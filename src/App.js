@@ -17,8 +17,6 @@ function App() {
      <Adminslogin/>
       <Confirm />
      <Rider/>
-
-      
     </div>
   );
 }
