@@ -4,14 +4,17 @@ import Landingpage from './Components/Landpage/Landingpage';
 import Lotery from './Components/Lottry/Lotery';
 import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 import Adminslogin from './Components/Adminlogin/Adminslogin';
+import Confirm from './Components/Confirmation/Confirm';
+
 
 function App() {
   return (
     <div className="App">
-     <Landingpage />
+     {/* <Landingpage />
      <Lotery/>
      <Ownerslogin/>
-     <Adminslogin/>
+     <Adminslogin/> */}
+    <Confirm/>
     </div>
   );
 }
