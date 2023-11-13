@@ -14,6 +14,10 @@ input, select{
     background-size: cover;
 }
 
-h3, h1, .est{
+h3, h1, .est, footer{
     color: var(--primary-color) !important;
+}
+
+.btn{
+    background-color: var(--primary-color);
 }

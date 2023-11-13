@@ -31,7 +31,7 @@ const Lotery = () => {
             <div className="col-lg-12 col-md-12 col-sm-12">
               <div className="mb-4">
                 <label htmlFor="name" className="mb-3">
-                  Name of Establishment
+                Establecimiento
                 </label>
                 <input
                   type="text"
@@ -42,7 +42,7 @@ const Lotery = () => {
                 <div className="row mt-5 pt-3">
                   <div className="col-lg-6 col-md-12 col-sm-12">
                     <label htmlFor="name" className="mb-3">
-                      Contact Person
+                    Persona de contacto
                     </label>
                     <input
                       type="tel"
@@ -51,7 +51,7 @@ const Lotery = () => {
                   </div>
                   <div className="col-lg-6 col-md-12 col-sm-12">
                     <label htmlFor="name" className="mb-3">
-                      Phone Number
+                    Telefono
                     </label>
                     <input
                       type="tel"
@@ -62,7 +62,7 @@ const Lotery = () => {
               </div>
 
               {/* riders details */}
-              <div className="row justify-content-center">
+              {/* <div className="row justify-content-center">
                 <div className="">
                   <div className="header mt-5">
                     <p className="fs-3 fw-bold mt-4 est">Riders Details</p>
@@ -105,7 +105,7 @@ const Lotery = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Order */}
               <div className="container-fluid">
@@ -168,11 +168,10 @@ const Lotery = () => {
                     />
                   </div>
                 </div>
-             
               </div>
               {/* Table */}
-              <div className="mb-3 fw-bold">
-                <h3>Invoice</h3>
+              <div className="my-3">
+                <h3 className="fw-bloder">Invoice</h3>
               </div>
               <div className=" w-100">
                 <table className="table-1 table-bordered table-responsive align-middle w-100">
@@ -234,7 +233,18 @@ const Lotery = () => {
                   </tbody>
                 </table>
                 <div className="mt-3 fw-bold">
-                <i class="bi bi-plus-lg est"></i><a href="/" className="est">Add more</a>
+                  <i class="bi bi-plus-lg est"></i>
+                  <a href="/" className="est">
+                    Add more
+                  </a>
+                </div>
+                <div className="text-center mt-3">
+                  <button
+                    type="submit"
+                    className="btn rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                  >
+                    Entregar
+                  </button>
                 </div>
               </div>
             </div>
