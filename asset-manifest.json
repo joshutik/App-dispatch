@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/App-dispatch/static/css/main.b965913e.css",
+    "main.js": "/App-dispatch/static/js/main.a9e26fe1.js",
+    "static/js/787.f73ddcd3.chunk.js": "/App-dispatch/static/js/787.f73ddcd3.chunk.js",
+    "static/media/Overlay (1).png": "/App-dispatch/static/media/Overlay (1).7b536f8d4dda7793a25b.png",
+    "static/media/Rectangle 7 (1).png": "/App-dispatch/static/media/Rectangle 7 (1).329330142c87365011a1.png",
+    "static/media/Rectangle 7.png": "/App-dispatch/static/media/Rectangle 7.f518def28c7f312380a5.png",
+    "static/media/Rectangle 21.png": "/App-dispatch/static/media/Rectangle 21.dd68d8a4b622e3b4b356.png",
+    "static/media/Rectangle 21 (1).png": "/App-dispatch/static/media/Rectangle 21 (1).dfbb0769cc1a4ba38a24.png",
+    "static/media/Rectangle 21 (2).png": "/App-dispatch/static/media/Rectangle 21 (2).91094183254042a081e1.png",
+    "static/media/logo.svg": "/App-dispatch/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/App-dispatch/index.html",
+    "main.b965913e.css.map": "/App-dispatch/static/css/main.b965913e.css.map",
+    "main.a9e26fe1.js.map": "/App-dispatch/static/js/main.a9e26fe1.js.map",
+    "787.f73ddcd3.chunk.js.map": "/App-dispatch/static/js/787.f73ddcd3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b965913e.css",
+    "static/js/main.a9e26fe1.js"
+  ]
+}
