@@ -2,13 +2,13 @@
     --primary-color: #17476E;
 }
 
-.owner-login{
+.login{
     font-family: poppins;
     background-image: url(../Assets/Overlay\ \(1\).png);
+    background-size: cover;
 }
 
 .head{
     color: var(--primary-color) !important; 
     font-family: poppins;
 }
-
