@@ -5,16 +5,20 @@ import Lotery from './Components/Lottry/Lotery';
 import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 import Adminslogin from './Components/Adminlogin/Adminslogin';
 import Confirm from './Components/Confirmation/Confirm';
+import Rider from './Components/Riderpage/Rider';
 
 
 function App() {
   return (
     <div className="App">
-     {/* <Landingpage />
+     <Landingpage />
      <Lotery/>
      <Ownerslogin/>
-     <Adminslogin/> */}
-    <Confirm/>
+     <Adminslogin/>
+      <Confirm />
+     <Rider/>
+
+      
     </div>
   );
 }
