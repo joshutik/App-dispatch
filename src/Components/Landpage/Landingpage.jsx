@@ -3,7 +3,7 @@ import './Landingpage.css'
 
 const Landingpage = () => {
   return (
-    <div className="container">
+    <div className="container-fluid landing-page">
       <div className="row min-vh-100 justify-content-center align-items-center">
         <div className="col-lg-5 col-md-7 col-sm-12">
           <div className="card rounded-5">
@@ -12,6 +12,10 @@ const Landingpage = () => {
                 <div className="my-4">
                     <button type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Iniciar sesion</button>
                 </div>
+                <div className="text-center">
+                   <hr className="w-50 mx-auto my-3" />
+                </div>
+               
                 <div className="my-4">
                     <button type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Administrador sesion</button>
                 </div>
