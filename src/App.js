@@ -6,17 +6,22 @@ import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 import Adminslogin from './Components/Adminlogin/Adminslogin';
 import Confirm from './Components/Confirmation/Confirm';
 import Rider from './Components/Riderpage/Rider';
+import Ownerslog from './Components/Overview/Ownerslog';
+import Lottery from './Components/Lotery/Lottery';
 
 
 function App() {
   return (
     <div className="App">
      <Landingpage />
-     <Lotery/>
+     {/* <Lotery/> */}
      <Ownerslogin/>
-     <Adminslogin/>
-      <Confirm />
-     <Rider/>
+     <Adminslogin/> 
+      {/* <Confirm /> */}
+     {/* <Rider/>
+     <Lottery/>
+     <Lotery/> */}
+     {/* <Ownerslog /> */}
     </div>
   );
 }

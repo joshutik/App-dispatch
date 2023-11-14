@@ -1,5 +1,6 @@
 import React from 'react'
 import './Adminslogin.css'
+import { Link } from 'react-router-dom'
 
 const Adminslogin = () => {
   return (
@@ -38,17 +39,17 @@ const Adminslogin = () => {
               </div>
 
               <div className="mt-5 text-center">
-                <button
-                  type="submit"
+                <Link
+                  to="/Rider-login"
                   className="btn btn-primary w-75 rounded-pill py-2"
                 >
                   Login
-                </button>
+                </Link>
               </div>
 
               <div className="text-center mt-5">
                 <p>
-                  Not an admin? <a href="/">Login as owner</a>
+                  Not an admin? <Link to="/Admin-login">Login as owner</Link>
                 </p>
               </div>
             </div>

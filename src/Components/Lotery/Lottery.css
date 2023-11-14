@@ -1,0 +1,13 @@
+:root{
+    --primary-color: #17476E;
+}
+
+body{
+    background-color: transparent;
+}
+
+.lot{
+    background-image: url(../Assets/Rectangle\ 7\ \(1\).png);
+    background-size: cover;
+    background-position: center;
+}

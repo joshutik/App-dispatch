@@ -1,5 +1,6 @@
 import React from "react";
 import './Ownerslogin.css'
+import { Link } from "react-router-dom";
 
 const Ownerslogin = () => {
   return (
@@ -38,17 +39,16 @@ const Ownerslogin = () => {
                 </div>
 
                 <div className="mt-5 text-center">
-                  <button
-                    type="submit"
-                    className="btn btn-primary w-75 rounded-pill py-2"
+                  <Link
+                   to="/Log-owner" className="btn btn-primary w-75 rounded-pill py-2"
                   >
                     Login
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="text-center mt-5">
                   <p>
-                    Not an owner? <a href="/">Login as admin</a>
+                    Not an owner? <Link to="/Owner-login">Login as admin</Link>
                   </p>
                 </div>
               </div>

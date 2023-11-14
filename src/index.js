@@ -10,6 +10,11 @@ import {
   } from "react-router-dom";
 import Landingpage from './Components/Landpage/Landingpage';
 import Lotery from './Components/Lottry/Lotery';
+import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
+import Ownerslog from './Components/Overview/Ownerslog';
+import Adminslogin from './Components/Adminlogin/Adminslogin';
+import Rider from './Components/Riderpage/Rider';
+import Lottery from './Components/Lotery/Lottery';
 
   
   const router = createBrowserRouter([
@@ -20,6 +25,27 @@ import Lotery from './Components/Lottry/Lotery';
     {
       path: "/Login",
       element: <Lotery />,
+    },
+ 
+    {
+      path: "/Log-owner",
+      element: <Ownerslog />,
+    },
+    {
+      path: "/Admin-login",
+      element: <Ownerslogin />,
+    },
+    {
+      path: "/Owner-login",
+      element: <Adminslogin />,
+    },
+    {
+      path: "/Rider-login",
+      element: <Rider />,
+    },
+    {
+      path: "/Add-more",
+      element: <Lottery />,
     },
  
    

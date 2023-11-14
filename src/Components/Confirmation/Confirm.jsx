@@ -8,7 +8,7 @@ const Confirm = () => {
         <div className="row min-vh-100 justify-content-center align-items-center">
           <div className="col-lg-4 col-md-5 col-sm-7">
             <div className="pt-5">
-              <div className="card shadow rounded-4 px-5 pt-3 pb-5">
+              <div className="card shadow rounded-4 px-5 pt-3 pb-5 confirm">
                 <div className="header text-center">
                     <i class="bi bi-check-circle-fill icon"></i>
                 </div>
