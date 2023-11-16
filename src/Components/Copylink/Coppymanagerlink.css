@@ -1,0 +1,34 @@
+:root{
+    --primary-color:#17476E;
+    --secondary-color: red;
+}
+
+body{
+    font-family: poppins;
+}
+
+.card{
+    width: 23rem;
+    height: 20rem;
+    margin: 10rem auto;
+}
+
+.copy{
+    background-color: transparent !important;
+    text-decoration: none !important;
+    padding-left:4rem !important ;
+    padding-right:4rem ;
+    color: var(--primary-color) !important;
+    outline: 3px solid var(--primary-color) !important;
+}
+
+.delete{
+    outline: 3px solid var(--secondary-color) !important;
+    background-color: transparent !important;
+    color: var(--secondary-color);
+}
+
+
+
+
+

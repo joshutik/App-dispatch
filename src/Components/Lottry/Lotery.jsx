@@ -1,5 +1,6 @@
 import React from "react";
 import "./Lotery.css";
+import { Link } from "react-router-dom";
 
 const Lotery = () => {
   return (
@@ -171,29 +172,33 @@ const Lotery = () => {
               </div>
               {/* Table */}
               <div className="my-3">
-                <h3 className="fw-bloder">Invoice</h3>
+                <h3 className="fw-bold">Invoice</h3>
               </div>
               <div className=" w-100">
                 <table className="table-1 table-bordered table-responsive align-middle w-100">
                   <thead>
                     <tr>
                       <th scope="col" className="p-4">
-                        Numero
+                        Date
                       </th>
                       <th scope="col" className="p-4">
                         Series
                       </th>
                       <th scope="col" className="p-4">
-                        Quantity reserved
+                        Quantity delivered
                       </th>
                       <th scope="col" className="p-4">
-                        Quantity returned
+                       Amount paid
                       </th>
                       <th scope="col" className="p-4">
-                        Quantity charged
+                       Balance
                       </th>
                       <th scope="col" className="p-4">
-                        Quantity sold
+                        Discount
+                      </th>
+                      <th scope="col" className="p-4">
+                      <Link to="/pending">Pending <i class="bi bi-chevron-down"></i></Link>
+                        
                       </th>
                     </tr>
                   </thead>

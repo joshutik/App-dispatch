@@ -8,13 +8,14 @@ import {
     createBrowserRouter,
     RouterProvider,
   } from "react-router-dom";
-import Landingpage from './Components/Landpage/Landingpage';
+// import Landingpage from './Components/Landpage/Landingpage';
 import Lotery from './Components/Lottry/Lotery';
 import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 import Ownerslog from './Components/Overview/Ownerslog';
 import Adminslogin from './Components/Adminlogin/Adminslogin';
 import Rider from './Components/Riderpage/Rider';
 import Lottery from './Components/Lotery/Lottery';
+// import Approved from './Components/Pending/Approved';
 
   
   const router = createBrowserRouter([
@@ -46,6 +47,10 @@ import Lottery from './Components/Lotery/Lottery';
     {
       path: "/Add-more",
       element: <Lottery />,
+    },
+    {
+      path: "/pending",
+      element: <pending />,
     },
  
    
