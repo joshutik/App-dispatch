@@ -18,7 +18,7 @@ const Landingpage = () => {
                 </div>
                
                 <div className="my-4">
-                    <button type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Administrador sesion</button>
+                    <Link to="" type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Administrador sesion</Link>
                 </div>
 
                 <div className="mt-5">

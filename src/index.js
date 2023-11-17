@@ -15,6 +15,9 @@ import Ownerslog from './Components/Overview/Ownerslog';
 import Adminslogin from './Components/Adminlogin/Adminslogin';
 import Rider from './Components/Riderpage/Rider';
 import Lottery from './Components/Lotery/Lottery';
+import Addorder from './Components/Addneworder/Addorder';
+import Adminpage2 from './Components/Adminpage2/Adminpage2';
+import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
 
   
@@ -52,7 +55,20 @@ import Lottery from './Components/Lotery/Lottery';
       path: "/pending",
       element: <pending />,
     },
+    {
+      path: "/add-order",
+      element: <Addorder/>,
+    },
+    {
+      path: "/edit-company",
+      element: <Adminpage2/>,
+    },
+    {
+      path: "/confirm",
+      element: <Confirmlink/>,
+    },
  
+    
    
   ]);
   

@@ -3,36 +3,6 @@
     --secondary-color: red;
 }
 
-
-.container{
-    margin: 0px !important;
-}
-
-.icon{
-    color: var(--primary-color) !important;
-}
-
-input, select{
-    outline: 2px solid var(--primary-color);
-}
-
-body{
-    font-family: poppins;
-    /* background-color: white; */
-}
-.manager-page{
-    background-image:url(../Assets/Rectangle\ 7.png) ;
-    background-size: cover;
-    background-position: center;
-    height: 40vh !important;
-    width: 100%;
-    margin:0px;
-}
-
-.table{
-    width: 100% !important;
-}
-
 table,td, th{
     border: 2px solid var(--primary-color);
     padding:10px ;
@@ -60,3 +30,27 @@ input[type="number"], input[type="date"]{
         width: 100px;
     }   
 }
+
+.popup {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  

@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Managerpage.css";
 import { Link } from "react-router-dom";
 
 const Managerpage = () => {
+  const [tableData, setTableData] = useState([
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    // Add more rows as needed
+  ]);
+  const handleInputChange = (id, field, value) => {
+    const updatedData = tableData.map((row) =>
+      row.id === id ? { ...row, [field]: value } : row
+    );
+    setTableData(updatedData);
+  };
+
   return (
     <div>
       <div className="container-fluid">
@@ -32,18 +47,18 @@ const Managerpage = () => {
             <div className="fs-5 icon">
               <Link to="/add-order" className="icon">
                 {" "}
-                <i class="bi bi-plus-lg"></i>add new order
+                <i class="bi bi-plus-lg"></i>Add new order
               </Link>
             </div>
             <div className="fs-5">
-              <Link to="/" className="icon">
+              <Link to="/edit-company" className="icon">
                 <i class="bi bi-plus-lg fw-bolder fs-4"></i>Edit Company details
               </Link>
             </div>
           </div>
           {/* Table */}
-          <div className=" w-75">
-            <table className="table table-bordered table-responsive align-middle w-100">
+          <div className="px-5">
+            {/* <table className="table table-bordered table-responsive align-middle w-100">
               <thead>
                 <tr>
                   <th scope="col" className="p-4">
@@ -105,11 +120,86 @@ const Managerpage = () => {
                   <td className="p-4"></td>
                 </tr>
               </tbody>
+            </table> */}
+            <table className="table table-bordered px-5 align-middle table-responsive w-100">
+              <thead className="">
+                <tr className="text-center">
+                  <th></th>
+                  <th>Date</th>
+                  <th>Number</th>
+                  <th>Series</th>
+                  <th>Quantity Delivered</th>
+                  <th>Amount paid</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableData.map((row) => (
+                  <tr key={row.id}>
+                    <td>{row.id}</td>
+                    <td>
+                      <input
+                        className=""
+                        type="date"
+                        value={row.name}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "name", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td className="">
+                      <input
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="Number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="Number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         </div>
         <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">
-          <div className="row justify-content-center align-items-center ">
+          <div className="row justify-content-center align-items-center">
             <div className="col-lg-4 col-md-12 col-sm-6">
               <p className="mb-0">
                 <i class="bi bi-geo-alt-fill "></i>

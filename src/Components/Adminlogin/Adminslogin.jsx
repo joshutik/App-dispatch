@@ -4,19 +4,43 @@ import React, { useState } from "react";
 // import Ownerslogin from "../Ownerlogin/Ownerslogin";
 
 const Adminslogin = ({onformSwitch}) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
   const [activeState, setActiveState] = useState('adminLogin')
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-  const handleSubmit = (e) => {
-    if(password < 8){
-      alert("password must be up to 8 digits")
-    }else{
-      console.log('a log was submited:', {email, password});
-    }
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    // Call the login API endpoint with formData
+    try {
+      const response = await fetch("your_login_endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Handle successful login
+        const responseData = await response.json();
+        console.log("Login successful:", responseData);
+      } else {
+        // Handle failed login
+        console.error("Login failed:", response.status);
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
 
 
@@ -42,7 +66,7 @@ const Adminslogin = ({onformSwitch}) => {
                         Email address
                       </label>
                       <input
-                        value={email} onChange={(e) => setEmail(e.target.value)}
+                        value={formData.email} onChange={handleChange}
                         type="email"
                         className="rounded-pill w-100 form-control border-1 py-2 px-3"
                         name="email"
@@ -52,7 +76,7 @@ const Adminslogin = ({onformSwitch}) => {
                     <div className="form-group mb-3">
                       <label htmlFor="password">Password</label>
                       <input
-                        value={password} onChange={(e) => setPassword(e.target.value)}
+                        value={formData.password} onChange={handleChange}
                         className="rounded-pill w-100 form-control border-1 py-2"
                         type="password"
                         id="password"

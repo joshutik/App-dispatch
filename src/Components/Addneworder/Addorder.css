@@ -1,0 +1,34 @@
+:root{
+    --primary-color:#17476E;
+    --secondary-color: red;
+}
+
+
+.container{
+    margin: 0px !important;
+}
+
+.bi{
+    color: var(--primary-color);
+}
+
+input, select{
+    outline: 2px solid var(--primary-color);
+}
+
+body{
+    font-family: poppins;
+    /* background-color: white; */
+}
+.bg{
+    background-image:url(../Assets/Rectangle\ 7.png) ;
+    background-size: cover;
+    background-position: center;
+    height: 40vh !important;
+    width: 100%;
+    margin:0px;
+}
+
+.table{
+    width: 100% !important;
+}
