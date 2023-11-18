@@ -58,7 +58,7 @@ const Managerpage = () => {
           </div>
           {/* Table */}
           <div className="px-5">
-            {/* <table className="table table-bordered table-responsive align-middle w-100">
+            <table className="table table-bordered table-responsive align-middle w-100">
               <thead>
                 <tr>
                   <th scope="col" className="p-4">
@@ -120,7 +120,7 @@ const Managerpage = () => {
                   <td className="p-4"></td>
                 </tr>
               </tbody>
-            </table> */}
+            </table>
             <table className="table table-bordered px-5 align-middle table-responsive w-100">
               <thead className="">
                 <tr className="text-center">
@@ -195,7 +195,7 @@ const Managerpage = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table> 
           </div>
         </div>
         <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">

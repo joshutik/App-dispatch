@@ -19,7 +19,9 @@ import Addorder from './Components/Addneworder/Addorder';
 import Adminpage2 from './Components/Adminpage2/Adminpage2';
 import Confirmpage from './Components/Confirmation/Confirmpage';
 import Establish from './Components/Establishment/Establish';
-import Managerpage from './Components/Managerpage/Managerpage';
+// import Managerpage from './Components/Managerpage/Managerpage';
+import Riderlogin from './Components/Riderlogin/Riderlogin';
+import Managmentlog from './Components/Managementlog/Managmentlog';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink'
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
@@ -85,7 +87,12 @@ import Managerpage from './Components/Managerpage/Managerpage';
     },
     {
       path: "/manager-page",
-      element: <Managerpage/>,
+      element: <Managmentlog/>,
+    },
+  
+    {
+      path: "/riders-details",
+      element: <Riderlogin/>,
     },
   
    

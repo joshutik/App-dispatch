@@ -16,10 +16,10 @@ const Confirm = () => {
                 <div className='text-center pb-3 fw-bold text-dark'>
                     <h1>Weldone!!!</h1>
                     <p>
-                        Form Submited successfuly
+                        Saved successfully
                     </p>
                     <div className='mt-5'>
-                        <Link to="/confirm" className='rounded-pill py-3 px-5 text-decoration-none  w-100 success-btn'>Add another</Link>
+                        <Link to="/add-order" className='rounded-pill py-3 px-5 text-decoration-none  w-100 success-btn'>Go back</Link>
                     </div>
                 </div>
               </div>

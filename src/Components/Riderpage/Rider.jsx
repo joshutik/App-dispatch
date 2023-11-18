@@ -42,9 +42,9 @@ const Rider = ({ onpageSwitch }) => {
                       {/* Switch  */}
                       <div class="toggle-switch">
                         {/* Knob  */}
-                        <Link to='/rider-page' className="establishment inline-block">Establishment</Link>
+                        <Link to='/rider-page-1' className="establishment inline-block">Establishment</Link>
                         <div class="toggle-knob"></div>
-                        <Link to="/rider-page-1" className="rider inline-block">Rider</Link>
+                        <Link to="/rider-page-2" className="rider inline-block">Rider</Link>
                       </div>
                     </label>
                   </div>
@@ -59,7 +59,7 @@ const Rider = ({ onpageSwitch }) => {
                           <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
                         </div>
                         <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-                          Lottery Company
+                          Frank Analaba
                         </div>
 
                         {/* modal */}
@@ -100,7 +100,7 @@ const Rider = ({ onpageSwitch }) => {
                           <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
                         </div>
                         <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-                          Lottery Company
+                          Winifred Iwu
                         </div>
                         <img className="w-100" src={img2} alt="" />
 
@@ -115,7 +115,7 @@ const Rider = ({ onpageSwitch }) => {
                           <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
                         </div>
                         <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-                          Lottery Company
+                          Philomina Udie
                         </div>
                         <img className="w-100" src={img3} alt="" />
                         <div className="middle">
@@ -128,7 +128,7 @@ const Rider = ({ onpageSwitch }) => {
                         <img className="w-100 image" src={img7} alt="" />
                         <div className="middle">
                           <div className="text">
-                            <Link to="/Add-more">
+                            <Link to="/riders-details">
                               <i class="bi bi-plus-lg"></i>
                             </Link>
                           </div>

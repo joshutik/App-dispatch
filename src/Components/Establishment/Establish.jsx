@@ -36,9 +36,9 @@ const Establish = () => {
                       {/* Switch  */}
                       <div class="toggle-switch">
                         {/* Knob  */}
-                        <Link to='/rider-page-2' className="establishment">Establishment</Link>
+                        <Link to='/rider-page-1' className="establishment">Establishment</Link>
                         <div class="toggle-knob"></div>
-                        <Link to="/rider-page-1" className="rider">Rider</Link>
+                        <Link to="/rider-page-2" className="rider">Rider</Link>
                       </div>
                     </label>
                   </div>
