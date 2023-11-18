@@ -40,7 +40,7 @@ function App() {
      {/* <Adminpage2/> */}
      {/* <Copymanagerlink /> */}
      <Landingpage/>
-     <Rider/>
+     {/* <Rider/> */}
      {/* <Establish/> */}
     </div>
   );
