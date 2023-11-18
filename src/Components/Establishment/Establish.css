@@ -183,7 +183,7 @@
     }
   
     .toggle-switch {
-      width: 30rem;
+      width: 10rem;
       height: 55px;
       background-color: #ccc;
       border-radius: 20px;
@@ -196,7 +196,7 @@
   
     .establishment {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 8px;
       left: 10px;
       font-size: 25px;
@@ -206,7 +206,7 @@
   
     .rider {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 4px;
       left: 22rem;
       font-size: 30px;
@@ -220,7 +220,7 @@
     
   }
   
-  @media screen and (max-width:806px){
+  /* @media screen and (max-width:806px){
     .toggle-switch {
       width: 20rem;
       height: 55px;
@@ -246,9 +246,9 @@
   
     .establishment {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 13px;
-      left: 8.3rem;
+      left: 0.3rem;
       font-size: 19px;
       font-weight: bold;
       text-transform: capitalize;
@@ -256,9 +256,9 @@
   
     .rider {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 13px;
-      left: 22.3rem;
+      left: 14.3rem;
       font-size: 19px;
       font-weight: bold;
       text-transform: capitalize;
@@ -267,9 +267,9 @@
     .toggle-checkbox:checked+.toggle-switch .toggle-knob {
       transform: translateX(10.3rem);
     }
-  }
-  
-  @media screen and (max-width:506px){
+  } */
+
+  /* @media screen and (min-width:630px){
     .toggle-switch {
       width: 20rem;
       height: 55px;
@@ -279,7 +279,56 @@
       top: 0;
       left: 0;
       transition: background-color 0.3s ease;
-      margin-left: 11rem !important;
+      margin-right: 10rem !important;
+    }
+  
+    .toggle-knob {
+      width: 152px;
+      height: 49px;
+      background-color: #fff;
+      border-radius: 29px;
+      position: absolute;
+      top: 3px;
+      left: 1px;
+      transition: transform 0.3s ease;
+    }
+  
+    .establishment {
+      position: absolute;
+      z-index: 1;
+      top: 13px;
+      left: 2.3rem;
+      font-size: 19px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  
+    .rider {
+      position: absolute;
+      z-index: 1;
+      top: 13px;
+      left: 14.3rem;
+      font-size: 19px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  
+    .toggle-checkbox:checked+.toggle-switch .toggle-knob {
+      transform: translateX(10.3rem);
+    }
+  } */
+  
+  /* @media screen and (max-width:506px){
+    .toggle-switch {
+      width: 20rem;
+      height: 55px;
+      background-color: #ccc;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: background-color 0.3s ease;
+      margin-left: rem !important;
       margin-right: 11rem !important;
     }
   
@@ -296,7 +345,7 @@
   
     .establishment {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 17px;
       left: 12.3rem;
       font-size: 15px;
@@ -306,7 +355,7 @@
   
     .rider {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 13px;
       left: 25.3rem;
       font-size: 19px;
@@ -318,8 +367,8 @@
       transform: translateX(10.3rem);
     }
   }
-  
-  @media screen and (max-width:436px){
+   */
+  /* @media screen and (max-width:436px){
     .toggle-switch {
       width: 20rem;
       height: 55px;
@@ -346,7 +395,7 @@
   
     .establishment {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 17px;
       left: 12.3rem;
       font-size: 15px;
@@ -357,7 +406,7 @@
   
     .rider {
       position: absolute;
-      /* z-index: 1; */
+      z-index: 1;
       top: 13px;
       left: 25.3rem;
       font-size: 19px;
@@ -368,6 +417,33 @@
   
     .toggle-checkbox:checked+.toggle-switch .toggle-knob {
       transform: translateX(10.3rem);
+    }
+  } */
+  @media screen and (max-width: 768px) {
+    .toggle-container {
+      margin-right: 0 !important;
+    }
+  
+    .toggle-switch {
+      width: 100%;
+    }
+  
+    .toggle-knob {
+      width: 50%;
+      left: 0;
+    }
+  
+    .establishment,
+    .rider {
+      top: 25px ;
+      font-size: 20px ;
+      left: 5px ;
+    } 
+  
+    .rider {
+      top: 100%;
+      left: 80%;
+      
     }
   }
   

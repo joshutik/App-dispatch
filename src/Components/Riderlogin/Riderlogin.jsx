@@ -36,9 +36,9 @@ const Riderlogin = () => {
               </div>
             </div>
             <div className="text-center mt-5">
-              <Link
+              <Link to="/confirm"
                 type="submit"
-                className="rounded-pill text-light w-50 py-4 mt-5"
+                className="save rounded-pill text-light w-50 py-4 mt-5"
               >
                 Save
               </Link>

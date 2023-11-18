@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import { useState } from 'react';
 import './App.css';
-import Landingpage from './Components/Landpage/Landingpage';
+// import Landingpage from './Components/Landpage/Landingpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
@@ -20,7 +20,7 @@ import Landingpage from './Components/Landpage/Landingpage';
 // import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Addorder from './Components/Addneworder/Addorder';
-// import Rider from './Components/Riderpage/Rider';
+import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink.jsx'
 
@@ -40,8 +40,8 @@ function App() {
      {/* <Riderlogin/> */}
      {/* <Adminpage2/> */}
      {/* <Copymanagerlink /> */}
-     <Landingpage/>
-     {/* <Rider/> */}
+     {/* <Landingpage/> */}
+     <Rider/>
      {/* <Establish/> */}
      {/* <Managmentlog/> */}
     </div>
