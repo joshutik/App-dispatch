@@ -1,11 +1,12 @@
 import React from 'react'
+import './Riderlogin.css'
 import { Link } from 'react-router-dom'
 
 const Riderlogin = () => {
   return (
     <div>
-        <div className="container">
-      <div className="card rounded-5 w-100 p-5 mt-3">
+        <div className="container ">
+      <div className="card rider-login rounded-5 w-100 p-5 mt-3">
         <div className="header mt-5">
           <p className="fs-3 fw-bold">Riders Details</p>
         </div>
@@ -19,7 +20,7 @@ const Riderlogin = () => {
           </div>
           <div>
             <div className="row mt-5 pt-3">
-              <div className="col-lg-6 col-md- col-sm-12">
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <label htmlFor="name">Phone Number</label>
                 <input
                   type="tel"

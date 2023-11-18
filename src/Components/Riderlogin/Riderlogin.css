@@ -1,0 +1,36 @@
+:root{
+    --primary-color:#17476E;
+    --secondary-color: red;
+}
+
+body{
+    background-color:black;
+    font-family: 'poppins';
+}
+
+label{
+    font-weight: 400 !important;
+}
+.container{
+    margin: 0px !important;
+}
+p, input{
+    color: var(--primary-color) !important;
+}
+
+label{
+    font-weight: 300;
+}
+input{
+    outline: 2px solid var(--primary-color);
+}
+.rider-login{
+    width: 82rem !important;
+    min-height: 38rem;
+    
+}
+
+.btn{
+    background-color: var(--primary-color);
+
+}
