@@ -83,7 +83,7 @@ const Adminslogin = ({onformSwitch}) => {
                         name="password"
                       />
                     </div>
-                    <div className="form-group d-flex justify-content-between">
+                    {/* <div className="form-group d-flex justify-content-between">
                       <div>
                         <input
                           className="rounded-pill  border-1 mr-2"
@@ -94,7 +94,7 @@ const Adminslogin = ({onformSwitch}) => {
                       <div>
                         <a href="/">Forgot password?</a>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="mt-5 text-center">
                       <Link

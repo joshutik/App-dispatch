@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Ownerslogin.css";
 import { Link } from "react-router-dom";
 
 const Ownerslogin = () => {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [pass, setPass] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log();
+  // };
   return (
     <div>
       <div className="container-fluid owner-login">
@@ -37,7 +37,7 @@ const Ownerslogin = () => {
                       type="password"
                     />
                   </div>
-                  <div className="form-group d-flex justify-content-between">
+                  {/* <div className="form-group d-flex justify-content-between">
                     <div>
                       <input
                         className="rounded-pill  border-1 mr-2"
@@ -48,7 +48,7 @@ const Ownerslogin = () => {
                     <div>
                       <a href="/">Forgot password?</a>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="mt-5 text-center">
                     <Link
