@@ -246,7 +246,7 @@ const Lotery = () => {
                 <div className="text-center mt-3">
                   <button
                     type="submit"
-                    className="btn rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                    className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
                   >
                     Entregar
                   </button>

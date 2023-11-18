@@ -1,5 +1,6 @@
 import React from 'react'
 import './Addorder.css'
+import { Link } from 'react-router-dom'
 
 const Addorder = () => {
   return (
@@ -86,12 +87,12 @@ const Addorder = () => {
           </div>
         </div>
         <div className="text-center mt-3">
-          <button
+          <Link to="/confirm"
             type="submit"
-            className="btn rounded-pill text-light w-50 py-3 mt-5 mb-5"
+            className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
           >
             Save
-          </button>
+          </Link>
         </div>
       </div>
       <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">

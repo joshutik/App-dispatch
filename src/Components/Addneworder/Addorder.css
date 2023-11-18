@@ -8,7 +8,7 @@
     margin: 0px !important;
 }
 
-.bi{
+.bi, .save{
     color: var(--primary-color);
 }
 

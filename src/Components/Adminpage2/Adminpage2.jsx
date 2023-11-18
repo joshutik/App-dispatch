@@ -164,7 +164,7 @@ const Adminpage2 = () => {
               <div className="text-center mt-3">
                 <Link to="/confirm"
                   type="submit"
-                  className=" rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                  className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
                 >
                   Save
                 </Link>

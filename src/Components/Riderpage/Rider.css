@@ -3,6 +3,10 @@
   /* height: 30vh; */
 }
 
+.bi-three-dots-vertical{
+  cursor: pointer  !important;
+}
+
 .button-box {
   width: 220px;
   margin: 35px auto;
@@ -138,22 +142,24 @@
 
 .establishment {
   position: absolute;
-  /* z-index: 1; */
+  z-index: 1 !important;
   top: 4px;
   left: 10px;
   font-size: 30px;
   font-weight: bold;
   text-transform: capitalize;
+  text-decoration: none !important;
 }
 
 .rider {
   position: absolute;
-  /* z-index: 1; */
+  z-index: 1 !important;
   top: 4px;
   left: 30rem;
   font-size: 30px;
   font-weight: bold;
   text-transform: capitalize;
+  text-decoration: none !important;
 }
 
 
@@ -364,3 +370,4 @@
     transform: translateX(10.3rem);
   }
 }
+

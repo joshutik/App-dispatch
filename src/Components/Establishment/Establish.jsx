@@ -1,21 +1,15 @@
-// import React, { useState } from "react";
-import "./Rider.css";
-import img1 from "../Assets/Rectangle 21 (2).png";
-import img2 from "../Assets/Rectangle 21 (1).png";
-import img3 from "../Assets/Rectangle 21.png";
+import React from 'react'
+import './Establish.css'
+import img4 from "../Assets/card img-1.png";
+import img5 from "../Assets/card img-2.png";
+import img6 from "../Assets/card img-3.png";
 import img7 from "../Assets/Rectangle 21 (3).png";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-const Rider = ({ onpageSwitch }) => {
-  //   const [activeState, setActiveState] = useState("establishmentLogin");
-  //   const [modal, setModal] = useState(false);
-
-  //   const toggleModal = () => {
-  //     setModal(!modal);
-  //   };
-
+const Establish = () => {
   return (
-    <div className="container-fluid w-100">
+    <div>
+        <div className="container-fluid w-100">
       <div className="establish">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-8 col-md-6 col-sm-12 p-5">
@@ -42,9 +36,9 @@ const Rider = ({ onpageSwitch }) => {
                       {/* Switch  */}
                       <div class="toggle-switch">
                         {/* Knob  */}
-                        <Link to='/rider-page' className="establishment inline-block">Establishment</Link>
+                        <Link to='/rider-page-2' className="establishment">Establishment</Link>
                         <div class="toggle-knob"></div>
-                        <Link to="/rider-page-1" className="rider inline-block">Rider</Link>
+                        <Link to="/rider-page-1" className="rider">Rider</Link>
                       </div>
                     </label>
                   </div>
@@ -54,7 +48,7 @@ const Rider = ({ onpageSwitch }) => {
                   <div className="">
                     <div className="rounded-5 overlay">
                       <div class="container position-relative">
-                        <img className="w-100 " src={img1} alt="" />
+                        <img className="w-100 " src={img4} alt="" />
                         <div className=" text-light fs-4">
                           <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
                         </div>
@@ -102,7 +96,7 @@ const Rider = ({ onpageSwitch }) => {
                         <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
                           Lottery Company
                         </div>
-                        <img className="w-100" src={img2} alt="" />
+                        <img className="w-100" src={img5} alt="" />
 
                         <div className="middle">
                           <div className="text">
@@ -117,7 +111,7 @@ const Rider = ({ onpageSwitch }) => {
                         <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
                           Lottery Company
                         </div>
-                        <img className="w-100" src={img3} alt="" />
+                        <img className="w-100" src={img6} alt="" />
                         <div className="middle">
                           <div className="text">
                             <Link to="/"></Link>
@@ -163,7 +157,9 @@ const Rider = ({ onpageSwitch }) => {
         </div>
       </div>
     </div>
-  );
-};
+      
+    </div>
+  )
+}
 
-export default Rider;
+export default Establish

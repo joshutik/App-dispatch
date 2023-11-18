@@ -1,5 +1,6 @@
 import React from 'react'
 import './Confirmlink.css'
+import { Link } from 'react-router-dom'
 
 const Confirmlink = () => {
   return (
@@ -21,7 +22,7 @@ const Confirmlink = () => {
                         <button className='rounded-pill py-3 w-100 success-btn'>Coppy link</button>
                     </div>
                     <div className='mt-5'>
-                        <button className='rounded-pill py-3 w-100 success-btn'>Add another</button>
+                        <Link to='/manager-page' className='save rounded-pill py-3 w-100 success-btn'>Add another</Link>
                     </div>
                 </div>
               </div>

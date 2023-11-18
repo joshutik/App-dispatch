@@ -1,6 +1,8 @@
 // import logo from './logo.svg';
 // import { useState } from 'react';
 import './App.css';
+import Landingpage from './Components/Landpage/Landingpage';
+// import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
@@ -10,7 +12,7 @@ import './App.css';
 // import Approved from './Components/Pending/Approved';
 // import Landingpage from './Components/Landpage/Landingpage';
 // import Lotery from './Components/Lottry/Lotery';
-import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
+// import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 // import Adminslogin from './Components/Adminlogin/Adminslogin';
 // import Confirm from './Components/Confirmation/Confirm';
 // import Rider from './Components/Riderpage/Rider';
@@ -18,6 +20,8 @@ import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 // import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Addorder from './Components/Addneworder/Addorder';
+import Rider from './Components/Riderpage/Rider';
+// import Copymanagerlink from './Components/Copylink/Copymanagerlink.jsx'
 
 
 function App() {
@@ -27,13 +31,17 @@ function App() {
       {/* <Addorder/> */}
       {/* <Lotery/> */}
       {/* <Lottery/> */}
-     <Ownerslogin/>
+     {/* <Ownerslogin/> */}
      {/* <Managerpage/> */}
      {/* <Rider/> */}
      {/* <Confirmlink/> */}
      {/* <SalesTable/> */}
      {/* <Riderlogin/> */}
      {/* <Adminpage2/> */}
+     {/* <Copymanagerlink /> */}
+     <Landingpage/>
+     <Rider/>
+     {/* <Establish/> */}
     </div>
   );
 }

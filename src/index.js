@@ -17,7 +17,11 @@ import Rider from './Components/Riderpage/Rider';
 import Lottery from './Components/Lotery/Lottery';
 import Addorder from './Components/Addneworder/Addorder';
 import Adminpage2 from './Components/Adminpage2/Adminpage2';
-import Confirmlink from './Components/Confirmastionlink/Confirmlink';
+import Confirmpage from './Components/Confirmation/Confirmpage';
+import Establish from './Components/Establishment/Establish';
+import Managerpage from './Components/Managerpage/Managerpage';
+// import Copymanagerlink from './Components/Copylink/Copymanagerlink'
+// import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
 
   
@@ -65,8 +69,27 @@ import Confirmlink from './Components/Confirmastionlink/Confirmlink';
     },
     {
       path: "/confirm",
-      element: <Confirmlink/>,
+      element: <Confirmpage/>,
     },
+    {
+      path: "/rider-page",
+      element: <Rider/>,
+    },
+    {
+      path: "/rider-page-1",
+      element: <Establish/>,
+    },
+    {
+      path: "/rider-page-2",
+      element: <Rider/>,
+    },
+    {
+      path: "/manager-page",
+      element: <Managerpage/>,
+    },
+  
+   
+   
  
     
    

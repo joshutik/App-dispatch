@@ -1,5 +1,6 @@
 import React from 'react'
-import './Confirm.css'
+import './Confirmpage.css'
+import { Link } from 'react-router-dom'
 
 const Confirm = () => {
   return (
@@ -18,7 +19,7 @@ const Confirm = () => {
                         Form Submited successfuly
                     </p>
                     <div className='mt-5'>
-                        <button className='rounded-pill py-3 w-100 success-btn'>Add another</button>
+                        <Link to="/confirm" className='rounded-pill py-3 px-5 text-decoration-none  w-100 success-btn'>Add another</Link>
                     </div>
                 </div>
               </div>

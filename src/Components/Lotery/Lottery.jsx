@@ -1,5 +1,6 @@
 import React from "react";
 import './Lottery.css'
+import { Link } from "react-router-dom";
 
 const Lottery = () => {
   return (
@@ -166,12 +167,12 @@ const Lottery = () => {
               </div>
             </div>
             <div className="text-center mt-3">
-              <button
+              <Link to="/confirm"
                 type="submit"
-                className="btn rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
               >
                 Save
-              </button>
+              </Link>
             </div>
           </div>
         </div>

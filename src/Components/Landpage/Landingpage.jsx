@@ -11,14 +11,20 @@ const Landingpage = () => {
             <div className="card-body text-center pt-5">
 
                 <div className="my-4">
-                    <Link to="/Login" className="btn btn-primary rounded-pill w-75 py-3"> Iniciar sesion</Link>
+                    <Link to="/Admin-login" className="btn btn-primary rounded-pill w-75 py-3"> Admin login</Link>
                 </div>
                 <div className="text-center">
                    <hr className="w-50 mx-auto my-3" />
                 </div>
                
-                <div className="my-4">
+                {/* <div className="my-4">
                     <Link to="" type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Administrador sesion</Link>
+                </div> */}
+                <div className="my-4">
+                    <Link to="/rider-page" type="submit" className="btn btn-primary rounded-pill w-75 py-3">Rider page</Link>
+                </div>
+                <div className="my-4">
+                    <Link to="/manager-page" type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Manager page</Link>
                 </div>
 
                 <div className="mt-5">
