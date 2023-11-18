@@ -10,7 +10,7 @@ import './App.css';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Manager from './Components/Managerlogin/Manager';
 // import Approved from './Components/Pending/Approved';
-// import Landingpage from './Components/Landpage/Landingpage';
+import Landingpage from './Components/Landpage/Landingpage';
 // import Lotery from './Components/Lottry/Lotery';
 // import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 // import Adminslogin from './Components/Adminlogin/Adminslogin';
@@ -20,7 +20,7 @@ import './App.css';
 // import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Addorder from './Components/Addneworder/Addorder';
-import Rider from './Components/Riderpage/Rider';
+// import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink.jsx'
 
@@ -40,8 +40,8 @@ function App() {
      {/* <Riderlogin/> */}
      {/* <Adminpage2/> */}
      {/* <Copymanagerlink /> */}
-     {/* <Landingpage/> */}
-     <Rider/>
+     <Landingpage/>
+     {/* <Rider/> */}
      {/* <Establish/> */}
      {/* <Managmentlog/> */}
     </div>
