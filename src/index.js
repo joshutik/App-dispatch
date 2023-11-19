@@ -57,10 +57,6 @@ import Managmentlog from './Components/Managementlog/Managmentlog';
       element: <Lottery />,
     },
     {
-      path: "/pending",
-      element: <pending />,
-    },
-    {
       path: "/add-order",
       element: <Addorder/>,
     },

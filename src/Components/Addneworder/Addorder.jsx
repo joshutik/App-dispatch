@@ -1,26 +1,29 @@
-import React from 'react'
-import './Addorder.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Addorder.css";
+import { Link } from "react-router-dom";
 
 const Addorder = () => {
   return (
     <div>
-         <div className="container-fluid bg bg-light">
-      <div className="">
-        <div className="pt-3 ps-5">
-          <a className="text-light text-decoration-none fs-5 ml-4" href="/">
-            <i className="bi bi-chevron-left"></i> Go Back
-          </a>
-        </div>
-        <div className="row justify-content-center align-items-center">
-          <div className="col-lg-8 col-md-6 col-sm-12 p-5">
-            <h1 className="text-light text-center fw-bold">Lottery Company</h1>
+      <div className="container-fluid bg bg-light">
+        <div className="">
+          <div className="pt-3 ps-5">
+            <a className="text-light text-decoration-none fs-5 ml-4" href="/">
+              <i className="bi bi-chevron-left"></i> Go Back
+            </a>
           </div>
-        </div>
-        <div className="text-end">
-          <p className="mb-0 fs-5 text-light p-3">
-            Dispatch Rider: <span className="fw-bold">Gloria Analaba</span>
-          </p>
+          <div className="row justify-content-center align-items-center">
+            <div className="col-lg-8 col-md-6 col-sm-12 p-5">
+              <h1 className="text-light text-center fw-bold">
+                Lottery Company
+              </h1>
+            </div>
+          </div>
+          <div className="text-end">
+            <p className="mb-0 fs-5 text-light p-3">
+              Dispatch Rider: <span className="fw-bold">Gloria Analaba</span>
+            </p>
+          </div>
         </div>
       </div>
       <div className="text-center mt-5">
@@ -87,7 +90,8 @@ const Addorder = () => {
           </div>
         </div>
         <div className="text-center mt-3">
-          <Link to="/confirm"
+          <Link
+            to="/confirm"
             type="submit"
             className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
           >
@@ -100,9 +104,8 @@ const Addorder = () => {
           <div className="col-lg-4 col-md-12 col-sm-6">
             <p className="mb-0">
               <i class="bi bi-geo-alt-fill "></i>
-               Avda de Espana 2428710-EL MOLAR  (MADRID)
-              </p>
-          
+              Avda de Espana 2428710-EL MOLAR (MADRID)
+            </p>
           </div>
 
           <div className="col-lg-4 col-md-12 col-sm-6">
@@ -116,9 +119,7 @@ const Addorder = () => {
         </div>
       </div>
     </div>
-      
-    </div>
-  )
-}
+  );
+};
 
-export default Addorder
+export default Addorder;
