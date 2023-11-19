@@ -1,11 +1,16 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import img1 from "../Assets/Rectangle 21 (2).png";
 import img2 from "../Assets/Rectangle 21 (1).png";
 import img3 from "../Assets/Rectangle 21.png";
 import img7 from "../Assets/Rectangle 21 (3).png";
 
-const Ridercompo = () => {
+
+const Ridercompo = ({onpageSwitch}) => {
+   
+  
+
+
   return (
     <div>
       <div className="row mt-5 gy-4">
@@ -38,6 +43,7 @@ const Ridercompo = () => {
             <div className="middle">
               <div className="text">
                 <Link to="/"></Link>
+                
               </div>
             </div>
           </div>

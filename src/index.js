@@ -22,7 +22,6 @@ import Establish from './Components/Establishment/Establish';
 // import Managerpage from './Components/Managerpage/Managerpage';
 import Riderlogin from './Components/Riderlogin/Riderlogin';
 import Managmentlog from './Components/Managementlog/Managmentlog';
-// import Copymanagerlink from './Components/Copylink/Copymanagerlink'
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
 
@@ -98,6 +97,7 @@ import Managmentlog from './Components/Managementlog/Managmentlog';
       path: "/riders-form",
       element: <Lottery/>,
     },
+   
   
    
    

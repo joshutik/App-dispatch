@@ -40,11 +40,11 @@ const Ownerslog = () => {
                   </div>
 
                   <div className="col-lg-6 col-md-6 col-sm-12 text-light pt-4 px-auto">
-                    <p>Total earnings</p>
+                    <p className="text-light">Total earnings</p>
                     <h2>
                       <span className="text-success">$18,000</span>
                     </h2>
-                    <p>compared to 52,000 yesterday</p>
+                    <p className="text-light">compared to 52,000 yesterday</p>
                   </div>
                 </div>
               </div>
@@ -57,11 +57,11 @@ const Ownerslog = () => {
                   </div>
 
                   <div className="col-lg-6 col-md-6 col-sm-10 text-light pt-4 px-auto">
-                    <p>Order trent</p>
+                    <p className="text-light">Order trent</p>
                     <h2>
                       <span className="text-success">124 order</span>
                     </h2>
-                    <p>compared to 52,000 yesterday</p>
+                    <p className="text-light">compared to 52,000 yesterday</p>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@ const Ownerslog = () => {
                   <h6 className="text-light">
                     Total amount paid
                   </h6>
-                  <h1 className="text-light">$18,000</h1>
+                  <h1 className="text-light own">$18,000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
@@ -93,7 +93,7 @@ const Ownerslog = () => {
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">
+                  <h6 className="text-light own">
                     Total amount paid
                   </h6>
                   <h1 className="text-light">$18,000</h1>

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import './Lottery.css'
 import { Link } from "react-router-dom";
 
 const Lottery = () => {
+  const [tableData, setTableData] = useState([
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    { name: "", value: "" },
+    // Add more rows as needed
+  ]);
+  const handleInputChange = (id, field, value) => {
+    const updatedData = tableData.map((row) =>
+      row.id === id ? { ...row, [field]: value } : row
+    );
+    setTableData(updatedData);
+  };
   return (
     <div className="container-fluid">
       <div className="">
@@ -165,6 +179,158 @@ const Lottery = () => {
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
+              <h2 className="">Invioce</h2>
+              <div className="px-5">
+            {/* <table className="table table-bordered table-responsive align-middle w-100">
+              <thead>
+                <tr>
+                  <th scope="col" className="p-4">
+                    Date
+                  </th>
+                  <th scope="col" className="p-4">
+                    Series
+                  </th>
+                  <th scope="col" className="p-4">
+                    Quantity delivered
+                  </th>
+                  <th scope="col" className="p-4">
+                    Amount paid
+                  </th>
+                  <th scope="col" className="p-4">
+                    Balance
+                  </th>
+                  <th scope="col" className="p-4">
+                    Discount
+                  </th>
+                  <th scope="col" className="p-4">
+                    <Link to="/pending">
+                      Pending <i class="bi bi-chevron-down"></i>
+                    </Link>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-center">
+                <tr>
+                  <td className="p-4 text-center">3356</td>
+                  <td className="p-4 text-center">24-46</td>
+                  <td className="p-4 text-center">$200</td>
+                  <td className="p-4 text-center">$200</td>
+                  <td className="p-4 text-center">$500</td>
+                  <td className="p-4 text-center">$200</td>
+                </tr>
+                <tr className="text-center">
+                  <td className="p-4">3356</td>
+                  <td className="p-4">24-46</td>
+                  <td className="p-4">$200</td>
+                  <td className="p-4">$200</td>
+                  <td className="p-4">$500</td>
+                  <td className="p-4">$200</td>
+                </tr>
+                <tr>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                </tr>
+                <tr>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                </tr>
+              </tbody>
+            </table> */}
+            <table className="table table-bordered px-5 align-middle table-responsive w-100">
+              <thead className="">
+                <tr className="text-center">
+                  <th></th>
+                  <th>Date</th>
+                  <th>Series</th>
+                  <th>Quantity Delivered</th>
+                  <th>Amount paid</th>
+                  <th>Balance</th>
+                  <th>Discount</th>
+                  <th>Confirmation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableData.map((row) => (
+                  <tr key={row.id}>
+                    <td>{row.id}</td>
+                    <td>
+                      <input
+                        className="class"
+                        type="date"
+                        value={row.name}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "name", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td className="class">
+                      <input
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input className="class"
+                        type="Number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input className="class"
+                        type="Number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input className="class"
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input className="class"
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td>
+                      <input className="class"
+                        type="number"
+                        value={row.value}
+                        onChange={(e) =>
+                          handleInputChange(row.id, "value", e.target.value)
+                        }
+                      />
+                    </td>
+                   
+                  </tr>
+                ))}
+              </tbody>
+            </table> 
+          </div>
             </div>
             <div className="text-center mt-3">
               <Link to="/confirm"

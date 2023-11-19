@@ -1,12 +1,11 @@
-import React from 'react'
-import './Adminpage2.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Adminpage2.css";
+import { Link } from "react-router-dom";
 
 const Adminpage2 = () => {
   return (
     <div>
-       <div>
-      <div className="container-fluid bg">
+      <div className="container-fluid add">
         <div className="pt-3 ps-5">
           <a className="text-light text-decoration-none fs-5 ml-4" href="/">
             <i className="bi bi-chevron-left"></i> Go Back
@@ -24,7 +23,7 @@ const Adminpage2 = () => {
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="mb-4">
               <label htmlFor="name" className="mb-3">
-              Establecimiento
+                Establecimiento
               </label>
               <input
                 type="text"
@@ -35,7 +34,7 @@ const Adminpage2 = () => {
               <div className="row mt-5 pt-3">
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                  Persona de contacto
+                    Persona de contacto
                   </label>
                   <input
                     type="tel"
@@ -44,7 +43,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                  Telefono
+                    Telefono
                   </label>
                   <input
                     type="tel"
@@ -62,7 +61,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="mb-4 mt-5">
                   <label htmlFor="name" className="mb-3">
-                  Namo
+                    Namo
                   </label>
 
                   <select
@@ -79,7 +78,7 @@ const Adminpage2 = () => {
                   <div className="row mt-5 pt-3">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <label htmlFor="name" className="mb-3">
-                      Persona de contacto
+                        Persona de contacto
                       </label>
                       <input
                         type="tel"
@@ -88,7 +87,7 @@ const Adminpage2 = () => {
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <label htmlFor="name" className="mb-3">
-                      Addresso
+                        Addresso
                       </label>
                       <input
                         type="tel"
@@ -102,13 +101,13 @@ const Adminpage2 = () => {
 
             {/* Order */}
             <div className="container-fluid">
-              <div className="header mt-5">
-                <p className="fs-3 fw-bold">Order details</p>
+              <div className="header mt-5 pt-5">
+                <p className="fs-3 fw-bold my-5">Order details</p>
               </div>
               <div className="row justify-content-center">
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Numero
+                    Numero
                   </label>
                   <input
                     type="number"
@@ -117,7 +116,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Cantidad reserva
+                    Cantidad reserva
                   </label>
                   <input
                     type="text"
@@ -126,7 +125,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Cantidad devuelta por el cliente
+                    Cantidad devuelta por el cliente
                   </label>
                   <input
                     type="text"
@@ -135,7 +134,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Cantidad vendida
+                    Cantidad vendida
                   </label>
                   <input
                     type="text"
@@ -144,7 +143,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Cantidad cobrada
+                    Cantidad cobrada
                   </label>
                   <input
                     type="text"
@@ -153,7 +152,7 @@ const Adminpage2 = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                   <label htmlFor="name" className="fs-5 mb-2">
-                  Regalo
+                    Regalo
                   </label>
                   <input
                     type="text"
@@ -162,7 +161,8 @@ const Adminpage2 = () => {
                 </div>
               </div>
               <div className="text-center mt-3">
-                <Link to="/confirm"
+                <Link
+                  to="/confirm"
                   type="submit"
                   className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
                 >
@@ -193,8 +193,7 @@ const Adminpage2 = () => {
         </div>
       </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Adminpage2
+export default Adminpage2;
