@@ -34,7 +34,7 @@ const Rider = ({ onpageSwitch }) => {
                   <div
                     className={`${
                       activeState === "establishment" ? "bg-white" : ""
-                    } px-5 py-2 cursor-pointer rounded-pill  col-lg-6 col-md-6 col-sm-12`}
+                    } px-5 py-2 cursor-pointer rounded-pill text-center  col-lg-6 col-md-6 col-sm-6`}
                     onClick={() => setActiveState("establishment")}
                   >
                     Esterblishment
@@ -42,7 +42,7 @@ const Rider = ({ onpageSwitch }) => {
                   <div
                     className={`${
                       activeState === "rider" ? "bg-white" : ""
-                    } px-5 py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-12`}
+                    } px-5 py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-6`}
                     onClick={() => setActiveState("rider")}
                   >
                     Rider

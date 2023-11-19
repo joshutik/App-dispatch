@@ -47,34 +47,38 @@ body{
     margin:0px;
 }
 
-.table{
-    width: 100% !important;
-}
 
-table,td, th{
-    border: 2px solid var(--primary-color);
-    padding:10px ;
-}
-
-table{
-    width: 100 !important;
-}
-
-/* .sea{
+td, th{
     border: 2px solid var(--primary-color) !important;
-} */
-
-td > input, input[type="date"]{
-    padding: 20px;
-    width: 180px;
-    border-collapse: collapse !important;
-    border: none !important;
-    outline: none !important;
+    padding:10px !important;
 }
+.table {
+    width: 100% !important;
+    border: 2px solid var(--primary-color) !important;
+  }
+  
+  /* Responsive styles for smaller screens */
+  
+  /* .sea{
+      border: 2px solid var(--primary-color) !important;
+    } */
+    
+    td > input, input[type="date"]{
+        padding: 20px;
+        border-collapse: collapse !important;
+        border: none !important;
+        outline: none !important;
+    }
 
-@media screen and (max-width:768px) {
-    input{
-        padding: 10px;
-        width: 100px;
-    }   
-}
+    @media screen and (max-width:768px) {
+        .table {
+          overflow-x: auto !important; /* Enable horizontal scrolling on smaller screens */
+        }
+/* 
+        /* input{
+            padding: 10px;
+            width: 100px;
+        }    */ 
+    
+
+    }

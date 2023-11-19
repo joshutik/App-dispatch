@@ -1,14 +1,48 @@
 import React, { useState } from "react";
-import './Lottery.css'
+import "./Lottery.css";
 import { Link } from "react-router-dom";
 
 const Lottery = () => {
   const [tableData, setTableData] = useState([
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
+    {
+      id: 1,
+      date: "",
+      series: 0,
+      quantityDelivered: 0,
+      amountPaid: 0,
+      balance: 0,
+      discount: 0,
+      confirmation: 0,
+    },
+    {
+      id: 2,
+      date: "",
+      series: 0,
+      quantityDelivered: 0,
+      amountPaid: 0,
+      balance: 0,
+      discount: 0,
+      confirmation: 0,
+    },
+    {
+      id: 3,
+      date: "",
+      series: 0,
+      quantityDelivered: 0,
+      amountPaid: 0,
+      balance: 0,
+      discount: 0,
+      confirmation: 0,
+    },
+    {
+      date: "",
+      series: 0,
+      quantityDelivered: 0,
+      amountPaid: 0,
+      balance: 0,
+      discount: 0,
+      confirmation: 0,
+    },
     // Add more rows as needed
   ]);
   const handleInputChange = (id, field, value) => {
@@ -22,166 +56,168 @@ const Lottery = () => {
       <div className="">
         <div className="lot">
           <div className="pt-3 ps-5">
-          <a className="text-light text-decoration-none fs-5 ml-4" href="/">
-            <i className="bi bi-chevron-left"></i> Go Back
-          </a>
-        </div>
-        <div className="row justify-content-center align-items-center">
-          <div className="col-lg-8 col-md-6 col-sm-12 p-5">
-            <h1 className="text-light text-center fw-bold">
-              LOTTERY DELIVERY RECEIPT
-            </h1>
-            <p className="text-center mt-3">Please fill in the details below</p>
+            <a className="text-light text-decoration-none fs-5 ml-4" href="/">
+              <i className="bi bi-chevron-left"></i> Go Back
+            </a>
           </div>
-        </div>
-        </div>
-        
-        <div className="row rounded-5 w-100 p-5 mt-3 px-5">
-        <div className="header mt-5">
-          <p className="fs-3 fw-bold">Establishment</p>
-        </div>
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="mb-4">
-            <label htmlFor="name" className="mb-3">
-              Name of Establishment
-            </label>
-            <input
-              type="text"
-              className="form-control rounded-pill w-100 border-1 py-3 px-3"
-            />
-          </div>
-          <div>
-            <div className="row mt-5 pt-3">
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <label htmlFor="name" className="mb-3">
-                  Contact Person
-                </label>
-                <input
-                  type="tel"
-                  className="form-control rounded-pill w-100 border-1 py-3 px-3"
-                />
-              </div>
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <label htmlFor="name" className="mb-3">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  className="form-control rounded-pill w-100 border-1 py-3 px-3"
-                />
-              </div>
+          <div className="row justify-content-center align-items-center">
+            <div className="col-lg-8 col-md-6 col-sm-12 p-5">
+              <h1 className="text-light text-center fw-bold">
+                LOTTERY DELIVERY RECEIPT
+              </h1>
+              <p className="text-center mt-3">
+                Please fill in the details below
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* riders details */}
-          <div className="row justify-content-center">
-            <div className="">
-              <div className="header mt-5">
-                <p className="fs-3 fw-bold mt-4">Riders Details</p>
+        <div className="row rounded-5 w-100 p-5 mt-3 px-5">
+          <div className="header mt-5">
+            <p className="fs-3 fw-bold">Establishment</p>
+          </div>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="mb-4">
+              <label htmlFor="name" className="mb-3">
+                Name of Establishment
+              </label>
+              <input
+                type="text"
+                className="form-control rounded-pill w-100 border-1 py-3 px-3"
+              />
+            </div>
+            <div>
+              <div className="row mt-5 pt-3">
+                <div className="col-lg-6 col-md-12 col-sm-12">
+                  <label htmlFor="name" className="mb-3">
+                    Contact Person
+                  </label>
+                  <input
+                    type="tel"
+                    className="form-control rounded-pill w-100 border-1 py-3 px-3"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-12 col-sm-12">
+                  <label htmlFor="name" className="mb-3">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    className="form-control rounded-pill w-100 border-1 py-3 px-3"
+                  />
+                </div>
               </div>
-              <div className="mb-4 mt-5">
-                <label htmlFor="name" className="mb-3">
-                  Name
-                </label>
+            </div>
 
-                <select
-                  className="form-select rounded-pill w-100 border-1 py-3 px-3"
-                  aria-label="Default select example"
-                >
-                  <option selected>select Rider</option>
-                  <option value="1">select Rider</option>
-                  <option value="2">select Rider</option>
-                  <option value="3">select Rider</option>
-                </select>
-              </div>
-              <div>
-                <div className="row mt-5 pt-3">
-                  <div className="col-lg-6 col-md-12 col-sm-12">
-                    <label htmlFor="name" className="mb-3">
-                      Contact Person
-                    </label>
-                    <input
-                      type="tel"
-                      className="form-control rounded-pill w-100 border-1 py-3 px-3"
-                    />
-                  </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12">
-                    <label htmlFor="name" className="mb-3">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      className="form-control rounded-pill w-100 border-1 py-3 px-3"
-                    />
+            {/* riders details */}
+            <div className="row justify-content-center">
+              <div className="">
+                <div className="header mt-5">
+                  <p className="fs-3 fw-bold mt-4">Riders Details</p>
+                </div>
+                <div className="mb-4 mt-5">
+                  <label htmlFor="name" className="mb-3">
+                    Name
+                  </label>
+
+                  <select
+                    className="form-select rounded-pill w-100 border-1 py-3 px-3"
+                    aria-label="Default select example"
+                  >
+                    <option selected>select Rider</option>
+                    <option value="1">select Rider</option>
+                    <option value="2">select Rider</option>
+                    <option value="3">select Rider</option>
+                  </select>
+                </div>
+                <div>
+                  <div className="row mt-5 pt-3">
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                      <label htmlFor="name" className="mb-3">
+                        Contact Person
+                      </label>
+                      <input
+                        type="tel"
+                        className="form-control rounded-pill w-100 border-1 py-3 px-3"
+                      />
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-sm-12">
+                      <label htmlFor="name" className="mb-3">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        className="form-control rounded-pill w-100 border-1 py-3 px-3"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Order */}
-          <div className="container-fluid">
-            <div className="header mt-5">
-              <p className="fs-3 fw-bold">Order details</p>
-            </div>
-            <div className="row justify-content-center">
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Number
-                </label>
-                <input
-                  type="number"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
+            {/* Order */}
+            <div className="container-fluid">
+              <div className="header mt-5">
+                <p className="fs-3 fw-bold">Order details</p>
               </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Reserve Quantity
-                </label>
-                <input
-                  type="text"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Amout returned by customer
-                </label>
-                <input
-                  type="text"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
-              </div>
-              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Quantity sold
-                </label>
-                <input
-                  type="text"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
-              </div>
-              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Amount charger
-                </label>
-                <input
-                  type="text"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
-              </div>
-              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
-                <label htmlFor="name" className="fs-5 mb-2">
-                  Gift/Discount
-                </label>
-                <input
-                  type="text"
-                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
-                />
-              </div>
-              <h2 className="">Invioce</h2>
-              <div className="px-5">
-            {/* <table className="table table-bordered table-responsive align-middle w-100">
+              <div className="row justify-content-center">
+                <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Number
+                  </label>
+                  <input
+                    type="number"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Reserve Quantity
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Amount returned by customer
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Quantity sold
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Amount charger
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                  <label htmlFor="name" className="fs-5 mb-2">
+                    Gift/Discount
+                  </label>
+                  <input
+                    type="text"
+                    className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                  />
+                </div>
+                <h2 className="">Invioce</h2>
+                <div className="px-5">
+                  {/* <table className="table table-bordered table-responsive align-middle w-100">
               <thead>
                 <tr>
                   <th scope="col" className="p-4">
@@ -244,125 +280,157 @@ const Lottery = () => {
                 </tr>
               </tbody>
             </table> */}
-            <table className="table table-bordered px-5 align-middle table-responsive w-100">
-              <thead className="">
-                <tr className="text-center">
-                  <th></th>
-                  <th>Date</th>
-                  <th>Series</th>
-                  <th>Quantity Delivered</th>
-                  <th>Amount paid</th>
-                  <th>Balance</th>
-                  <th>Discount</th>
-                  <th>Confirmation</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.map((row) => (
-                  <tr key={row.id}>
-                    <td>{row.id}</td>
-                    <td>
-                      <input
-                        className="class"
-                        type="date"
-                        value={row.name}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "name", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td className="class">
-                      <input
-                        type="number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input className="class"
-                        type="Number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input className="class"
-                        type="Number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input className="class"
-                        type="number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input className="class"
-                        type="number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input className="class"
-                        type="number"
-                        value={row.value}
-                        onChange={(e) =>
-                          handleInputChange(row.id, "value", e.target.value)
-                        }
-                      />
-                    </td>
-                   
-                  </tr>
-                ))}
-              </tbody>
-            </table> 
-          </div>
-            </div>
-            <div className="text-center mt-3">
-              <Link to="/confirm"
-                type="submit"
-                className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
-              >
-                Save
-              </Link>
+                  <div className="row">
+                    <div className="col-lg-12 ">
+                    <table className="table">
+                      <tr className="text-center">
+                        <th>Date</th>
+                        <th>Series</th>
+                        <th>Quantity Delivered</th>
+                        <th>Amount paid</th>
+                        <th>Balance</th>
+                        <th>Discount</th>
+                        <th>Confirmation</th>
+                      </tr>
+
+                      {tableData.map((row) => (
+                        <tr key={row.id}>
+                          {/* <td>{row.id}</td> */}
+                          <td>
+                            <input
+                              className=" class"
+                              type="date"
+                              value={row.name}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "date",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td className="class">
+                            <input
+                              type="number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "series",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              className="class"
+                              type="Number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "quantityDelivered",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              className="class"
+                              type="Number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "amountPaid",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              className="class"
+                              type="number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "balance",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              className="class"
+                              type="number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "discount",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                          <td>
+                            <input
+                              className="class"
+                              type="number"
+                              value={row.value}
+                              onChange={(e) =>
+                                handleInputChange(
+                                  row.id,
+                                  "pending",
+                                  e.target.value
+                                )
+                              }
+                            />
+                          </td>
+                        </tr>
+                      ))}
+                    </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-center mt-3">
+                <Link
+                  to="/confirm"
+                  type="submit"
+                  className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                >
+                  Save
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">
-        <div className="row justify-content-center align-items-center ">
-          <div className="col-lg-4 col-md-12 col-sm-6">
-            <p className="mb-0">
-              <i class="bi bi-geo-alt-fill "></i>
-              Avda de Espana 2428710-EL MOLAR (MADRID)
-            </p>
-          </div>
+        <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">
+          <div className="row justify-content-center align-items-center ">
+            <div className="col-lg-4 col-md-12 col-sm-6">
+              <p className="mb-0">
+                <i class="bi bi-geo-alt-fill "></i>
+                Avda de Espana 2428710-EL MOLAR (MADRID)
+              </p>
+            </div>
 
-          <div className="col-lg-4 col-md-12 col-sm-6">
-            <i class="bi bi-telephone-fill"></i>+918410517
-          </div>
+            <div className="col-lg-4 col-md-12 col-sm-6">
+              <i class="bi bi-telephone-fill"></i>+918410517
+            </div>
 
-          <div className="col-lg-4 col-md-12 col-sm-6">
-            <i class="bi bi-envelope-at-fill"></i>
-            <a href="/">loteriaelmolar@yahoo.es</a>
+            <div className="col-lg-4 col-md-12 col-sm-6">
+              <i class="bi bi-envelope-at-fill"></i>
+              <a href="/">loteriaelmolar@yahoo.es</a>
+            </div>
           </div>
         </div>
-      </div>
-        
       </div>
     </div>
   );

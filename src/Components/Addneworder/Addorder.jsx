@@ -29,7 +29,7 @@ const Addorder = () => {
       <div className="text-center mt-5">
         <h2>Add new order</h2>
       </div>
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-3">
         <div className="header mt-5">
           <p className="fs-3 fw-bold">Order details</p>
         </div>
@@ -89,11 +89,11 @@ const Addorder = () => {
             />
           </div>
         </div>
-        <div className="text-center mt-3">
+        <div className="text-center mt-3 w-75 mx-auto">
           <Link
             to="/confirm"
             type="submit"
-            className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
+            className="save text-decoration-none rounded-pill text-light w-100 py-3 mt-5 mb-5"
           >
             Save
           </Link>

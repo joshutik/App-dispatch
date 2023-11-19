@@ -18,7 +18,7 @@ import Landingpage from './Components/Landpage/Landingpage';
 // import Rider from './Components/Riderpage/Rider';
 // import SalesTable from './Components/Tables/SalesTable';
 // import Ownerslog from './Components/Overview/Ownerslog';
-// import Lottery from './Components/Lotery/Lottery';
+import Lottery from './Components/Lotery/Lottery';
 // import Addorder from './Components/Addneworder/Addorder';
 // import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
@@ -31,7 +31,7 @@ function App() {
     <div>
       {/* <Addorder/> */}
       {/* <Lotery/> */}
-   {/* <Lottery/> */}
+   <Lottery/>
      {/* <Ownerslogin/> */}
      {/* <Managerpage/> */}
      {/* <Rider/> */}

@@ -16,7 +16,8 @@ const Adminpage2 = () => {
             <h1 className="text-light text-center fw-bold">Lottery Company</h1>
           </div>
         </div>
-        <div className="row rounded-5 w-100 p-5 mt-3 px-5">
+        </div>
+        <div className="row rounded-5 p-5 mt-3">
           <div className="header mt-5">
             <p className="fs-3 fw-bold">Establecimiento</p>
           </div>
@@ -164,7 +165,7 @@ const Adminpage2 = () => {
                 <Link
                   to="/confirm"
                   type="submit"
-                  className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                  className="save text-decoration-none rounded-pill text-light w-50 py-3 mt-5 mb-5"
                 >
                   Save
                 </Link>
@@ -192,7 +193,6 @@ const Adminpage2 = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
