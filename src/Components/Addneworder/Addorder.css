@@ -24,9 +24,19 @@ body{
     background-image:url(../Assets/Rectangle\ 7.png) ;
     background-size: cover;
     background-position: center;
-    height: 40vh !important;
     width: 100%;
+   max-height: 100vh !important;
     margin:0px;
+}
+@media screen and (max-width:1000px){
+    .bg{
+        background-image:url(../Assets/Rectangle\ 7.png) ;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 100vh !important;
+        margin:0px;
+    }
 }
 
 .table{

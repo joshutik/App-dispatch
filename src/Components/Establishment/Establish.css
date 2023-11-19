@@ -219,6 +219,14 @@
     }
     
   }
+
+  @media screen and (max-width:560px) {
+    .container {
+      position: relative;
+      width: 100% !important;
+      margin-top: 1rem;
+    }
+  }
   
   /* @media screen and (max-width:806px){
     .toggle-switch {

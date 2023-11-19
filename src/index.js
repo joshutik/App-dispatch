@@ -94,6 +94,10 @@ import Managmentlog from './Components/Managementlog/Managmentlog';
       path: "/riders-details",
       element: <Riderlogin/>,
     },
+    {
+      path: "/riders-form",
+      element: <Lottery/>,
+    },
   
    
    

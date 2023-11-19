@@ -21,7 +21,7 @@ const Landingpage = () => {
                     <Link to="" type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Administrador sesion</Link>
                 </div> */}
                 <div className="my-4">
-                    <Link to="/rider-page" type="submit" className="btn btn-primary rounded-pill w-75 py-3">Rider page</Link>
+                    <Link to="/riders-form" type="submit" className="btn btn-primary rounded-pill w-75 py-3">Rider page</Link>
                 </div>
                 <div className="my-4">
                     <Link to="/manager-page" type="submit" className="btn btn-primary rounded-pill w-75 py-3"> Manager page</Link>

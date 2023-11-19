@@ -196,6 +196,14 @@
     margin-right: 20px;
   }
 
+  @media screen and (max-width:560px) {
+    .container {
+      position: relative;
+      width: 100% !important;
+      margin-top: 1rem;
+    }
+  }
+
   /* .establishment {
     position: absolute;
     z-index: 1;
@@ -453,6 +461,3 @@
   }
 }
 
-@media screen  {
-  
-}
