@@ -5,6 +5,9 @@ import img5 from "../Assets/card img-2.png";
 import img6 from "../Assets/card img-3.png";
 import img7 from "../Assets/Rectangle 21 (3).png";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Modal } from "react-bootstrap";
+import Example from "../Modal/Modal";
 
 const Establish = () => {
   return (
@@ -14,7 +17,8 @@ const Establish = () => {
           <div class="container position-relative">
             <img className="w-100 " src={img4} alt="" />
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+            <Example />
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
               Lottery Company
@@ -56,7 +60,8 @@ const Establish = () => {
           <div class="container position-relative">
             <img className="w-100" src={img5} alt="" />
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+            <Example />
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
               Lottery Company
@@ -71,7 +76,8 @@ const Establish = () => {
           <div class="container position-relative">
             <img className="w-100" src={img6} alt="" />
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+              <Example />
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
               Lottery Company

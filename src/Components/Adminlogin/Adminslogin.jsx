@@ -22,7 +22,7 @@ const Adminslogin = ({onformSwitch}) => {
 
     // Call the login API endpoint with formData
     try {
-      const response = await fetch("your_login_endpoint", {
+      const response = await fetch("https://128f-41-184-171-185.ngrok-free.app/jwt_token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

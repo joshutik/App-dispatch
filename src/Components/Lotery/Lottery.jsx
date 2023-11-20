@@ -1,59 +1,60 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Lottery.css";
 import { Link } from "react-router-dom";
+import ResponsiveExample from "../Tables/Responsivetable";
+// import { Link } from "react-router-dom";
 
 const Lottery = () => {
-  const [tableData, setTableData] = useState([
-    {
-      id: 1,
-      date: "",
-      series: 0,
-      quantityDelivered: 0,
-      amountPaid: 0,
-      balance: 0,
-      discount: 0,
-      confirmation: 0,
-    },
-    {
-      id: 2,
-      date: "",
-      series: 0,
-      quantityDelivered: 0,
-      amountPaid: 0,
-      balance: 0,
-      discount: 0,
-      confirmation: 0,
-    },
-    {
-      id: 3,
-      date: "",
-      series: 0,
-      quantityDelivered: 0,
-      amountPaid: 0,
-      balance: 0,
-      discount: 0,
-      confirmation: 0,
-    },
-    {
-      date: "",
-      series: 0,
-      quantityDelivered: 0,
-      amountPaid: 0,
-      balance: 0,
-      discount: 0,
-      confirmation: 0,
-    },
+  // const [tableData, setTableData] = useState([
+  //   {
+  //     id: 1,
+  //     date: "",
+  //     series: 0,
+  //     quantityDelivered: 0,
+  //     amountPaid: 0,
+  //     balance: 0,
+  //     discount: 0,
+  //     confirmation: 0,
+  //   },
+  //   {
+  //     id: 2,
+  //     date: "",
+  //     series: 0,
+  //     quantityDelivered: 0,
+  //     amountPaid: 0,
+  //     balance: 0,
+  //     discount: 0,
+  //     confirmation: 0,
+  //   },
+  //   {
+  //     id: 3,
+  //     date: "",
+  //     series: 0,
+  //     quantityDelivered: 0,
+  //     amountPaid: 0,
+  //     balance: 0,
+  //     discount: 0,
+  //     confirmation: 0,
+  //   },
+  //   {
+  //     date: "",
+  //     series: 0,
+  //     quantityDelivered: 0,
+  //     amountPaid: 0,
+  //     balance: 0,
+  //     discount: 0,
+  //     confirmation: 0,
+  //   },
     // Add more rows as needed
-  ]);
-  const handleInputChange = (id, field, value) => {
-    const updatedData = tableData.map((row) =>
-      row.id === id ? { ...row, [field]: value } : row
-    );
-    setTableData(updatedData);
-  };
+  // ]);
+  // const handleInputChange = (id, field, value) => {
+  //   const updatedData = tableData.map((row) =>
+  //     row.id === id ? { ...row, [field]: value } : row
+  //   );
+  //   setTableData(updatedData);
+  // };
   return (
     <div className="container-fluid">
-      <div className="">
         <div className="lot">
           <div className="pt-3 ps-5">
             <a className="text-light text-decoration-none fs-5 ml-4" href="/">
@@ -72,7 +73,7 @@ const Lottery = () => {
           </div>
         </div>
 
-        <div className="row rounded-5 w-100 p-5 mt-3 px-5">
+        <div className="row rounded-5 w-100 mt-3">
           <div className="header mt-5">
             <p className="fs-3 fw-bold">Establishment</p>
           </div>
@@ -133,7 +134,7 @@ const Lottery = () => {
                 <div>
                   <div className="row mt-5 pt-3">
                     <div className="col-lg-6 col-md-12 col-sm-12">
-                      <label htmlFor="name" className="mb-3">
+                      <label htmlFor="contact" className="mb-3">
                         Contact Person
                       </label>
                       <input
@@ -142,7 +143,7 @@ const Lottery = () => {
                       />
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
-                      <label htmlFor="name" className="mb-3">
+                      <label htmlFor="phone number" className="mb-3">
                         Phone Number
                       </label>
                       <input
@@ -162,7 +163,7 @@ const Lottery = () => {
               </div>
               <div className="row justify-content-center">
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                  <label htmlFor="name" className="fs-5 mb-2">
+                  <label htmlFor="number" className="fs-5 mb-2">
                     Number
                   </label>
                   <input
@@ -171,20 +172,20 @@ const Lottery = () => {
                   />
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                  <label htmlFor="name" className="fs-5 mb-2">
+                  <label htmlFor="Reserve Quantity" className="fs-5 mb-2">
                     Reserve Quantity
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
-                  <label htmlFor="name" className="fs-5 mb-2">
+                  <label htmlFor="amount returned" className="fs-5 mb-2">
                     Amount returned by customer
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
                 </div>
@@ -193,16 +194,16 @@ const Lottery = () => {
                     Quantity sold
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
-                  <label htmlFor="name" className="fs-5 mb-2">
-                    Amount charger
+                  <label htmlFor="amount charged" className="fs-5 mb-2">
+                    Amount charged
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
                 </div>
@@ -217,6 +218,7 @@ const Lottery = () => {
                 </div>
                 <h2 className="">Invioce</h2>
                 <div className="px-5">
+
                   {/* <table className="table table-bordered table-responsive align-middle w-100">
               <thead>
                 <tr>
@@ -280,131 +282,136 @@ const Lottery = () => {
                 </tr>
               </tbody>
             </table> */}
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-lg-12 ">
-                    <table className="table">
-                      <tr className="text-center">
-                        <th>Date</th>
-                        <th>Series</th>
-                        <th>Quantity Delivered</th>
-                        <th>Amount paid</th>
-                        <th>Balance</th>
-                        <th>Discount</th>
-                        <th>Confirmation</th>
-                      </tr>
-
-                      {tableData.map((row) => (
-                        <tr key={row.id}>
-                          {/* <td>{row.id}</td> */}
-                          <td>
-                            <input
-                              className=" class"
-                              type="date"
-                              value={row.name}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "date",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td className="class">
-                            <input
-                              type="number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "series",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              className="class"
-                              type="Number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "quantityDelivered",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              className="class"
-                              type="Number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "amountPaid",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              className="class"
-                              type="number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "balance",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              className="class"
-                              type="number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "discount",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
-                          <td>
-                            <input
-                              className="class"
-                              type="number"
-                              value={row.value}
-                              onChange={(e) =>
-                                handleInputChange(
-                                  row.id,
-                                  "pending",
-                                  e.target.value
-                                )
-                              }
-                            />
-                          </td>
+                      <table className="table text-center">
+                        <tr className="text-center">
+                          <th>Date</th>
+                          <th>Series</th>
+                          <th>Quantity Delivered</th>
+                          <th>Amount paid</th>
+                          <th>Balance</th>
+                          <th>Discount</th>
+                          <th>Confirmation</th>
                         </tr>
-                      ))}
-                    </table>
+
+                        {tableData.map((row) => (
+                          <tr key={row.id}>
+                            <td>{row.id}</td> 
+                            <td>
+                              <input
+                                className=" class"
+                                type="date"
+                                value={row.name}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "date",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td className="class">
+                              <input
+                                type="number"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "series",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="class"
+                                type="Number"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "quantityDelivered",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="class"
+                                type="Number"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "amountPaid",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="class"
+                                type="number"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "balance",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="class"
+                                type="number"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "discount",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                            </td>
+                            <td>
+                              <input
+                                className="class"
+                                type="button"
+                                value={row.value}
+                                onChange={(e) =>
+                                  handleInputChange(
+                                    row.id,
+                                    "pending",
+                                    e.target.value
+                                  )
+                                }
+                              />
+                              <span className="btn">
+                                 <i className=" bi bi-chevron-down"></i>
+                              </span>
+                               
+                            </td>
+                          </tr>
+                        ))}
+                      </table>
                     </div>
-                  </div>
+                  </div> */}
+                  <ResponsiveExample/>
                 </div>
               </div>
               <div className="text-center mt-3">
                 <Link
                   to="/confirm"
                   type="submit"
-                  className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
+                  className="save text-decoration-none rounded-pill text-light  w-75   py-3 mt-5 mb-5"
                 >
                   Save
                 </Link>
@@ -432,7 +439,6 @@ const Lottery = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

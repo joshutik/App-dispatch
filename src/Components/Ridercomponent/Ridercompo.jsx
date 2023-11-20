@@ -4,6 +4,10 @@ import img1 from "../Assets/Rectangle 21 (2).png";
 import img2 from "../Assets/Rectangle 21 (1).png";
 import img3 from "../Assets/Rectangle 21.png";
 import img7 from "../Assets/Rectangle 21 (3).png";
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Modal } from "react-bootstrap";
+import Examplem from "../Modal2/Modal2";
+
 
 
 const Ridercompo = ({onpageSwitch}) => {
@@ -18,7 +22,8 @@ const Ridercompo = ({onpageSwitch}) => {
           <div class="container position-relative">
             <img className="w-100 " src={img1} alt="" />
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+              <Examplem />
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
               Frank Analaba
@@ -35,7 +40,8 @@ const Ridercompo = ({onpageSwitch}) => {
             </div>
 
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+            <Examplem/>
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
               Winifred Iwu
@@ -53,10 +59,11 @@ const Ridercompo = ({onpageSwitch}) => {
             </div>
 
             <div className=" text-light fs-4 my-3">
-              <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i>
+              <Examplem/>
+              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-              Philomina Udie
+              Philomina Udiel
             </div>
             <div className="middle">
               <div className="text">

@@ -30,7 +30,7 @@ const Rider = ({ onpageSwitch }) => {
             />
             <div className="card rounded-0 border-0">
               <div className="card-body w-100 ">
-                <div className="bg-gray rounded-pill row col-lg-5 p-2 m-auto justify-content-between align-items-center">
+                <div className=" bg-gray rounded-pill row col-lg-5 p-2 m-auto justify-content-between align-items-center">
                   <div
                     className={`${
                       activeState === "establishment" ? "bg-white" : ""
