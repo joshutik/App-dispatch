@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 // import './Modal.css';
 
 function Examplem() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const handleModalToggle = () => {
     setShowModal(!showModal);
