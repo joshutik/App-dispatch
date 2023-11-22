@@ -46,13 +46,13 @@ table{
     border: 2px solid var(--primary-color) !important;
 } */
 
-input[type="number"], input[type="date"]{
+/* input[type="number"], input[type="date"]{
     padding: 20px;
     width: 180px;
     border-collapse: collapse !important;
     border: none !important;
     outline: none !important;
-}
+} */
 
 @media screen and (max-width:768px) {
     input{
