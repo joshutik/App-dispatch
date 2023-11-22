@@ -2,6 +2,7 @@
 // import { useState } from 'react';
 import './App.css';
 import Landingpage from './Components/Landpage/Landingpage';
+import Managerpage from './Components/Managerpage/Managerpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
@@ -17,11 +18,11 @@ import Landingpage from './Components/Landpage/Landingpage';
 // import Confirm from './Components/Confirmation/Confirm';
 // import Rider from './Components/Riderpage/Rider';
 // import SalesTable from './Components/Tables/SalesTable';
-// import Ownerslog from './Components/Overview/Ownerslog';
+import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Responsivetable from './Components/Tables/Responsivetable';
-import Addorder from './Components/Addneworder/Addorder';
-import Riderlogin from './Components/Riderlogin/Riderlogin';
+// import Addorder from './Components/Addneworder/Addorder';
+// import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
 // // import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
@@ -37,13 +38,14 @@ function App() {
 
   return (
     <div>
-      <Addorder/>
+      <Ownerslog/>
+      {/* <Addorder/> */}
       {/* <Managerlinkmodal/>
       <Copyriderlink/>
       <Lotery/>
    <Lottery/>
      <Ownerslogin/>
-     <Managerpage/>
+     
      <Rider/>
      <Confirmlink/> */}
      {/* <SalesTable/> */}
@@ -58,8 +60,9 @@ function App() {
      <Copymanagerlink/>
     <Manager/>
      <Modal/>
-     <Ownerslog/> */}
-     <Riderlogin/>
+     {/* <Riderlogin/> */}
+     {/* <Ownerslog/> */}
+     <Managerpage/>
 
     </div>
   );

@@ -10,14 +10,18 @@ const Ownerslog = () => {
           <div className="col-lg-7">
             <div className="text-light">
               <h3 className="fs-2 fw-bold text-light">Buenas Noches,</h3>
-              <h1 className="fs-1 fw-bold text-light ml-5">Dunena De Loteria</h1>
+              <h1 className="fs-1 fw-bold text-light ml-5">
+                Dunena De Loteria
+              </h1>
             </div>
           </div>
         </div>
       </div>
       <div className="row justify-content-center mt-5 pt-5">
         <div className="col-lg-10 col-md-6 col-sm-12">
-          <label htmlFor="establishment" className="fs-4 fw-normal mb-3">Choose an establishment</label>
+          <label htmlFor="establishment" className="fs-4 fw-normal mb-3">
+            Choose an establishment
+          </label>
           <select
             className="form-select rounded-pill py-3"
             aria-label="Default select example"
@@ -28,11 +32,18 @@ const Ownerslog = () => {
             <option value="3">Lottery Company 1</option>
           </select>
           <div className="row gy-4 justify-content-center">
-            <div className="mt-5 d-flex">
-              <p className="fs-2 mt-5">Overview</p>
-              <p className="text-dark mt-5 pt-3 text-normal ms-auto">Fecha Uitima Entrega: <span className="fw-bold">16th of October, 2023</span></p>
+            <div className="row mt-5">
+              <div className="col-lg-6 col-md-6 col-sm-12">
+                <p className="fs-2 mt-5">Overview</p>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-12">
+                <p className="text-dark mt-5 pt-3 text-normal ms-auto">
+                  Fecha Uitima Entrega:{" "}
+                  <span className="fw-bold">16th of October, 2023</span>
+                </p>
+              </div>
             </div>
-            
+
             <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="card w-100 plates p-5 d-flex justify-content-center rounded-5">
                 <div className="row g-0 justify-content-center align-items-center text-center">
@@ -70,33 +81,25 @@ const Ownerslog = () => {
             <div className="row text-center mt-5 gy-4 mb-5 pb-5">
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">
-                    Total amount paid
-                  </h6>
+                  <h6 className="text-light">Total amount paid</h6>
                   <h1 className="text-light">$18,000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">
-                    Total amount paid
-                  </h6>
+                  <h6 className="text-light">Total amount paid</h6>
                   <h1 className="text-light own">$18,000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">
-                    Total amount paid
-                  </h6>
+                  <h6 className="text-light">Total amount paid</h6>
                   <h1 className="text-light">$18,000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light own">
-                    Total amount paid
-                  </h6>
+                  <h6 className="text-light own">Total amount paid</h6>
                   <h1 className="text-light">$18,000</h1>
                 </div>
               </div>
@@ -109,9 +112,8 @@ const Ownerslog = () => {
           <div className="col-lg-4 col-md-12 col-sm-6">
             <p className="mb-0">
               <i class="bi bi-geo-alt-fill "></i>
-               Avda de Espana 2428710-EL MOLAR  (MADRID)
-              </p>
-          
+              Avda de Espana 2428710-EL MOLAR (MADRID)
+            </p>
           </div>
 
           <div className="col-lg-4 col-md-12 col-sm-6">

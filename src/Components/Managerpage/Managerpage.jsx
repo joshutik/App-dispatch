@@ -3,7 +3,6 @@ import "./Managerpage.css";
 import { Link } from "react-router-dom";
 import ResponsiveExample from "../Tables/Responsivetable";
 
-
 const Managerpage = () => {
   // const [tableData, setTableData] = useState([
   //   { name: "", value: "" },
@@ -45,14 +44,14 @@ const Managerpage = () => {
               placeholder="Search orders...."
             />
           </div>
-          <div className="d-flex justify-content-between w-75 mb-3">
-            <div className="fs-5 icon">
+          <div className="row justify-content-between w-75 mb-3">
+            <div className="fs-5 icon col-lg-12 col-md-6 col-sm-12">
               <Link to="/add-order" className="icon">
                 {" "}
                 <i class="bi bi-plus-lg"></i>Add new order
               </Link>
             </div>
-            <div className="fs-5">
+            <div className="fs-5 col-lg-12 col-md-6 col-sm-12">
               <Link to="/edit-company" className="icon">
                 <i class="bi bi-plus-lg fw-bolder fs-4"></i>Edit Company details
               </Link>
@@ -198,7 +197,7 @@ const Managerpage = () => {
                 ))}
               </tbody>
             </table>  */}
-            <ResponsiveExample/>
+            <ResponsiveExample />
           </div>
         </div>
         <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">
