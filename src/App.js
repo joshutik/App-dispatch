@@ -2,7 +2,7 @@
 // import { useState } from 'react';
 import './App.css';
 import Landingpage from './Components/Landpage/Landingpage';
-import Managerpage from './Components/Managerpage/Managerpage';
+// import Managerpage from './Components/Managerpage/Managerpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
@@ -62,7 +62,7 @@ function App() {
      <Modal/>
      {/* <Riderlogin/> */}
      {/* <Ownerslog/> */}
-     <Managerpage/>
+     {/* <Managerpage/> */}
 
     </div>
   );
