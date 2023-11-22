@@ -3,6 +3,7 @@ import "./Lottery.css";
 // import { Link } from "react-router-dom";
 import ResponsiveExample from "../Tables/Responsivetable";
 import Successmodal3 from "../Successmodal3/Successmodal3";
+// import Successmodal2 from "../Successmodal2/Successmodal2";
 // import { Link } from "react-router-dom";
 
 const Lottery = () => {

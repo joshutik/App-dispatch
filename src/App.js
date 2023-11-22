@@ -2,7 +2,7 @@
 // import { useState } from 'react';
 import './App.css';
 import Landingpage from './Components/Landpage/Landingpage';
-import Rider from './Components/Riderpage/Rider';
+// import Rider from './Components/Riderpage/Rider';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
