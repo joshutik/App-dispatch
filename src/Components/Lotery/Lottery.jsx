@@ -2,6 +2,7 @@ import React from "react";
 import "./Lottery.css";
 // import { Link } from "react-router-dom";
 import ResponsiveExample from "../Tables/Responsivetable";
+import Successmodal3 from "../Successmodal3/Successmodal3";
 // import { Link } from "react-router-dom";
 
 const Lottery = () => {
@@ -422,6 +423,7 @@ const Lottery = () => {
                 >
                   Save
                 </Link> */}
+                <Successmodal3/>
               </div>
             </div>
           </div>

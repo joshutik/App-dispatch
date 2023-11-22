@@ -45,13 +45,13 @@ const Managerpage = () => {
             />
           </div>
           <div className="row justify-content-between w-75 mb-3 gy-3">
-            <div className="fs-5 icon col-lg-12 col-md-6 col-sm-12">
+            <div className="fs-5 icon col-lg-6 col-md-6 col-sm-12">
               <Link to="/add-order" className="icon text-decoration-none">
                 {" "}
                 <i class="bi bi-plus-lg"></i>Add new order
               </Link>
             </div>
-            <div className="fs-5 col-lg-12 col-md-6 col-sm-12">
+            <div className="fs-5 col-lg-6 col-md-6 col-sm-12">
               <Link to="/edit-company" className="icon text-decoration-none">
                 <i class="bi bi-plus-lg fw-bolder fs-4"></i>Edit Company details
               </Link>

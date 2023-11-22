@@ -18,7 +18,7 @@ import Managerpage from './Components/Managerpage/Managerpage';
 // import Confirm from './Components/Confirmation/Confirm';
 // import Rider from './Components/Riderpage/Rider';
 // import SalesTable from './Components/Tables/SalesTable';
-import Ownerslog from './Components/Overview/Ownerslog';
+// import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Responsivetable from './Components/Tables/Responsivetable';
 // import Addorder from './Components/Addneworder/Addorder';
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div>
-      <Ownerslog/>
+      {/* <Ownerslog/> */}
       {/* <Addorder/> */}
       {/* <Managerlinkmodal/>
       <Copyriderlink/>
