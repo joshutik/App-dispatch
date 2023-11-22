@@ -23,20 +23,20 @@ const Rider = ({ onpageSwitch }) => {
       </div>
       <div className="row justify-content-center align-item-center">
         <div className="row justify-content-center">
-          <div className="">
-           
-            <div className="card rounded-0 border-0">
-              <div className="card-body w-100 ">
-                <div className=" bg-secondary rounded-pill row col-lg-5 p-2 m-auto justify-content-between align-items-center">
+          <div className="card rounded-0 border-0">
+            <div className="card-body w-100">
+              {/* large screen */}
+              <div className="d-none d-lg-block">
+                <div className=" bg-secondary rounded-pill row col-lg-6 p-2 m-auto justify-content-between align-items-center">
                   <div
                     className={`${
                       activeState === "establishment" ? "bg-white" : ""
-                    } px-5 py-2 cursor-pointer rounded-pill text-center d-lg-none d-xl-block col-lg-6 col-md-6 col-sm-6`}
+                    } p-5  py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-6`}
                     onClick={() => setActiveState("establishment")}
                   >
                     Establecimiento
                   </div>
-                  
+
                   <div
                     className={`${
                       activeState === "rider" ? "bg-white" : ""
@@ -47,9 +47,47 @@ const Rider = ({ onpageSwitch }) => {
                   </div>
                 </div>
                 <input
-              type="search"
-              className="form-control rounded-pill mt-5 py-3" placeholder="Buscar establecimiento...."
-            />
+                  type="search"
+                  className="form-control rounded-pill mt-5 py-3"
+                  placeholder="Buscar establecimiento...."
+                />
+                {activeState === "establishment" && <Establish />}
+                {activeState === "rider" && (
+                  <div>
+                    {" "}
+                    <Ridercompo />{" "}
+                  </div>
+                )}
+              </div>
+              <div className="d-md-block d-lg-none">
+                {/* mobile screen */}
+                <div
+                  className=" bg-transparent
+                  rounded-pill row col-lg-6 col-md-12 col-sm-12 p-2 mx-auto justify-content-center align-items-center"
+                >
+                  <div
+                    className={`${
+                      activeState === "establishment" ? "bg-secondary " : ""
+                    } px-5 py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-6`}
+                    onClick={() => setActiveState("establishment")}
+                  >
+                    Establecimiento
+                  </div>
+
+                  <div
+                    className={`${
+                      activeState === "rider" ? "bg-secondary " : ""
+                    } px-5 py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-6`}
+                    onClick={() => setActiveState("rider")}
+                  >
+                    Rider
+                  </div>
+                </div>
+                <input
+                  type="search"
+                  className="form-control rounded-pill mt-5 py-3"
+                  placeholder="Buscar establecimiento...."
+                />
                 {activeState === "establishment" && <Establish />}
                 {activeState === "rider" && (
                   <div>

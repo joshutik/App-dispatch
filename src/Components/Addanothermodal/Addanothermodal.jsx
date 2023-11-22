@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
-import './Managerlinkmodal.css'
+import './Addanothermodal.css'
 import { Link } from 'react-router-dom';
 
 
-function Managerlinkmodal() {
+function Addanothermodal() {
   const [showModal, setShowModal] = useState(false);
 
   const handleSaveClick = () => {
@@ -32,16 +32,13 @@ function Managerlinkmodal() {
                     <i class="bi bi-check-circle-fill icon"></i>
                 </div>
                 <div className='text-center pb-5 fw-bold text-dark'>
-                    <h1>Weldone!!!</h1>
-                    <p>
+                    <h1 className='fw-bold'>Weldone!!!</h1>
+                    <p className='fs-4'>
                         Saved successfully
                     </p>
-                    <div className='mt-5 mb-5'>
+                    <div className='mt-5 mb-3'>
                         <div>
-                        <Link to="/rider-page-2" className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
-                        </div>
-                        <div>
-                        <Link to="/rider-page-2" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy manager link</Link>
+                        <Link to="/lotery" className='rounded-pill py-3 px-5 text-decoration-none w-100 btn-link mt-3 text-light'>Add another</Link>
                         </div>
                     </div>
                 </div>
@@ -56,4 +53,4 @@ function Managerlinkmodal() {
   );
 }
 
-export default Managerlinkmodal;
+export default Addanothermodal;
