@@ -1,6 +1,7 @@
 import React from "react";
 import "./Adminpage2.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Successmodal2 from "../Successmodal2/Successmodal2";
 
 const Adminpage2 = () => {
   return (
@@ -162,13 +163,14 @@ const Adminpage2 = () => {
                 </div>
               </div>
               <div className="text-center mt-3">
-                <Link
+                <Successmodal2/>
+                {/* <Link
                   to="/confirm"
                   type="submit"
                   className="save text-decoration-none rounded-pill text-light w-50 py-3 mt-5 mb-5"
                 >
                   Save
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import { useState } from 'react';
 import './App.css';
-// import Landingpage from './Components/Landpage/Landingpage';
+import Landingpage from './Components/Landpage/Landingpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
@@ -10,7 +10,7 @@ import './App.css';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Manager from './Components/Managerlogin/Manager';
 // import Approved from './Components/Pending/Approved';
-import Landingpage from './Components/Landpage/Landingpage';
+// import Landingpage from './Components/Landpage/Landingpage';
 // import Lotery from './Components/Lottry/Lotery';
 // import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 // import Adminslogin from './Components/Adminlogin/Adminslogin';
@@ -23,8 +23,8 @@ import Landingpage from './Components/Landpage/Landingpage';
 // import Addorder from './Components/Addneworder/Addorder';
 // import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
-// import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
-// import Copyriderlink from './Components/Copyriderlink/Copyriderlink';
+// // import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
+// // import Copyriderlink from './Components/Copyriderlink/Copyriderlink';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink.jsx'
 // import Modal from './Components/Modal/Modal';
 // import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
@@ -36,28 +36,28 @@ function App() {
 
   return (
     <div>
-      {/* <Managerlinkmodal/> */}
-      {/* <Copyriderlink/> */}
-      {/* <Addorder/> */}
-      {/* <Lotery/> */}
-   {/* <Lottery/> */}
-     {/* <Ownerslogin/> */}
-     {/* <Managerpage/> */}
-     {/* <Rider/> */}
-     {/* <Confirmlink/> */}
+      {/* <Managerlinkmodal/>
+      <Copyriderlink/>
+      <Addorder/>
+      <Lotery/>
+   <Lottery/>
+     <Ownerslogin/>
+     <Managerpage/>
+     <Rider/>
+     <Confirmlink/> */}
      {/* <SalesTable/> */}
-     {/* <Riderlogin/> */}
-     {/* <Adminpage2/> */}
-     {/* <Copymanagerlink /> */}
+     {/* <Riderlogin/>
+     <Adminpage2/>
+     <Copymanagerlink /> */}
      <Landingpage/>
-     {/* <Rider/> */}
-     {/* <Establish/> */}
-     {/* <Managmentlog/> */}
-     {/* <Responsivetable/> */}
-     {/* <Copymanagerlink/> */}
-    {/* <Manager/> */}
-     {/* <Modal/> */}
-     {/* <Ownerslog/> */}
+     {/* <Rider/>
+     <Establish/>
+     <Managmentlog/>
+     <Responsivetable/>
+     <Copymanagerlink/>
+    <Manager/>
+     <Modal/>
+     <Ownerslog/> */}
 
     </div>
   );

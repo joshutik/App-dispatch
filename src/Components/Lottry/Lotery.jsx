@@ -1,6 +1,8 @@
 import React from "react";
 import "./Lotery.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import ResponsiveExample from "../Tables/Responsivetable";
+import Successmodal2 from "../Successmodal2/Successmodal2";
 
 const Lotery = () => {
   return (
@@ -34,16 +36,21 @@ const Lotery = () => {
                 <label htmlFor="name" className="mb-3">
                 Establecimiento
                 </label>
-                <input
-                  type="text"
-                  className="form-control rounded-pill w-100 border-1 py-3 px-3"
-                />
+                <select
+                    className="form-select rounded-pill w-100 border-1 py-3 px-3"
+                    aria-label="Default select example"
+                  >
+                    <option selected>select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                  </select>
               </div>
               <div>
                 <div className="row mt-5 pt-3">
                   <div className="col-lg-6 col-md-12 col-sm-12">
                     <label htmlFor="name" className="mb-3">
-                    Persona de contacto
+                    Telefono
                     </label>
                     <input
                       type="tel"
@@ -52,10 +59,10 @@ const Lotery = () => {
                   </div>
                   <div className="col-lg-6 col-md-12 col-sm-12">
                     <label htmlFor="name" className="mb-3">
-                    Telefono
+                    Adresso
                     </label>
                     <input
-                      type="tel"
+                      type="address"
                       className="form-control rounded-pill w-100 border-1 py-3 px-3"
                     />
                   </div>
@@ -134,9 +141,9 @@ const Lotery = () => {
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-12 mb-5">
                     <label htmlFor="name" className="fs-5 mb-2">
-                      Amout returned by customer
+                      Amount returned by customer
                     </label>
-                    <input
+                    <input placeholder="&#8364; "
                       type="text"
                       className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                     />
@@ -152,9 +159,9 @@ const Lotery = () => {
                   </div>
                   <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                     <label htmlFor="name" className="fs-5 mb-2">
-                      Amount charger
+                      Amount charged
                     </label>
-                    <input
+                    <input placeholder="&#8364; "
                       type="text"
                       className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                     />
@@ -165,6 +172,7 @@ const Lotery = () => {
                     </label>
                     <input
                       type="text"
+                      placeholder="&#8364; "
                       className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                     />
                   </div>
@@ -175,7 +183,7 @@ const Lotery = () => {
                 <h3 className="fw-bold">Invoice</h3>
               </div>
               <div className=" w-100">
-                <table className="table-1 table-bordered table-responsive align-middle w-100">
+                {/* <table className="table-1 table-bordered table-responsive align-middle w-100">
                   <thead>
                     <tr>
                       <th scope="col" className="p-4">
@@ -236,7 +244,8 @@ const Lotery = () => {
                       <td className="p-4"></td>
                     </tr>
                   </tbody>
-                </table>
+                </table> */}
+                <ResponsiveExample/>
                 <div className="mt-3 fw-bold">
                   <i class="bi bi-plus-lg est"></i>
                   <a href="/" className="est">
@@ -244,12 +253,13 @@ const Lotery = () => {
                   </a>
                 </div>
                 <div className="text-center mt-3">
-                  <button
+                  {/* <button
                     type="submit"
                     className="save rounded-pill text-light w-50 py-3 mt-5 mb-5"
                   >
                     Entregar
-                  </button>
+                  </button> */}
+                  <Successmodal2/>
                 </div>
               </div>
             </div>

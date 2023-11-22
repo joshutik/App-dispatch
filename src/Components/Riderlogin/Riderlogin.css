@@ -22,7 +22,7 @@ label{
     font-weight: 300;
 }
 input{
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--primary-color) !important;
 }
 .rider-login{
     width: 82rem !important;

@@ -15,7 +15,7 @@ const Establish = () => {
       <div className="row mt-5 gy-4">
         <div className="rounded-5 overlay">
           <div class="container position-relative">
-            <Link to="/add-order">
+            <Link to="/admin-page">
             <img className="w-100 " src={img4} alt="" />
             </Link>
             <div className=" text-light fs-4 my-3">
@@ -60,7 +60,7 @@ const Establish = () => {
             </div>
           </div>
           <div class="container position-relative">
-          <Link to="/add-order">
+          <Link to="/admin-page">
             <img className="w-100" src={img5} alt="" />
             </Link>
             <div className=" text-light fs-4 my-3">
@@ -78,7 +78,7 @@ const Establish = () => {
             </div>
           </div>
           <div class="container position-relative">
-          <Link to="/add-order">
+          <Link to="/admin-page">
             <img className="w-100" src={img6} alt="" /> 
             </Link>
             <div className=" text-light fs-4 my-3">

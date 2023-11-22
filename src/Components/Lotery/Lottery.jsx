@@ -82,16 +82,21 @@ const Lottery = () => {
               <label htmlFor="name" className="mb-3">
                 Name of Establishment
               </label>
-              <input
-                type="text"
-                className="form-control rounded-pill w-100 border-1 py-3 px-3"
-              />
+              <select
+                    className="form-select rounded-pill w-100 border-1 py-3 px-3"
+                    aria-label="Default select example"
+                  >
+                    <option selected>select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                    <option value="select establisment">select establishment</option>
+                  </select>
             </div>
             <div>
               <div className="row mt-5 pt-3">
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                    Contact Person
+                    Telefono
                   </label>
                   <input
                     type="tel"
@@ -100,7 +105,7 @@ const Lottery = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                    Phone Number
+                    Adresso
                   </label>
                   <input
                     type="tel"
@@ -135,7 +140,7 @@ const Lottery = () => {
                   <div className="row mt-5 pt-3">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <label htmlFor="contact" className="mb-3">
-                        Contact Person
+                        Telefono
                       </label>
                       <input
                         type="tel"
@@ -144,10 +149,10 @@ const Lottery = () => {
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <label htmlFor="phone number" className="mb-3">
-                        Phone Number
+                        Address
                       </label>
                       <input
-                        type="tel"
+                        type="address"
                         className="form-control rounded-pill w-100 border-1 py-3 px-3"
                       />
                     </div>
@@ -184,7 +189,7 @@ const Lottery = () => {
                   <label htmlFor="amount returned" className="fs-5 mb-2">
                     Amount returned by customer
                   </label>
-                  <input
+                  <input placeholder="&#8364;"
                     type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
@@ -203,6 +208,7 @@ const Lottery = () => {
                     Amount charged
                   </label>
                   <input
+                  placeholder="&#8364; "
                     type="number"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />
@@ -212,6 +218,7 @@ const Lottery = () => {
                     Gift/Discount
                   </label>
                   <input
+                  placeholder="&#8364; "
                     type="text"
                     className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                   />

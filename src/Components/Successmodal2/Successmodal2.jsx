@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
-import './Successmodal.css'
+import './Successmodal2.css'
 import { Link } from 'react-router-dom';
 
 
@@ -38,7 +38,7 @@ function Successmodal2() {
                     </p>
                     <div className='mt-5 mb-3'>
                         <div>
-                        <Link to="/add-order" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Go Back</Link>
+                        <Link to="/edit-company" className='rounded-pill py-3 px-5 text-decoration-none w-100 btn-link mt-3 text-light'>Go Back</Link>
                         </div>
                     </div>
                 </div>
