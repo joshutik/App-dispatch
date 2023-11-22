@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
-import './Copyriderlink.css'
+import './Successmodal3.css'
 import { Link } from 'react-router-dom';
 
 
-function Copyriderlink() {
+function Successmodal3() {
   const [showModal, setShowModal] = useState(false);
 
   const handleSaveClick = () => {
@@ -32,16 +32,13 @@ function Copyriderlink() {
                     <i class="bi bi-check-circle-fill icon"></i>
                 </div>
                 <div className='text-center pb-5 fw-bold text-dark'>
-                    <h1>Weldone!!!</h1>
-                    <p>
+                    <h1 className='fw-bold'>Weldone!!!</h1>
+                    <p className='fs-4'>
                         Saved successfully
                     </p>
-                    <div className='mt-5 mb-5'>
+                    <div className='mt-5 mb-3'>
                         <div>
-                        <Link to="/rider-page-2" className='rounded-pill go-back py-2 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
-                        </div>
-                        <div>
-                        <Link to="/" className='rounded-pill py-2 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy rider link</Link>
+                        <Link to="/edit-company" className='rounded-pill py-3 px-5 text-decoration-none w-100 btn-link mt-3 text-light'>Add another</Link>
                         </div>
                     </div>
                 </div>
@@ -56,4 +53,4 @@ function Copyriderlink() {
   );
 }
 
-export default Copyriderlink;
+export default Successmodal3;

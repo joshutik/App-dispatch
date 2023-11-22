@@ -38,10 +38,10 @@ function Managerlinkmodal() {
                     </p>
                     <div className='mt-5 mb-5'>
                         <div>
-                        <Link to="/add-order" className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
+                        <Link to="/admin-page" className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
                         </div>
                         <div>
-                        <Link to="/add-order" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy managerlink</Link>
+                        <Link to="/" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy managerlink</Link>
                         </div>
                     </div>
                 </div>

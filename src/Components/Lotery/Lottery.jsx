@@ -1,6 +1,6 @@
 import React from "react";
 import "./Lottery.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ResponsiveExample from "../Tables/Responsivetable";
 // import { Link } from "react-router-dom";
 
@@ -96,7 +96,7 @@ const Lottery = () => {
               <div className="row mt-5 pt-3">
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                    Telefono
+                  Contact Person
                   </label>
                   <input
                     type="tel"
@@ -105,7 +105,7 @@ const Lottery = () => {
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">
                   <label htmlFor="name" className="mb-3">
-                    Adresso
+                  Phone Number
                   </label>
                   <input
                     type="tel"
@@ -130,10 +130,10 @@ const Lottery = () => {
                     className="form-select rounded-pill w-100 border-1 py-3 px-3"
                     aria-label="Default select example"
                   >
-                    <option selected>select Rider</option>
-                    <option value="1">select Rider</option>
-                    <option value="2">select Rider</option>
-                    <option value="3">select Rider</option>
+                    <option selected>Select rider</option>
+                    <option value="1">Select rider</option>
+                    <option value="2">Select rider</option>
+                    <option value="3">Select rider</option>
                   </select>
                 </div>
                 <div>
@@ -415,13 +415,13 @@ const Lottery = () => {
                 </div>
               </div>
               <div className="text-center mt-3">
-                <Link
+                {/* <Link
                   to="/confirm"
                   type="submit"
                   className="save text-decoration-none rounded-pill text-light  w-75   py-3 mt-5 mb-5"
                 >
                   Save
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

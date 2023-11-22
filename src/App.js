@@ -20,7 +20,8 @@ import Landingpage from './Components/Landpage/Landingpage';
 // import Ownerslog from './Components/Overview/Ownerslog';
 // import Lottery from './Components/Lotery/Lottery';
 // import Responsivetable from './Components/Tables/Responsivetable';
-// import Addorder from './Components/Addneworder/Addorder';
+import Addorder from './Components/Addneworder/Addorder';
+import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Rider from './Components/Riderpage/Rider';
 // import Managmentlog from './Components/Managementlog/Managmentlog';
 // // import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
@@ -36,9 +37,9 @@ function App() {
 
   return (
     <div>
+      <Addorder/>
       {/* <Managerlinkmodal/>
       <Copyriderlink/>
-      <Addorder/>
       <Lotery/>
    <Lottery/>
      <Ownerslogin/>
@@ -58,6 +59,7 @@ function App() {
     <Manager/>
      <Modal/>
      <Ownerslog/> */}
+     <Riderlogin/>
 
     </div>
   );

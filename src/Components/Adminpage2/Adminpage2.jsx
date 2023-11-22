@@ -1,7 +1,6 @@
 import React from "react";
 import "./Adminpage2.css";
-// import { Link } from "react-router-dom";
-import Successmodal2 from "../Successmodal2/Successmodal2";
+import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 
 const Adminpage2 = () => {
   return (
@@ -163,7 +162,7 @@ const Adminpage2 = () => {
                 </div>
               </div>
               <div className="text-center mt-3">
-                <Successmodal2/>
+                <Managerlinkmodal/>
                 {/* <Link
                   to="/confirm"
                   type="submit"

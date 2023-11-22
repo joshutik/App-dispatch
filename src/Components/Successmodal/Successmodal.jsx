@@ -38,7 +38,7 @@ function Successmodal() {
                     </p>
                     <div className='mt-5 mb-3'>
                         <div>
-                        <Link to="/add-order" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Go Back</Link>
+                        <Link to="/admin-page" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Go Back</Link>
                         </div>
                     </div>
                 </div>
