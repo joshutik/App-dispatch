@@ -1,6 +1,7 @@
 import React from 'react'
 import './Riderlogin.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import Copyriderlink from '../Copyriderlink/Copyriderlink'
 
 const Riderlogin = () => {
   return (
@@ -36,12 +37,13 @@ const Riderlogin = () => {
               </div>
             </div>
             <div className="text-center mt-5">
-              <Link to="/confirm"
+              {/* <Link to="/confirm"
                 type="submit"
-                className="save rounded-pill text-light w-50 py-4 mt-5"
+                className="save text-decoration-none rounded-pill text-light w-50 py-4 mt-5"
               >
                 Save
-              </Link>
+              </Link> */}
+              <Copyriderlink/>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
     margin: 0px !important;
 }
 
-.bi, .save{
+.bi, .save, .heading-1{
     color: var(--primary-color);
 }
 

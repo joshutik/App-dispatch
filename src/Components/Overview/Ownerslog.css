@@ -1,10 +1,15 @@
 :root{
     --primary-color: #17476E;
+    --tertiary-color: #26e545;
 }
 
 .container-fluid{
     font-family: poppins;
     font-weight: 700;
+}
+
+.success-class{
+    color: var(--tertiary-color);
 }
 
 .owner-bg{

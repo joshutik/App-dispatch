@@ -66,7 +66,7 @@ const Adminpage2 = () => {
                   </label>
 
                   <select
-                    className="form-select rounded-pill w-100 border-1 py-3 px-3"
+                    className="form-select rounded-pill w-100 border-1 py-3 px-3 numero"
                     aria-label="Default select example"
                   >
                     <option selected>select Rider</option>
@@ -79,7 +79,7 @@ const Adminpage2 = () => {
                   <div className="row mt-5 pt-3">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <label htmlFor="name" className="mb-3">
-                        Persona de contacto
+                        Telefono
                       </label>
                       <input
                         type="tel"

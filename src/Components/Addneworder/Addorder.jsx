@@ -1,6 +1,7 @@
 import React from "react";
 import "./Addorder.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Successmodal from "../Successmodal/Successmodal";
 
 const Addorder = () => {
   return (
@@ -27,7 +28,7 @@ const Addorder = () => {
         </div>
       </div>
       <div className="text-center mt-5">
-        <h2>Add new order</h2>
+        <h2 className="fw-bold fs-2 heading-1">Add new order</h2>
       </div>
       <div className="container-fluid px-3">
         <div className="header mt-5">
@@ -90,13 +91,14 @@ const Addorder = () => {
           </div>
         </div>
         <div className="text-center mt-3 w-75 mx-auto">
-          <Link
+          {/* <Link
             to="/confirm"
             type="submit"
             className="save text-decoration-none rounded-pill text-light w-100 py-3 mt-5 mb-5"
           >
             Save
-          </Link>
+          </Link> */}
+          <Successmodal/>
         </div>
       </div>
       <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">

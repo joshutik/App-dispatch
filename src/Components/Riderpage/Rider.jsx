@@ -24,21 +24,19 @@ const Rider = ({ onpageSwitch }) => {
       <div className="row justify-content-center align-item-center">
         <div className="row justify-content-center">
           <div className="">
-            <input
-              type="search"
-              className="form-control rounded-pill mt-5 py-3"
-            />
+           
             <div className="card rounded-0 border-0">
               <div className="card-body w-100 ">
-                <div className=" bg-gray rounded-pill row col-lg-5 p-2 m-auto justify-content-between align-items-center">
+                <div className=" bg-secondary rounded-pill row col-lg-5 p-2 m-auto justify-content-between align-items-center">
                   <div
                     className={`${
                       activeState === "establishment" ? "bg-white" : ""
-                    } px-5 py-2 cursor-pointer rounded-pill text-center  col-lg-6 col-md-6 col-sm-6`}
+                    } px-5 py-2 cursor-pointer rounded-pill text-center d-lg-none d-xl-block col-lg-6 col-md-6 col-sm-6`}
                     onClick={() => setActiveState("establishment")}
                   >
-                    Esterblishment
+                    Establecimiento
                   </div>
+                  
                   <div
                     className={`${
                       activeState === "rider" ? "bg-white" : ""
@@ -48,6 +46,10 @@ const Rider = ({ onpageSwitch }) => {
                     Rider
                   </div>
                 </div>
+                <input
+              type="search"
+              className="form-control rounded-pill mt-5 py-3" placeholder="Buscar establecimiento...."
+            />
                 {activeState === "establishment" && <Establish />}
                 {activeState === "rider" && (
                   <div>

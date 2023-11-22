@@ -9,8 +9,8 @@ const Ownerslog = () => {
         <div className="row justify-content-center text-light">
           <div className="col-lg-7">
             <div className="text-light">
-              <h3>Buenas Noches,</h3>
-              <h1>Dunena De Loteria</h1>
+              <h3 className="fs-2 fw-bold text-light">Buenas Noches,</h3>
+              <h1 className="fs-1 fw-bold text-light ml-5">Dunena De Loteria</h1>
             </div>
           </div>
         </div>
@@ -22,14 +22,15 @@ const Ownerslog = () => {
             className="form-select rounded-pill py-3"
             aria-label="Default select example"
           >
-            <option selected>Open this select menu</option>
+            <option selected>Lottery company 1</option>
             <option value="1">Lottery Company 1</option>
             <option value="2">Lottery Company 1</option>
             <option value="3">Lottery Company 1</option>
           </select>
           <div className="row gy-4 justify-content-center">
-            <div className="mt-5">
+            <div className="mt-5 d-flex">
               <p className="fs-2 mt-5">Overview</p>
+              <p className="text-dark mt-5 pt-3 text-normal ms-auto">Fecha Uitima Entrega: <span className="fw-bold">16th of October, 2023</span></p>
             </div>
             
             <div className="col-lg-6 col-md-12 col-sm-12">
@@ -42,7 +43,7 @@ const Ownerslog = () => {
                   <div className="col-lg-6 col-md-6 col-sm-12 text-light pt-4 px-auto">
                     <p className="text-light">Total earnings</p>
                     <h2>
-                      <span className="text-success">$18,000</span>
+                      <span className="success-class fw-bold">$18,000</span>
                     </h2>
                     <p className="text-light">compared to 52,000 yesterday</p>
                   </div>
@@ -59,7 +60,7 @@ const Ownerslog = () => {
                   <div className="col-lg-6 col-md-6 col-sm-10 text-light pt-4 px-auto">
                     <p className="text-light">Order trent</p>
                     <h2>
-                      <span className="text-success">124 order</span>
+                      <span className="success-class fw-bold">124 order</span>
                     </h2>
                     <p className="text-light">compared to 52,000 yesterday</p>
                   </div>

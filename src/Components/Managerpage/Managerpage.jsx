@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Managerpage.css";
 import { Link } from "react-router-dom";
+import ResponsiveExample from "../Tables/Responsivetable";
+
 
 const Managerpage = () => {
-  const [tableData, setTableData] = useState([
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    // Add more rows as needed
-  ]);
-  const handleInputChange = (id, field, value) => {
-    const updatedData = tableData.map((row) =>
-      row.id === id ? { ...row, [field]: value } : row
-    );
-    setTableData(updatedData);
-  };
+  // const [tableData, setTableData] = useState([
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   // Add more rows as needed
+  // ]);
+  // const handleInputChange = (id, field, value) => {
+  //   const updatedData = tableData.map((row) =>
+  //     row.id === id ? { ...row, [field]: value } : row
+  //   );
+  //   setTableData(updatedData);
+  // };
 
   return (
     <div>
@@ -121,7 +123,7 @@ const Managerpage = () => {
                 </tr>
               </tbody>
             </table> */}
-            <table className="table table-bordered px-5 align-middle table-responsive w-100">
+            {/* <table className="table table-bordered px-5 align-middle table-responsive w-100">
               <thead className="">
                 <tr className="text-center">
                   <th></th>
@@ -195,7 +197,8 @@ const Managerpage = () => {
                   </tr>
                 ))}
               </tbody>
-            </table> 
+            </table>  */}
+            <ResponsiveExample/>
           </div>
         </div>
         <div className="container-fluid footer py-4 bg-light text-center mt-5 mb-0">

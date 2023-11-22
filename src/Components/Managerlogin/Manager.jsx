@@ -1,21 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Manager.css";
+import ResponsiveExample from "../Tables/Responsivetable";
 
 const Manager = () => {
-  const [tableData, setTableData] = useState([
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    { name: "", value: "" },
-    // Add more rows as needed
-  ]);
-  const handleInputChange = (id, field, value) => {
-    const updatedData = tableData.map((row) =>
-      row.id === id ? { ...row, [field]: value } : row
-    );
-    setTableData(updatedData);
-  };
+  // const [tableData, setTableData] = useState([
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   { name: "", value: "" },
+  //   // Add more rows as needed
+  // ]);
+  // const handleInputChange = (id, field, value) => {
+  //   const updatedData = tableData.map((row) =>
+  //     row.id === id ? { ...row, [field]: value } : row
+  //   );
+  //   setTableData(updatedData);
+  // };
   return (
     <div>
       <div className="container-fluid ">
@@ -95,7 +96,7 @@ const Manager = () => {
                 </tbody>
               </table>
             </div> */}
-             <table className="table table-bordered px-5 align-middle table-responsive w-100">
+             {/* <table className="table table-bordered px-5 align-middle table-responsive w-100">
               <thead className="">
                 <tr className="text-center">
                   <th></th>
@@ -169,7 +170,8 @@ const Manager = () => {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table> */}
+            <ResponsiveExample/>
             </div>
           </div>
         </div>
