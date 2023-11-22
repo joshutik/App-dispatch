@@ -64,7 +64,7 @@ function App() {
      {/* <Riderlogin/> */}
      {/* <Ownerslog/> */}
      {/* <Managerpage/> */}
-     <Rider/>
+     {/* <Rider/> */}
 
     </div>
   );
