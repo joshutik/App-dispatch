@@ -38,7 +38,7 @@ function Addanothermodal() {
                     </p>
                     <div className='mt-5 mb-3'>
                         <div>
-                        <Link to="/lotery" className='rounded-pill py-3 px-5 text-decoration-none w-100 btn-link mt-3 text-light'>Add another</Link>
+                        <Link to="/riders-form" className='rounded-pill py-3 px-5 text-decoration-none w-100 btn-link mt-3 text-light'>Add another</Link>
                         </div>
                     </div>
                 </div>
