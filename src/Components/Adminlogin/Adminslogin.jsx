@@ -65,7 +65,7 @@ const Adminslogin = ({onformSwitch}) => {
                       <label htmlFor="email" className="text-start">
                         Email address
                       </label>
-                      <input
+                      <input required
                         value={formData.email} onChange={handleChange}
                         type="email"
                         className="rounded-pill w-100 form-control border-1 py-2 px-3"
@@ -75,7 +75,7 @@ const Adminslogin = ({onformSwitch}) => {
                     </div>
                     <div className="form-group mb-3">
                       <label htmlFor="password">Password</label>
-                      <input
+                      <input required
                         value={formData.password} onChange={handleChange}
                         className="rounded-pill w-100 form-control border-1 py-2"
                         type="password"

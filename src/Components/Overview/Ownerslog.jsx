@@ -1,6 +1,7 @@
 import React from "react";
 import "./Ownerslog.css";
 import img4 from "../Assets/Circle chart.png";
+import Currentdate from "../Currentdate/Currentdate";
 
 const Ownerslog = () => {
   return (
@@ -26,7 +27,7 @@ const Ownerslog = () => {
             className="form-select rounded-pill py-3"
             aria-label="Default select example"
           >
-            <option selected>Lottery company 1</option>
+            <option selected>All establishment</option>
             <option value="1">Lottery Company 1</option>
             <option value="2">Lottery Company 1</option>
             <option value="3">Lottery Company 1</option>
@@ -37,9 +38,10 @@ const Ownerslog = () => {
                 <p className="fs-2 mt-5">Overview</p>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
-                <p className="text-dark mt-5 pt-3 text-normal ms-auto">
-                  Fecha Uitima Entrega:{" "}
-                  <span className="fw-bold">16th of October, 2023</span>
+                <p className="text-dark mt-5 pt-3 text-normal text-end">
+                  Fecha Uitima Entrega:{" "} 
+                  <span className="fw-bold"><Currentdate/></span>
+                  
                 </p>
               </div>
             </div>
@@ -82,25 +84,25 @@ const Ownerslog = () => {
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
                   <h6 className="text-light">Total amount paid</h6>
-                  <h1 className="text-light">$18,000</h1>
+                  <h1 className="text-light">$000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">Total amount paid</h6>
-                  <h1 className="text-light own">$18,000</h1>
+                  <h6 className="text-light">Total debts</h6>
+                  <h1 className="text-light own">$000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light">Total amount paid</h6>
-                  <h1 className="text-light">$18,000</h1>
+                  <h6 className="text-light">Total amount reserved</h6>
+                  <h1 className="text-light">$000</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
-                  <h6 className="text-light own">Total amount paid</h6>
-                  <h1 className="text-light">$18,000</h1>
+                  <h6 className="text-light own">Total amount supplied</h6>
+                  <h1 className="text-light">$000</h1>
                 </div>
               </div>
             </div>

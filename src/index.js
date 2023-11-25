@@ -23,6 +23,7 @@ import Establish from './Components/Establishment/Establish';
 import Riderlogin from './Components/Riderlogin/Riderlogin';
 import Managmentlog from './Components/Managementlog/Managmentlog';
 import Managerpage from './Components/Managerpage/Managerpage';
+import Ridercompo from './Components/Ridercomponent/Ridercompo';
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
 
@@ -97,6 +98,10 @@ import Managerpage from './Components/Managerpage/Managerpage';
     {
       path: "/admin-page",
       element: <Managerpage/>,
+    },
+    {
+      path: "/slide-rider",
+      element: <Ridercompo/>,
     },
    
   

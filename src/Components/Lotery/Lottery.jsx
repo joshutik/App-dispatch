@@ -1,61 +1,11 @@
 import React from "react";
 import "./Lottery.css";
-// import { Link } from "react-router-dom";
 import ResponsiveExample from "../Tables/Responsivetable";
-// import Successmodal3 from "../Successmodal3/Successmodal3";
 import Addanothermodal from "../Addanothermodal/Addanothermodal";
-// import Successmodal2 from "../Successmodal2/Successmodal2";
-// import { Link } from "react-router-dom";
+
 
 const Lottery = () => {
-  // const [tableData, setTableData] = useState([
-  //   {
-  //     id: 1,
-  //     date: "",
-  //     series: 0,
-  //     quantityDelivered: 0,
-  //     amountPaid: 0,
-  //     balance: 0,
-  //     discount: 0,
-  //     confirmation: 0,
-  //   },
-  //   {
-  //     id: 2,
-  //     date: "",
-  //     series: 0,
-  //     quantityDelivered: 0,
-  //     amountPaid: 0,
-  //     balance: 0,
-  //     discount: 0,
-  //     confirmation: 0,
-  //   },
-  //   {
-  //     id: 3,
-  //     date: "",
-  //     series: 0,
-  //     quantityDelivered: 0,
-  //     amountPaid: 0,
-  //     balance: 0,
-  //     discount: 0,
-  //     confirmation: 0,
-  //   },
-  //   {
-  //     date: "",
-  //     series: 0,
-  //     quantityDelivered: 0,
-  //     amountPaid: 0,
-  //     balance: 0,
-  //     discount: 0,
-  //     confirmation: 0,
-  //   },
-    // Add more rows as needed
-  // ]);
-  // const handleInputChange = (id, field, value) => {
-  //   const updatedData = tableData.map((row) =>
-  //     row.id === id ? { ...row, [field]: value } : row
-  //   );
-  //   setTableData(updatedData);
-  // };
+
   return (
     <div className="container-fluid">
         <div className="lot">
