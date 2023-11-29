@@ -1,0 +1,19 @@
+:root{
+    --primary-color:#17476E;
+    --secondary-color: red;
+}
+
+/* *{
+    padding: 0px !important;
+    margin: 0px !important;
+    box-sizing: border-box;
+} */
+
+.reg-btn{
+    background-color: var(--primary-color);
+}
+
+.log-btn{
+    outline: 3px solid var(--primary-color) !important;
+    color:var(--primary-color) !important;
+}

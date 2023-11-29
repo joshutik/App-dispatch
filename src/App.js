@@ -1,7 +1,10 @@
 // import logo from './logo.svg';
 // import { useState } from 'react';
 import './App.css';
-import Landingpage from './Components/Landpage/Landingpage';
+import Login from './Components/Login/Login';
+// import Ownerregister from './Components/Ownerregister/Ownerregister';
+// import Landingpage from './Components/Landpage/Landingpage';
+// import Adminregister from './Components/Register/Adminregister';
 // import Rider from './Components/Riderpage/Rider';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Establish from './Components/Establishment/Establish';
@@ -53,7 +56,11 @@ function App() {
      {/* <Riderlogin/>
      <Adminpage2/>
      <Copymanagerlink /> */}
-     <Landingpage/>
+     {/* <Adminregister/> */}
+     <Login/>
+  
+     {/* <Ownerregister/> */}
+     {/* <Landingpage/> */}
      {/* <Rider/>
      <Establish/>
      <Managmentlog/>

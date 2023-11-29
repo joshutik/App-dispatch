@@ -19,6 +19,7 @@ import Addorder from './Components/Addneworder/Addorder';
 import Adminpage2 from './Components/Adminpage2/Adminpage2';
 import Confirmpage from './Components/Confirmation/Confirmpage';
 import Establish from './Components/Establishment/Establish';
+import Adminregister from './Components/Register/Adminregister.jsx'
 // import Managerpage from './Components/Managerpage/Managerpage';
 import Riderlogin from './Components/Riderlogin/Riderlogin';
 import Managmentlog from './Components/Managementlog/Managmentlog';
@@ -102,6 +103,10 @@ import Ridercompo from './Components/Ridercomponent/Ridercompo';
     {
       path: "/slide-rider",
       element: <Ridercompo/>,
+    },
+    {
+      path: "/register-login",
+      element: <Adminregister/>,
     },
    
   

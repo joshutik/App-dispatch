@@ -1,0 +1,19 @@
+.register{
+    background-image: url(../Assets/Overlay\ \(1\).png);
+    background-size: cover;
+    font-family: 'poppins';
+    font-weight: 400;
+    min-height: 100vh;
+}
+:root{
+    --primary-color: #17476E;
+}
+
+.butn-bg{
+background-color: var(--primary-color);
+}
+
+.text-color{
+    color: var(--primary-color);
+    font-size: 500;
+}
