@@ -166,7 +166,7 @@ const Adminregister = ({onFormSwitch}) => {
               <div className="text-center my-5">
                 <button
                   type="submit"
-                  className="w-75 rounded-pill py-2 text-light butn-bg"
+                  className="w-75 rounded-pill py-2 text-light butn-bg text-bold"
                 >
                   Register
                 </button>

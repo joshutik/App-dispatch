@@ -1,9 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Ownerslog.css";
 import img4 from "../Assets/Circle chart.png";
 import Currentdate from "../Currentdate/Currentdate";
+import axios from "axios";
 
 const Ownerslog = () => {
+  const [totalEarnings, setTotalEarnings] = useState("");
+  const [order, setOrder] = useState("");
+  const [amtPaid, setAmtPaid] = useState("");
+  const [totalDebt, setTotalDebt] = useState("");
+  const [totalAmtPaid, setTotalAmtPaid] = useState("");
+  const [totalAmtSupplied, setTotalAmtSupplied] = useState("");
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+
+      console.log(response);
+      setTotalEarnings(response.data.length);
+      setOrder(response.data.length);
+      setAmtPaid(response.data.length);
+      setTotalDebt(response.data.length);
+      setTotalAmtPaid(response.data.length);
+      setTotalAmtSupplied(response.data.length);
+      // if (response.ok) {
+      //   // Handle successful login
+      //   const responseData = await response.json();
+      //   console.log("Login successful:", responseData);
+      //   console.log(response)
+
+      // } else {
+      //   // Handle failed login
+      //   console.error("Login failed:", response.status);
+      //   // navigate('/Rider-login')
+      // }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="container-fluid">
       <div className="owner-bg p-5">
@@ -39,9 +80,10 @@ const Ownerslog = () => {
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <p className="text-dark mt-5 pt-3 text-normal text-end">
-                  Fecha Uitima Entrega:{" "} 
-                  <span className="fw-bold"><Currentdate/></span>
-                  
+                  Fecha Uitima Entrega:{" "}
+                  <span className="fw-bold">
+                    <Currentdate />
+                  </span>
                 </p>
               </div>
             </div>
@@ -56,7 +98,9 @@ const Ownerslog = () => {
                   <div className="col-lg-6 col-md-6 col-sm-12 text-light pt-4 px-auto">
                     <p className="text-light">Total earnings</p>
                     <h2>
-                      <span className="success-class fw-bold">$18,000</span>
+                      <span className="success-class fw-bold">
+                      &euro;{totalEarnings}
+                      </span>
                     </h2>
                     <p className="text-light">compared to 52,000 yesterday</p>
                   </div>
@@ -73,7 +117,7 @@ const Ownerslog = () => {
                   <div className="col-lg-6 col-md-6 col-sm-10 text-light pt-4 px-auto">
                     <p className="text-light">Order trent</p>
                     <h2>
-                      <span className="success-class fw-bold">124 order</span>
+                      <span className="success-class fw-bold">{order} order</span>
                     </h2>
                     <p className="text-light">compared to 52,000 yesterday</p>
                   </div>
@@ -84,25 +128,25 @@ const Ownerslog = () => {
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
                   <h6 className="text-light">Total amount paid</h6>
-                  <h1 className="text-light">$000</h1>
+                  <h1 className="text-light">&euro;{amtPaid}</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
                   <h6 className="text-light">Total debts</h6>
-                  <h1 className="text-light own">$000</h1>
+                  <h1 className="text-light own">&euro;{totalDebt}</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
                   <h6 className="text-light">Total amount reserved</h6>
-                  <h1 className="text-light">$000</h1>
+                  <h1 className="text-light">&euro;{totalAmtPaid}</h1>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="card plates rounded-4 w-100 py-3">
                   <h6 className="text-light own">Total amount supplied</h6>
-                  <h1 className="text-light">$000</h1>
+                  <h1 className="text-light">&euro;{totalAmtSupplied}</h1>
                 </div>
               </div>
             </div>

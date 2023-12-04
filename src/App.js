@@ -2,6 +2,7 @@
 // import { useState } from 'react';
 import './App.css';
 import Login from './Components/Login/Login';
+import Search from './Components/Search/Search';
 // import Ownerregister from './Components/Ownerregister/Ownerregister';
 // import Landingpage from './Components/Landpage/Landingpage';
 // import Adminregister from './Components/Register/Adminregister';
@@ -23,6 +24,8 @@ import Login from './Components/Login/Login';
 // import Rider from './Components/Riderpage/Rider';
 // import SalesTable from './Components/Tables/SalesTable';
 // import Ownerslog from './Components/Overview/Ownerslog';
+// import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
+// import Select from './Components/Selectdropdown/Select';
 // import Lottery from './Components/Lotery/Lottery';
 // import Responsivetable from './Components/Tables/Responsivetable';
 // import Addorder from './Components/Addneworder/Addorder';
@@ -42,22 +45,27 @@ function App() {
 
   return (
     <div>
+      {/* <Select/> */}
       {/* <Ownerslog/> */}
       {/* <Addorder/> */}
       {/* <Managerlinkmodal/>
       <Copyriderlink/>
       <Lotery/>
    <Lottery/>
-     <Ownerslogin/>
+    //  
      
      <Rider/>
      <Confirmlink/> */}
      {/* <SalesTable/> */}
      {/* <Riderlogin/>
-     <Adminpage2/>
      <Copymanagerlink /> */}
      {/* <Adminregister/> */}
+     {/* <Adminpage2/> */}
      <Login/>
+     <Search/>
+     {/* <Adminslogin/> */}
+    
+     {/* <Ownerslogin/> */}
   
      {/* <Ownerregister/> */}
      {/* <Landingpage/> */}

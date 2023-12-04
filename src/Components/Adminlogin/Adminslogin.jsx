@@ -1,46 +1,54 @@
 import "./Adminslogin.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import Footer from "../Footer/Footer";
+import axios from "axios";
+
 // import Ownerslogin from "../Ownerlogin/Ownerslogin";
 
 const Adminslogin = ({onformSwitch}) => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const [activeState, setActiveState] = useState('adminLogin')
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log(formData);
+
     // Call the login API endpoint with formData
     try {
-      const response = await fetch("https://128f-41-184-171-185.ngrok-free.app/jwt_token/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post("https://b145-41-184-171-185.ngrok-free.app/jwt_token/")
+
+       
+    
+
+      
 
       if (response.ok) {
         // Handle successful login
         const responseData = await response.json();
         console.log("Login successful:", responseData);
+      
       } else {
         // Handle failed login
         console.error("Login failed:", response.status);
+        navigate('/Rider-login')
       }
     } catch (error) {
       console.error("Error during login:", error);
     }
+
+    
   };
 
 
@@ -83,27 +91,13 @@ const Adminslogin = ({onformSwitch}) => {
                         name="password"
                       />
                     </div>
-                    {/* <div className="form-group d-flex justify-content-between">
-                      <div>
-                        <input
-                          className="rounded-pill  border-1 mr-2"
-                          type="checkbox"
-                        />
-                        <label htmlFor="checkbox">Remember me</label>
-                      </div>
-                      <div>
-                        <a href="/">Forgot password?</a>
-                      </div>
-                    </div> */}
-
                     <div className="mt-5 text-center">
-                      <Link
-                        to="/Rider-login"
+                      <button
                         type="submit"
                         className="btn btn-primary w-75 rounded-pill py-2"
                       >
                         Login
-                      </Link>
+                      </button>
                     </div>
 
                     {activeState === "adminLogin" && <div className="text-center mt-5">
@@ -134,6 +128,7 @@ const Adminslogin = ({onformSwitch}) => {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );
