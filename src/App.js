@@ -2,7 +2,7 @@
 // import { useState } from 'react';
 import './App.css';
 import Login from './Components/Login/Login';
-import Search from './Components/Search/Search';
+// import Search from './Components/Search/Search';
 // import Ownerregister from './Components/Ownerregister/Ownerregister';
 // import Landingpage from './Components/Landpage/Landingpage';
 // import Adminregister from './Components/Register/Adminregister';
@@ -62,7 +62,7 @@ function App() {
      {/* <Adminregister/> */}
      {/* <Adminpage2/> */}
      <Login/>
-     <Search/>
+     {/* <Search/> */}
      {/* <Adminslogin/> */}
     
      {/* <Ownerslogin/> */}
