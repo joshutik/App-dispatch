@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Ownerregister.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Ownerregister = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,8 @@ const Ownerregister = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,6 +63,7 @@ const Ownerregister = () => {
 
       // Handle successful registration
       console.log("Registration successful:", response.data);
+      
 
       // Assume the backend returns an authentication token
       const authToken = response.data.token;
@@ -103,6 +106,7 @@ const Ownerregister = () => {
 
     if (validateForm()) {
       await handleRegistration();
+      navigate('/Owner-login')
     } else {
       console.log("Form validation failed");
     }

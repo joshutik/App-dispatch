@@ -8,7 +8,7 @@ import Login from './Components/Login/Login';
 // import Adminregister from './Components/Register/Adminregister';
 // import Rider from './Components/Riderpage/Rider';
 // import Managerpage from './Components/Managerpage/Managerpage';
-// import Establish from './Components/Establishment/Establish';
+import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
