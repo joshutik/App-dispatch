@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Adminpage2.css";
 // import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Select from "../Selectdropdown/Select";
-
+import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 
 const Adminpage2 = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const Adminpage2 = () => {
     giftQuantity: "",
   });
 
-  console.log(formData)
+  console.log(formData);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -42,7 +42,6 @@ const Adminpage2 = () => {
     setShowModal(false);
   };
 
-  const navigate = useNavigate()
   const handleSave = async () => {
     try {
       setLoading(true);
@@ -50,12 +49,10 @@ const Adminpage2 = () => {
       // Simulating an API request delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-
       // Assume successful save
       console.log("Data saved successfully!");
       toast.success("Data saved successfully!");
-      navigate('/managercopy-modal');
-      
+
       // Open the modal after a successful save
       setShowModal(true);
     } catch (error) {
@@ -262,16 +259,20 @@ const Adminpage2 = () => {
               </div>
             </div>
             <div className="text-center mt-3">
-              <button
-                type="submit"
-                className="save text-decoration-none rounded-pill text-light w-50 py-3 mt-5 mb-5"
+              {/* <Managerlinkmodal type="submit"
                 onClick={handleSave}
+                disabled={loading}/> */}
+              <Managerlinkmodal
+                type="submit"
+                onClick={() => {
+                  handleSave();
+                  handleSaveClick();
+                }}
                 disabled={loading}
-                // closeModal={() => setShowModal(false)}
-                show={showModal} onHide={handleCloseModal}
-              >
-                Save
-              </button>
+                showModal={showModal}
+                onClose={handleCloseModal} 
+              />
+
               {/* <Managerlinkmodal/> */}
               {/* Modal component */}
 

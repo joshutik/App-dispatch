@@ -6,7 +6,7 @@ import './Managerlinkmodal.css'
 import { Link } from 'react-router-dom';
 
 
-function Managerlinkmodal() {
+function Managerlinkmodal({ type, onClick, disabled, onClose  }) {
   const [showModal, setShowModal] = useState(false);
 
   const handleSaveClick = () => {
@@ -28,7 +28,7 @@ function Managerlinkmodal() {
         
         </Modal.Header> */}
         <Modal.Body dialogClassName="modal-body">
-        <div className="header text-center">
+        <div className={`modal ${showModal ? 'visible' : 'hidden'}header text-center`}>
                     <i class="bi bi-check-circle-fill icon"></i>
                 </div>
                 <div className='text-center pb-5 fw-bold text-dark'>
@@ -38,7 +38,8 @@ function Managerlinkmodal() {
                     </p>
                     <div className='mt-5 mb-5'>
                         <div>
-                        <Link to="/admin-page" className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
+               
+                        <Link   to="/rider-page"  onClick={onClose} className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
                         </div>
                         <div>
                         <Link to="/" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy manager link</Link>
@@ -55,5 +56,6 @@ function Managerlinkmodal() {
     </>
   );
 }
+
 
 export default Managerlinkmodal;

@@ -27,17 +27,22 @@ const Adminslogin = ({onformSwitch}) => {
 
     // Call the login API endpoint with formData
     try {
-      const response = await axios.post("https://b145-41-184-171-185.ngrok-free.app/jwt_token/")
-
+      const response = await axios.post("https://jsonplaceholder.typicode.com/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
       if (response.ok) {
         // Handle successful login
         const responseData = await response.json();
         console.log("Login successful:", responseData);
-      navigate('/Rider-login')
+     
       } else {
         // Handle failed login
         console.error("Login failed:", response.status);
-        
+         navigate('/Rider-login');
       }
     } catch (error) {
       console.error("Error during login:", error);
