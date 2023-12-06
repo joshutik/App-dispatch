@@ -43,7 +43,7 @@ const Rider = ({ onpageSwitch }) => {
                     } px-5 py-2 cursor-pointer rounded-pill text-center col-lg-6 col-md-6 col-sm-6`}
                     onClick={() => setActiveState("rider")}
                   >
-                    Rider
+                    Riderssss
                   </div>
                 </div>
                 <input

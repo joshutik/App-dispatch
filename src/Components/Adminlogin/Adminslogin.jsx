@@ -4,54 +4,45 @@ import React, { useState } from "react";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 
-// import Ownerslogin from "../Ownerlogin/Ownerslogin";
-
-const Adminslogin = ({onformSwitch}) => {
-  const [activeState, setActiveState] = useState('adminLogin')
+const Adminslogin = ({ onformSwitch }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  
+  const [activeState, setActiveState] = useState('adminLogin'); // Add state for activeState
 
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
-
-    // Call the login API endpoint with formData
     try {
-      const response = await axios.post("https://b145-41-184-171-185.ngrok-free.app/jwt_token/")
+      const response = await axios.post("http://127.0.0.1:9090/jwt_token/", formData);
 
-       
-    
-
-      
-
-      if (response.ok) {
+      if (response.status === 200) {
         // Handle successful login
-        const responseData = await response.json();
+        const responseData = response.data; // Assuming the token data is in response.data
         console.log("Login successful:", responseData);
-      
+        
+        // Perform actions with the tokens as needed (e.g., store them, set in localStorage, etc.)
+        
+        // Redirect or navigate to a new route upon successful login
+        navigate('/rider-page'); // Replace '/dashboard' with your desired route after login
       } else {
         // Handle failed login
         console.error("Login failed:", response.status);
-        navigate('/Rider-login')
+        navigate('/Rider-login');
       }
     } catch (error) {
       console.error("Error during login:", error);
     }
-
-    
   };
-
-
 
   return (
     <>
@@ -133,5 +124,6 @@ const Adminslogin = ({onformSwitch}) => {
     </>
   );
 };
+
 
 export default Adminslogin;

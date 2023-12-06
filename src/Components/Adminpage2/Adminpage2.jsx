@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Adminpage2.css";
 // import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Select from "../Selectdropdown/Select";
 
 
 const Adminpage2 = () => {
-  const [formData, setFormData] = useState({
-    establishment: "",
-    contactPerson: "",
-    contactPhone: "",
-    phoneNumber: "",
-    rider: "",
-    riderPhone: "",
-    riderAddress: "",
-    orderNumber: 0,
-    reserveQuantity: "",
-    customerReturnQuantity: "",
-    soldQuantity: "",
-    collectedQuantity: "",
-    giftQuantity: "",
-  });
 
-  console.log(formData)
-  const [loading, setLoading] = useState(false);
+ const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  
+    if (name === 'rider') {
+      // Retrieve rider details and set riderPhone and riderAddress based on selected rider
+      const selectedRider = responseData.find((rider) => rider.id === parseInt(value, 10));
+      if (selectedRider) {
+        setFormData((prevData) => ({
+          ...prevData,
+          rider: selectedRider.id,
+          riderPhone: selectedRider.phone,
+          riderAddress: selectedRider.address,
+        }));
+      }
+    } else {
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    }
   };
+  
 
   const handleSaveClick = () => {
     setShowModal(true);
@@ -43,26 +42,116 @@ const Adminpage2 = () => {
   };
 
   const navigate = useNavigate()
-  const handleSave = async () => {
+    // function to handle saving establishment and  order data
+    const handleSave = async () => {
+      try {
+        setLoading(true);
+        await handleSubmit(); // Sending establishment details
+        await handleSubmitOrder(); // Sending order details
+      } catch (error) {
+        console.error("Error during save:", error);
+        toast.error("An error occurred. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+  const [responseData, setResponseData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:9090/rider/");
+  
+        if (response.status === 200) {
+          setResponseData(response.data);
+          console.log(response.data)
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [formData, setFormData] = useState({
+    establishment: "",
+    contact_person: "",
+    phone_number: "",
+    rider: "",
+    riderPhone: "",
+    riderAddress: "",
+    order_number: 0,
+    reserved_quantity: "",
+    amount_returned_by_customer: "",
+    quantity_sold: "",
+    collectedQuantity: "",
+    gift_or_discount: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Check if required fields are not empty
+    if (!formData.first_name || !formData.last_name || !formData.phone) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
     try {
-      setLoading(true);
+      const response = await fetch('http://127.0.0.1:9090/establishment/create/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Simulating an API request delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-
-      // Assume successful save
-      console.log("Data saved successfully!");
-      toast.success("Data saved successfully!");
-      navigate('/managercopy-modal');
-      
-      // Open the modal after a successful save
-      setShowModal(true);
+      if (response.ok) {
+        console.log('Establishment data sent successfully!!');
+        console.log(formData);
+      } else {
+        // Get error response from server
+        const errorResponse = await response.json();
+        console.error('Failed to send establishment  data:', errorResponse);
+      }
     } catch (error) {
-      console.error("Error during save:", error);
+      console.error('Error sending establishment data:', error);
+    }
+  };
+
+
+  const handleSubmitOrder = async () => {
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:9090/order/create/",
+        formData // Sending formData for creating an order
+      );
+
+      if (response.status === 200) {
+        console.log("Order details sent successfully!");
+        toast.success("Order details sent successfully!");
+        navigate("/managercopy-modal");
+        setShowModal(true);
+      } else {
+        console.error("Failed to send order details.");
+        toast.error("Failed to send order details.");
+      }
+    } catch (error) {
+      console.error("Error sending order details:", error);
       toast.error("An error occurred. Please try again later.");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -91,9 +180,8 @@ const Adminpage2 = () => {
             </label>
             <input
               type="text"
-              name="establishment"
-              value={FormData.establishment}
-              onChange={handleChange}
+              name="name"
+              onChange={handleInputChange}
               className="form-control rounded-pill w-100 border-1 py-3 px-3"
             />
           </div>
@@ -105,9 +193,8 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="tel"
-                  name="contactPerson"
-                  value={formData.contactPerson}
-                  onChange={handleChange}
+                  name="contact_person"
+                  onChange={handleInputChange}
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
               </div>
@@ -117,8 +204,8 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
+                  name="phone_number"
+                  onChange={handleInputChange}
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
               </div>
@@ -133,23 +220,25 @@ const Adminpage2 = () => {
               </div>
               <div className="mb-4 mt-5">
                 <label htmlFor="name" className="mb-3">
-                  Namo
+                  Select Rider
                 </label>
-                <Select />
-                {/* <select
+                
+                <select
                   className="form-select rounded-pill w-100 border-1 py-3 px-3 numero"
-                  aria-label="Rider"
-                  name="rider" // Set the name attribute to match the corresponding property in formData
-                  value={formData.rider} // Bind the value to the corresponding property in formData
+                  aria-label="Rider" 
+                  name="rider" 
+                  value={formData.rider}
                   onChange={handleChange}
                 >
-                  <option value="" disabled selected>
+                  <option value="" disabled>
                     Select Rider
                   </option>
-                  <option value="1">Rider 1</option>
-                  <option value="2">Rider 2</option>
-                  <option value="3">Rider 3</option>
-                </select> */}
+                  {responseData.map((rider, index) => (
+                  <option key={index} value={rider.id}>
+                    {rider.first_name} {rider.last_name} - {rider.phone}
+                  </option>
+          ))}
+                </select>
               </div>
               <div>
                 <div className="row mt-5 pt-3">
@@ -160,7 +249,7 @@ const Adminpage2 = () => {
                     <input
                       type="tel"
                       name="riderPhone"
-                      value={FormData.riderPhone}
+                      value={formData.riderPhone}
                       onChange={handleChange}
                       className="form-control rounded-pill w-100 border-1 py-3 px-3"
                     />
@@ -172,7 +261,7 @@ const Adminpage2 = () => {
                     <input
                       type="text"
                       name="riderAddress"
-                      value={FormData.riderAddress}
+                      value={formData.riderAddress}
                       onChange={handleChange}
                       className="form-control rounded-pill w-100 border-1 py-3 px-3"
                     />
@@ -194,9 +283,9 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="number"
-                  name="orderNumber"
-                  value={FormData.orderNumber}
-                  onChange={handleChange}
+                  name="order_number"
+                  value={formData.orderNumber}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
@@ -206,9 +295,9 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="number"
-                  name="reserveQuantity"
-                  value={FormData.reserveQuantity}
-                  onChange={handleChange}
+                  name="reserve_quantity"
+                  value={formData.reserveQuantity}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
@@ -218,9 +307,9 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="number"
-                  name="customerReturnQuantity"
-                  value={FormData.customerReturnQuantity}
-                  onChange={handleChange}
+                  name="amount_returned_by_customer"
+                  value={formData.customerReturnQuantity}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
@@ -230,9 +319,9 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="text"
-                  name="soldQuantity"
-                  value={FormData.soldQuantity}
-                  onChange={handleChange}
+                  name="quantity_sold"
+                  value={formData.soldQuantity}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
@@ -241,10 +330,10 @@ const Adminpage2 = () => {
                   Cantidad cobrada
                 </label>
                 <input
-                  type="number"
-                  name="collectedQuantity"
-                  value={FormData.collectedQuantity}
-                  onChange={handleChange}
+                  type="text"
+                  name="amount_charged"
+                  value={formData.collectedQuantity}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
@@ -254,9 +343,9 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="text"
-                  name="giftQuantity"
-                  value={FormData.giftQuantity}
-                  onChange={handleChange}
+                  name="gift_or_discount"
+                  value={formData.giftQuantity}
+                  onChange={handleInputChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
               </div>
