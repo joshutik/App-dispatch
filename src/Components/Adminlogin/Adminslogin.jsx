@@ -26,6 +26,7 @@ const Adminslogin = ({ onformSwitch }) => {
       const response = await axios.post("http://127.0.0.1:9090/jwt_token/", formData);
 
       if (response.status === 200) {
+
         // Handle successful login
         const responseData = response.data; // Assuming the token data is in response.data
         console.log("Login successful:", responseData);
@@ -38,6 +39,7 @@ const Adminslogin = ({ onformSwitch }) => {
         // Handle failed login
         console.error("Login failed:", response.status);
         navigate('/Rider-login');
+    
       }
     } catch (error) {
       console.error("Error during login:", error);

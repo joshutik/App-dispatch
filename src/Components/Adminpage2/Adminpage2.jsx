@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,6 +7,8 @@ import "./Adminpage2.css";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Select from "../Selectdropdown/Select";
+import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 
 
 const Adminpage2 = () => {
@@ -40,6 +43,7 @@ const Adminpage2 = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
 
   const navigate = useNavigate()
     // function to handle saving establishment and  order data
@@ -131,6 +135,7 @@ const Adminpage2 = () => {
       console.error('Error sending establishment data:', error);
     }
   };
+
 
 
   const handleSubmitOrder = async () => {
@@ -351,16 +356,20 @@ const Adminpage2 = () => {
               </div>
             </div>
             <div className="text-center mt-3">
-              <button
-                type="submit"
-                className="save text-decoration-none rounded-pill text-light w-50 py-3 mt-5 mb-5"
+              {/* <Managerlinkmodal type="submit"
                 onClick={handleSave}
+                disabled={loading}/> */}
+              <Managerlinkmodal
+                type="submit"
+                onClick={() => {
+                  handleSave();
+                  handleSaveClick();
+                }}
                 disabled={loading}
-                // closeModal={() => setShowModal(false)}
-                show={showModal} onHide={handleCloseModal}
-              >
-                Save
-              </button>
+                showModal={showModal}
+                onClose={handleCloseModal} 
+              />
+
               {/* <Managerlinkmodal/> */}
               {/* Modal component */}
 

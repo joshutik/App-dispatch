@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Adminregister.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Adminregister = ({onFormSwitch}) => {
     const [activeState, setActiveState] = useState('adminRegister')
@@ -16,6 +16,8 @@ const Adminregister = ({onFormSwitch}) => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,6 +64,8 @@ const Adminregister = ({onFormSwitch}) => {
 
       // Handle successful registration
       console.log("Registration successful:", response.data);
+      
+
 
       // Assume the backend returns an authentication token
       const authToken = response.data.token;
@@ -104,6 +108,7 @@ const Adminregister = ({onFormSwitch}) => {
 
     if (validateForm()) {
       await handleRegistration();
+      navigate('/Admin-login')
     } else {
       console.log("Form validation failed");
     }
