@@ -24,13 +24,21 @@ const Adminslogin = ({ onformSwitch }) => {
 
     try {
       const response = await axios.post("http://127.0.0.1:9090/jwt_token/", formData);
+      
 
       if (response.status === 200) {
         // Handle successful login
         const responseData = response.data; // Assuming the token data is in response.data
         console.log("Login successful:", responseData);
         
-        // Perform actions with the tokens as needed (e.g., store them, set in localStorage, etc.)
+        // Handle successful registration
+        console.log("Registration successful: See Access Token:", response.data.access);
+
+        // Assume the backend returns an authentication token
+        const authToken = response.data.token;
+
+        // Save the token to local storage or state for future API requests`
+        localStorage.setItem("authToken", authToken);
         
         // Redirect or navigate to a new route upon successful login
         navigate('/rider-page'); // Replace '/dashboard' with your desired route after login

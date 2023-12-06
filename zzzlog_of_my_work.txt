@@ -1,0 +1,10 @@
+Achievements: Today Wednesday 6th Dec. 2023 from 12pm- 5pm
+
+I have integrated the Registration API: It should now route to the login page on successful registration
+
+I have also integrated the loggin API thta will get Access token and refresh token - 
+: We have to enable it to be used for subsequent request to other endpoints.
+
+I have also integrated the API that creates the establishment: 
+ it is not routing to the view establishment page.
+

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-4 col-md-12 col-sm-12">
             <p className="mb-0">
-              <i class="bi bi-geo-alt-fill "></i>
+              <i className="bi bi-geo-alt-fill "></i>
               Avda de Espana 2428710-EL MOLAR (MADRID)
             </p>
           </div>

@@ -97,17 +97,16 @@ const Riderlogin = () => {
                 </div>
               </div>
               <div className="text-center mt-5">
-              <Copyriderlink />
-                {/* <button
+                <button
                   type="submit"
                   className="save rounded-pill text-light w-50 py-4 mt-5"
                 >
                   Save 
-                </button> */}
+                </button>
               </div>
             </div>
           </form>
-          {/* <Copyriderlink /> */}
+          <Copyriderlink />
         </div>
       </div>
     </div>
