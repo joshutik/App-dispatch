@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Establish.css";
 import img4 from "../Assets/card img-1.png";
-import img5 from "../Assets/card img-2.png";
-import img6 from "../Assets/card img-3.png";
+// import img5 from "../Assets/card img-2.png";
+// import img6 from "../Assets/card img-3.png";
 import img7 from "../Assets/Rectangle 21 (3).png";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Modal } from "react-bootstrap";
 import Example from "../Modal/Modal";
 
 const Establish = () => {
+  const [responseData, setResponseData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:9090/establishment/");
+  
+        if (response.status === 200) {
+          setResponseData(response.data);
+          console.log(response.data)
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div>
       <div className="row mt-5 gy-4">
         <div className="rounded-5 overlay">
-          <div class="container position-relative">
+        {responseData.map((item, index) => (
+          <div key={index} class="container position-relative">
             <Link to="/admin-page">
             <img className="w-100 " src={img4} alt="" />
             </Link>
@@ -23,7 +45,7 @@ const Establish = () => {
               {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
             </div>
             <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-              Lottery Company
+            {item.name}
             </div>
 
             {/* modal */}
@@ -54,47 +76,9 @@ const Establish = () => {
                           </div>)} */}
 
             <div className="middle">
-              <div className="text">
-                <Link to="/"></Link>
-              </div>
             </div>
           </div>
-          <div class="container position-relative">
-          <Link to="/admin-page">
-            <img className="w-100" src={img5} alt="" />
-            </Link>
-            <div className=" text-light fs-4 my-3">
-            <Example />
-              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
-            </div>
-            <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-              Lottery Company
-            </div>
-
-            <div className="middle">
-              <div className="text">
-                <Link to="/"></Link>
-              </div>
-            </div>
-          </div>
-          <div class="container position-relative">
-          <Link to="/admin-page">
-            <img className="w-100" src={img6} alt="" /> 
-            </Link>
-            <div className=" text-light fs-4 my-3">
-             
-              <Example />
-              {/* <i class="position-absolute top-0 end-0 me-4 mt-3 bi bi-three-dots-vertical text-light btn-modal"></i> */}
-            </div>
-            <div className="position-absolute top-50 end-0 translate-middle mt-5 text-light">
-              Lottery Company
-            </div>
-            <div className="middle">
-              <div className="text">
-                <Link to="/"></Link>
-              </div>
-            </div>
-          </div>
+          ))}
           <div class="container">
             <img className="w-100 image" src={img7} alt="" />
             <div className="middle">
