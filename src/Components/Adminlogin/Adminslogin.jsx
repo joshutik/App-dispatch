@@ -27,6 +27,7 @@ const Adminslogin = ({ onformSwitch }) => {
       
 
       if (response.status === 200) {
+
         // Handle successful login
         const responseData = response.data; // Assuming the token data is in response.data
         console.log("Login successful:", responseData);
@@ -46,6 +47,7 @@ const Adminslogin = ({ onformSwitch }) => {
         // Handle failed login
         console.error("Login failed:", response.status);
         navigate('/Rider-login');
+    
       }
     } catch (error) {
       console.error("Error during login:", error);
