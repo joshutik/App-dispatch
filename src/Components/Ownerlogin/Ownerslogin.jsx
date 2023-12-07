@@ -30,7 +30,8 @@ const Ownerslogin = () => {
 
     // Call the login API endpoint with formData
     try {
-      const response = await axios.post("https://jsonplaceholder.typicode.com/todos/1", {
+      const response = await axios.post("http://127.0.0.1:9090/jwt_token/", {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",

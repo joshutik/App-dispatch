@@ -6,14 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 const Adminregister = ({onFormSwitch}) => {
     const [activeState, setActiveState] = useState('adminRegister')
   const [formData, setFormData] = useState({
-    firstName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({
-    firstName: "",
+    first_name: "",
+    last_name: "",
     email: "",
+    username: "",
     password: "",
   });
 
@@ -36,11 +39,20 @@ const Adminregister = ({onFormSwitch}) => {
     let valid = true;
     const newErrors = { ...errors };
 
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First Name is required";
+    if (!formData.first_name.trim()) {
+      newErrors.first_name = "First Name is required";
       valid = false;
     }
 
+    if (!formData.last_name.trim()) {
+      newErrors.last_name = "First Name is required";
+      valid = false;
+    }
+
+    if (!formData.username.trim()) {
+      newErrors.username = "Email is required";
+      valid = false;
+    }
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
       valid = false;
@@ -58,7 +70,7 @@ const Adminregister = ({onFormSwitch}) => {
   const handleRegistration = async () => {
     try {
       const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/todos/1",
+        "http://127.0.0.1:9090/register/user/create",
         formData
       );
 
@@ -77,7 +89,7 @@ const Adminregister = ({onFormSwitch}) => {
         // The request was made, but the server responded with a status code
         // that falls out of the range of 2xx
         console.error(
-          "Registration failed with status code:",
+          "Registration failed with statu s code:",
           error.response.status
         );
         console.error("Error data:", error.response.data);
@@ -128,17 +140,44 @@ const Adminregister = ({onFormSwitch}) => {
                 </div>)}
                 
               <div className="my-4">
-                <label className="my-2">First Name(Surname first)</label>
+                <label className="my-2">First Name:</label>
                 <br />
                 <input
                   className="rounded-pill w-100 py-2 px-2"
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="first_name"
+                  value={formData.first_name}
                   onChange={handleChange}
                 />
 
-                <span style={{ color: "red" }}>{errors.firstName}</span>
+                <span style={{ color: "red" }}>{errors.first_name}</span>
+              </div>
+
+              <div className="my-4">
+                <label className="my-2">Last Name:</label>
+                <br />
+                <input
+                  className="rounded-pill w-100 py-2 px-2"
+                  type="text"
+                  name="last_name"
+                  value={formData.last_name}
+                  onChange={handleChange}
+                />
+
+                <span style={{ color: "red" }}>{errors.last_name}</span>
+              </div>
+
+              <div className="my-4">
+                <label className="my-2"> Username: </label>
+                <br></br>
+                <input
+                  className="rounded-pill w-100 py-2 px-2"
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                />
+                <span style={{ color: "red" }}>{errors.username}</span>
               </div>
 
               <div className="my-4">
