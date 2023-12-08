@@ -1,0 +1,27 @@
+:root{
+    --primary-color: #17476E;
+    --tertiary-color: #26e545;
+}
+
+.container-fluid{
+    font-family: poppins;
+    font-weight: 700;
+}
+
+.success-class{
+    color: var(--tertiary-color);
+}
+
+.owner-bg{
+    background-image: url(../Assets/Rectangle\ 7.png);
+    background-size: cover;
+
+}
+
+.plates{
+    background-color: var(--primary-color) !important;
+}
+
+h6{
+    color: white !important;
+}

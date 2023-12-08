@@ -1,0 +1,24 @@
+:root{
+    --primary-color: #17476E;
+}
+
+
+.bi-check-circle-fill{
+    color: var(--primary-color);
+    font-size: 9rem;
+}
+
+.confirm{
+    background-image: url(../Assets/Saved\ confirmation.png) !important;
+    background-size: cover;
+}
+
+.suceess{
+    font-family: poppins;
+    
+}
+
+.success-btn{
+    background-color: var(--primary-color) !important;
+    outline: none !important; 
+}

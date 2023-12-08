@@ -1,0 +1,17 @@
+:root{
+    --primary-color:#17476E;
+}
+
+.copy-btn{
+    color: var(--primary-color) !important;
+    outline: 2px solid var(--primary-color) !important;
+    background-color: white !important;
+    border: none !important;
+}
+
+.delete-btn{
+    color: red !important;
+    outline: 2px solid red !important;
+    background-color: white!;
+    border: none !important;
+}

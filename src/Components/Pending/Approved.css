@@ -1,0 +1,26 @@
+:root{
+    --primary-color:#17476E;
+}
+
+body{
+    /* background-color: black; */
+    font-family: poppins;
+}
+
+.card{
+    width: 18rem ;
+    margin:10rem auto;
+}
+
+.pending{
+    background-color: var(--primary-color) !important;
+    text-decoration: none !important;
+    padding-left:4rem !important ;
+    padding-right:4rem ;
+}
+
+.approved{
+    outline: 2px solid var(--primary-color) !important;
+    background-color: transparent !important;
+    color: var(--primary-color);
+}

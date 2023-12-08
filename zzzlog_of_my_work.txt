@@ -1,0 +1,29 @@
+Achievements: Today Wednesday 6th Dec. 2023 from 12pm- 5pm
+
+I have integrated the Registration API: It should now route to the login page on successful registration
+
+I have also integrated the loggin API thta will get Access token and refresh token - 
+: We have to enable it to be used for subsequent request to other endpoints.
+
+I have also integrated the API that creates the establishment: 
+ it is not routing to the view establishment page.
+
+
+
+Achievements: Today Thursday 7th Dec. 2023 from 11am- 5pm
+
+1. Successfully implemented the Rider and Establishment deletion on the modal!!
+
+2. Successfully implemented the Copy Rider Link and Copy Manager Link on the Rider and Establishment modal!!
+
+
+Achievements: Today Friday 8th Dec. 2023 from 1:33pm - 5pm
+1.0 Nothing
+
+
+2.0
+
+
+3.0
+
+

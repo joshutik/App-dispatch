@@ -1,0 +1,41 @@
+:root{
+    --primary-color:#17476E;
+    --secondary-color: red;
+}
+
+
+.container{
+    margin: 0px !important;
+}
+
+.bi, .save, .heading-1{
+    color: var(--primary-color);
+}
+
+input, select{
+    outline: 2px solid var(--primary-color);
+}
+
+body{
+    font-family: poppins;
+    /* background-color: white; */
+}
+.bg{
+    background-image:url(../Assets/Rectangle\ 7.png) ;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+   height: 50vh !important;
+    margin:0px;
+}
+@media screen and (max-width:1000px){
+    .bg{
+        background-image:url(../Assets/Rectangle\ 7.png) ;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 50vh !important;
+        margin:0px;
+    }
+}
+
