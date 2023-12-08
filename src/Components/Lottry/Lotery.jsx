@@ -105,7 +105,7 @@ const Lotery = () => {
                   onChange={handleSelectChange}
                 >
                   <option value="selected_establishment">Select Establishment</option>
-                  {responseData.map((item, index) => (
+                  {Array.isArray(responseData) && responseData.map((item, index) => (
                     <option key={index} value="select_establishment">
                       {item.name} {item.contact_person} {item.phone_number}
                     </option>
