@@ -329,7 +329,7 @@ const Adminpage2 = () => {
                   </option>
                   {riderData.map((rider, index) => (
                   <option key={index} value={rider.id}>
-                    {rider.first_name} {rider.last_name} - {rider.phone}
+                  {rider.first_name} {rider.last_name} - {rider.phone}
                   </option>
                   ))}
                 </select>
