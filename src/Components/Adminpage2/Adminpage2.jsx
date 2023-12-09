@@ -137,17 +137,17 @@ const Adminpage2 = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  // const handleInputChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
 
-    // Handle checkbox input separately
-    const newValue = type === "checkbox" ? checked : value;
+  //   // Handle checkbox input separately
+  //   const newValue = type === "checkbox" ? checked : value;
 
-    setFormData({
-      ...formData,
-      [name]: newValue,
-    });
-  };
+  //   setFormData({
+  //     ...formData,
+  //     [name]: newValue,
+  //   });
+  // };
 
   
 
@@ -211,30 +211,30 @@ const Adminpage2 = () => {
   };
 
 
-  const handleUpdate = async () => {
-    try {
-      const response = await axios.put(
-        `http://localhost:9090/establishment/${formData.name}`, // Update the endpoint with the establishment ID you're editing
-        {
-          contact_person: formData.contact_person,
-          phone_number: formData.phone_number,
-          // Add other fields you want to update
-        }
-      );
+  // const handleUpdate = async () => {
+  //   try {
+  //     const response = await axios.put(
+  //       `http://localhost:9090/establishment/${formData.name}`, // Update the endpoint with the establishment ID you're editing
+  //       {
+  //         contact_person: formData.contact_person,
+  //         phone_number: formData.phone_number,
+  //         // Add other fields you want to update
+  //       }
+  //     );
   
-      if (response.status === 200) {
-        console.log("Establishment data updated successfully!!");
-        toast.success("Establishment data updated successfully!!");
-        // You can add additional logic here such as updating state or informing the user about the successful update
-      } else {
-        console.error("Failed to update establishment data");
-        toast.error("Failed to update establishment data");
-      }
-    } catch (error) {
-      console.error("Error updating establishment data:", error);
-      toast.error("An error occurred. Please try again later.");
-    }
-  };
+  //     if (response.status === 200) {
+  //       console.log("Establishment data updated successfully!!");
+  //       toast.success("Establishment data updated successfully!!");
+  //       // You can add additional logic here such as updating state or informing the user about the successful update
+  //     } else {
+  //       console.error("Failed to update establishment data");
+  //       toast.error("Failed to update establishment data");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating establishment data:", error);
+  //     toast.error("An error occurred. Please try again later.");
+  //   }
+  // };
 
   return (
     <div>
