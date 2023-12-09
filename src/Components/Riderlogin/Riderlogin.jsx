@@ -28,7 +28,8 @@ const Riderlogin = () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:9090/rider/create/', {
+      console.log("About to save rider")
+      const response = await fetch('https://distachapp.onrender.com/rider/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
