@@ -1,27 +1,12 @@
-// MyModalComponent.js
-
-import React, { useState } from 'react';
-import { Modal, Button} from 'react-bootstrap';
+import { Modal} from 'react-bootstrap';
 import './Copyriderlink.css'
 import { Link } from 'react-router-dom';
 
 
-function Copyriderlink() {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleSaveClick = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
+function Copyriderlink({showModal, handleCloseModal}) {
   return (
     <>
-      <Button variant="primary" className='btn-link text-decoration-none text-light fw-bold rounded-pill w-50 py-3 mt-5 mb-5' onClick={handleSaveClick}>
-        Save
-      </Button>
+      
 
       <Modal show={showModal} onHide={handleCloseModal} dialogClassName="modal-transparent rounded-3">
       {/* <Modal.Header closeButton>

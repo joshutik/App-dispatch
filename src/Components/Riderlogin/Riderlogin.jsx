@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import './Riderlogin.css';
-import Copyriderlink from '../Copyriderlink/Copyriderlink';
+
+import React, { useState } from "react";
+import "./Riderlogin.css";
+import Copyriderlink from "../Copyriderlink/Copyriderlink";
 
 const Riderlogin = () => {
+  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
-    phone: '',
-    address: '',
+    first_name: "",
+    last_name: "",
+    phone: "",
+    address: "",
   });
 
   const handleInputChange = (e) => {
@@ -23,36 +25,45 @@ const Riderlogin = () => {
 
     // Check if required fields are not empty
     if (!formData.first_name || !formData.last_name || !formData.phone) {
-      alert('Please fill in all required fields.');
+      alert("Please fill in all required fields.");
       return;
     }
 
     try {
-      console.log("About to save rider")
-      const response = await fetch('https://distachapp.onrender.com/rider/create/', {
-        method: 'POST',
+      const response = await fetch("https://distachapp.onrender.com/rider/create/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        console.log('Data sent successfully!');
+        console.log("Data sent successfully!");
+        setShowModal(true);
         console.log(formData);
       } else {
         // Get error response from server
         const errorResponse = await response.json();
-        console.error('Failed to send data:', errorResponse);
+        console.error("Failed to send data:", errorResponse);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
+      alert(error)
     }
+  };
+
+
+
+ 
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
     <div>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="card rider-login rounded-5 w-100 p-5 mt-3">
           <div className="header mt-5">
             <p className="fs-3 fw-bold">Riders Details</p>
@@ -60,7 +71,7 @@ const Riderlogin = () => {
           <form onSubmit={handleSubmit}>
             <div className="col-lg-12 col-md-6 col-sm-12">
               <div className="mb-4">
-                <label htmlFor="first_name">First  Name</label>
+                <label htmlFor="first_name">First Name</label>
                 <input
                   type="text"
                   name="first_name"
@@ -99,15 +110,16 @@ const Riderlogin = () => {
               </div>
               <div className="text-center mt-5">
                 <button
-                  type="submit"
-                  className="save rounded-pill text-light w-50 py-4 mt-5"
+                  variant="primary"
+                  className="btn-link text-decoration-none text-light fw-bold py-3 rounded-pill w-50  mb-5"
+                  
                 >
-                  Save 
+                  Save
                 </button>
+                <Copyriderlink handleCloseModal={handleCloseModal} showModal={showModal} />
               </div>
             </div>
           </form>
-          <Copyriderlink />
         </div>
       </div>
     </div>
