@@ -13,7 +13,7 @@ const Establish = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://5d12-102-90-42-74.ngrok-free.app/establishment/');
+        const response = await axios.get('https://distachapp.onrender.com/establishment/');
 
         if (response.status === 200) {
           setResponseData(response.data);
@@ -34,7 +34,7 @@ const Establish = () => {
     <div>
       <div className="row mt-5 gy-4">
         <div className="rounded-5 overlay">
-          {Array.isArray(responseData) && responseData.map((item, index) => (
+          {responseData.map((item, index) => (
             <div key={index} className="container position-relative">
               <Link to="/admin-page">
                 <img className="w-100 " src={img4} alt="" />

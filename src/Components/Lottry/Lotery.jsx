@@ -32,7 +32,7 @@ const Lotery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://5d12-102-90-42-74.ngrok-free.app/establishment/");
+        const response = await axios.get("http://127.0.0.1:9090/establishment/");
         console.log(response)
         if (response.status === 200) {
           setResponseData(response.data);

@@ -10,6 +10,7 @@ const Rider = ({ onpageSwitch }) => {
   //   const toggleModal = () => {
   //     setModal(!modal);
   //   };
+  // const authToken = localStorage.getItem("authToken");
 
   return (
     <div className="container-fluid w-100">

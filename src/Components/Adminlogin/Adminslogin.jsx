@@ -23,7 +23,7 @@ const Adminslogin = ({ onformSwitch }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://5d12-102-90-42-74.ngrok-free.app/jwt_token/", formData);
+      const response = await axios.post("https://distachapp.onrender.com/jwt_token/", formData);
       
 
       if (response.status === 200) {

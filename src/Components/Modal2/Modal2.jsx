@@ -35,7 +35,7 @@ function Examplem({riderId, first_name, last_name, phone}) {
     if (riderId) {
       try {
         
-        const response = await axios.delete(`http://127.0.0.1:9090/rider/${riderId}`);
+        const response = await axios.delete(`https://distachapp.onrender.com/rider/${riderId}`);
         if (response.status === 204) {
           // Handle successful deletion
           console.log('Rider deleted successfully');

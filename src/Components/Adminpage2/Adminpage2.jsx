@@ -12,6 +12,7 @@ const Adminpage2 = () => {
   const [loading, setLoading] = useState(false);
   const [establishmentData, setEstablishmentData] = useState([]);
   const [riderData, setRiderData] = useState([]);
+  const [orderResponse, setOrderResponse] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
@@ -40,13 +41,19 @@ const Adminpage2 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const establishmentResponse = await axios.get("https://5d12-102-90-42-74.ngrok-free.app/establishment/");
-        const riderResponse = await axios.get("https://5d12-102-90-42-74.ngrok-free.app/rider/");
+        const establishmentResponse = await axios.get("https://distachapp.onrender.com/establishment/");
+        const riderResponse = await axios.get("https://distachapp.onrender.com/rider/");
+        const orderResponse = await axios.get("https://distachapp.onrender.com/order/");
 
         if (establishmentResponse.status === 200) {
           setEstablishmentData(establishmentResponse.data);
         } else {
           console.error("Failed to fetch establishment data");
+        }
+        if (orderResponse.status === 200) {
+          setOrderResponse(orderResponse.data);
+        } else {
+          console.error("Failed to fetch Order data");
         }
 
         if (riderResponse.status === 200) {
@@ -62,6 +69,22 @@ const Adminpage2 = () => {
     fetchData();
   }, []);
 
+
+  useEffect(() => {
+    if (orderResponse.length > 0) {
+      const orderData = orderResponse[0]; // Assuming you want to prefill with the first order
+  
+      setFormData((prevData) => ({
+        ...prevData,
+        order_number: orderData.order_number || '',
+        series: orderData.series || '',
+        quantity_delivered: orderData.quantity_delivered || '',
+        amount_paid: orderData.amount_paid || '',
+        balance: orderData.balance || '',
+        discount: orderData.discount || '',
+      }));
+    }
+  }, [orderResponse]);
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -76,12 +99,6 @@ const Adminpage2 = () => {
           contact_person: selectedEstablishment.contact_person,
           phone_number: selectedEstablishment.phone_number,
           order_number: selectedEstablishment.order_number,
-          created: selectedEstablishment.created,
-          // series: selectedEstablishment.series,
-          // quantity_delivered: selectedEstablishment.quantity_delivered,
-          // amount_paid: selectedEstablishment.amount_paid,
-          // balance: selectedEstablishment.balance,
-          // discount: selectedEstablishment.baldiscountance,
         }));
       }
     } else if (name === "rider") {
@@ -94,6 +111,25 @@ const Adminpage2 = () => {
           rider: selectedRider.id,
           riderPhone: selectedRider.phone,
           riderAddress: selectedRider.address,
+        }));
+      }
+    } else if (name === "order") {
+      const selectedOrder = orderResponse.find(
+        (order) => order.id === parseInt(value, 10)
+      );
+      if (selectedOrder) {
+        setFormData((prevData) => ({
+          ...prevData,
+          order: selectedOrder.id,
+          quantity_sold: selectedOrder.quantity_sold,
+          amount_charged: selectedOrder.amount_charged,
+          created: selectedOrder.created,
+          gift_or_discount: selectedOrder.gift_or_discount,
+          series: selectedOrder.series,
+          amount_paid: selectedOrder.amount_paid,
+          quantity_delivered: selectedOrder.quantity_delivered,
+          balance: selectedOrder.balance,
+          discount: selectedOrder.discount,
         }));
       }
     } else {
@@ -233,8 +269,7 @@ const Adminpage2 = () => {
                   <option value=""  disabled>
                     Select Establishment
                   </option>
-                  {Array.isArray(establishmentData) &&
-                  establishmentData.map((item, index) => (
+                  {establishmentData.map((item, index) => (
                   <option key={index} value={item.id}>
                     {item.name} {item.contact_person} - {item.phone_number}
                   </option>
@@ -292,7 +327,7 @@ const Adminpage2 = () => {
                   <option value="" disabled>
                     Select Rider
                   </option>
-                  {Array.isArray(riderData) && riderData.map((rider, index) => (
+                  {riderData.map((rider, index) => (
                   <option key={index} value={rider.id}>
                     {rider.first_name} {rider.last_name} - {rider.phone}
                   </option>

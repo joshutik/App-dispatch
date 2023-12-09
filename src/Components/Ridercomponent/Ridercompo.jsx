@@ -12,14 +12,17 @@ import Examplem from "../Modal2/Modal2";
 const Ridercompo = ({onpageSwitch}) => {
   const [responseData, setResponseData] = useState([]);
 
+  const authToken = localStorage.getItem("authToken");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:9090/rider/");
+        const response = await axios.get("https://distachapp.onrender.com/rider");
   
         if (response.status === 200) {
           setResponseData(response.data);
           console.log(response.data)
+          console.log(authToken)
         } else {
           console.error("Failed to fetch data");
         }
