@@ -12,8 +12,6 @@ import Examplem from "../Modal2/Modal2";
 const Ridercompo = ({onpageSwitch}) => {
   const [responseData, setResponseData] = useState([]);
 
-  const authToken = localStorage.getItem("authToken");
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,7 +20,8 @@ const Ridercompo = ({onpageSwitch}) => {
         if (response.status === 200) {
           setResponseData(response.data);
           console.log(response.data)
-          console.log(authToken)
+          const authToken = localStorage.getItem("authToken");
+          console.log("Token retrieved:", authToken);
         } else {
           console.error("Failed to fetch data");
         }

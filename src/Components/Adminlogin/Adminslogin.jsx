@@ -36,10 +36,9 @@ const Adminslogin = ({ onformSwitch }) => {
         console.log("Registration successful: See Access Token:", response.data.access);
 
         // Assume the backend returns an authentication token
-        const authToken = response.data.token;
-
-        // Save the token to local storage or state for future API requests`
+        const authToken = response.data.access;
         localStorage.setItem("authToken", authToken);
+        
         
         // Redirect or navigate to a new route upon successful login
         navigate('/rider-page'); // Replace '/dashboard' with your desired route after login
