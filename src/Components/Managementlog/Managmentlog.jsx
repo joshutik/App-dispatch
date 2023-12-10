@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Managmentlog.css";
 
+
+
+
 const Managmentlog = () => {
+  const [responseData, setResponseData] = useState([]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://distachapp.onrender.com/order/");
+  
+        if (response.status === 200) {
+          setResponseData(response.data);
+          console.log(response.data)
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+
+
+
+
   return (
     <div className="container-fluid">
       <div className="manager-log">
@@ -61,16 +93,17 @@ const Managmentlog = () => {
                 </tr>
               </thead>
               <tbody className="text-center position-relative">
+              {responseData.map((item, index) => (
+              
                 <tr>
-                  <td className="p-4 text-center">23-11-2021</td>
-                  <td className="p-4 text-center">3356</td>
-                  <td className="p-4 text-center">24-46</td>
-                  <td className="p-4 text-center">$200</td>
-                  <td className="p-4 text-center">$200</td>
-                  <td className="p-4 text-center">$500</td>
-                  <td className="p-4 text-center">$200</td>
-                  <td className="p-5 text-center ">
-                    $200
+                  <td key={index} className="p-4 text-left">{(new Date(item.created)).getDate()}-{(new Date(item.created)).getMonth() + 1}-{(new Date(item.created)).getFullYear()}</td>
+                  <td className="p-4 text-center">{item.order_number}</td>
+                  <td className="p-4 text-center">{item.series}</td>
+                <td className="p-4 text-center">{item.quantity_delivered}</td>
+                <td className="p-4 text-center">${item.amount_paid}</td>
+                  <td className="p-4 text-center">${item.balance}</td>
+                  <td className="p-4 text-center">${item.discount}</td>
+                  <td className="p-5 text-center ">$GIFT NOT IN The Order API</td>
                    <div className="position-relative re">
 
                     <div className="vertical-letters position-absolute">
@@ -84,36 +117,10 @@ const Managmentlog = () => {
                       <span>d</span>
                     </div>
                     </div>
-                  </td>
+                  
                 </tr>
-                <tr className="text-center">
-                  <td className="p-4 text-center">23-11-2021</td>
-                  <td className="p-4">3356</td>
-                  <td className="p-4">24-46</td>
-                  <td className="p-4">$200</td>
-                  <td className="p-4">$200</td>
-                  <td className="p-4">$500</td>
-                  <td className="p-4">$200</td>
-                  <td className="p-4">$200</td>
-                </tr>
-                <tr>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                </tr>
-                <tr>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                  <td className="p-4"></td>
-                </tr>
+                ))} 
+          
               </tbody>
             </table>
           </div>
@@ -124,7 +131,7 @@ const Managmentlog = () => {
           <div className="col-lg-4 col-md-12 col-sm-6">
             <p className="mb-0">
               <i class="bi bi-geo-alt-fill "></i>
-              Avda de Espana 2428710-EL MOLAR (MADRID)
+              Avda de Espana 2428710-EL MOLAR (MADRID) 
             </p>
           </div>
 

@@ -4,7 +4,6 @@ import "./Addorder.css";
 import Successmodal from "../Successmodal/Successmodal";
 
 
-
 const Addorder = () => {
 
   const [formData, setFormData] = useState({
@@ -21,6 +20,7 @@ const Addorder = () => {
     amount_charged: "",
     gift_or_discount: "",
   });
+
   return (
     <div>
       <div className="container-fluid bg bg-light">

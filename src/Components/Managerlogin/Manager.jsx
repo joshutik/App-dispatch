@@ -3,6 +3,7 @@ import "./Manager.css";
 import ResponsiveExample from "../Tables/Responsivetable";
 
 const Manager = () => {
+
   // const [tableData, setTableData] = useState([
   //   { name: "", value: "" },
   //   { name: "", value: "" },
@@ -17,6 +18,7 @@ const Manager = () => {
   //   );
   //   setTableData(updatedData);
   // };
+
   return (
     <div>
       <div className="container-fluid ">
@@ -35,6 +37,9 @@ const Manager = () => {
           </form>
           <div>
           <div className="row justify-content-center align-items-center mt-5">
+
+            
+
             {/* Table */}
             {/* <div className=" w-75">
               <table className="table table-bordered table-responsive align-middle w-100">

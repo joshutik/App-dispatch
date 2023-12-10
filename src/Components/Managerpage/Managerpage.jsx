@@ -205,7 +205,7 @@ const Managerpage = () => {
             <div className="col-lg-4 col-md-12 col-sm-6">
               <p className="mb-0">
                 <i class="bi bi-geo-alt-fill "></i>
-                Avda de Espana 2428710-EL MOLAR (MADRID)
+                Avda de Espana 2428710-EL MOLAR (MADRID)qwertyuqwertyu
               </p>
             </div>
 
@@ -215,7 +215,7 @@ const Managerpage = () => {
 
             <div className="col-lg-4 col-md-12 col-sm-6">
               <i class="bi bi-envelope-at-fill"></i>
-              <a href="/">loteriaelmolar@yahoo.es</a>
+              <a href="/">loteriaelmolar@yahoo.es12345678</a>
             </div>
           </div>
         </div>
