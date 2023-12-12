@@ -7,11 +7,11 @@ function ResponsiveExample() {
   const columnTypes = [
     "Date",
     "Series",
-    "Quantity delivered",
-    "Amount paid",
+    "Quantity Delivered",
+    "Amount Paid",
     "Balance",
     "Discount",
-    "Confirmation",
+    "Confirm",
   ];
 
   const [cellValues, setCellValues] = useState(

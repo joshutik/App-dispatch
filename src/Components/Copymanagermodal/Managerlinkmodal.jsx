@@ -6,7 +6,7 @@ import './Managerlinkmodal.css'
 import { Link } from 'react-router-dom';
 
 
-function Managerlinkmodal({ type, onClick, disabled, onClose  }) {
+function Managerlinkmodal({ type, onClick, disabled, onClose, onSaveClick  }) {
   const [showModal, setShowModal] = useState(false);
 
   const handleSaveClick = () => {
@@ -15,6 +15,10 @@ function Managerlinkmodal({ type, onClick, disabled, onClose  }) {
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+  const handleSave = () => {
+    onSaveClick(); // Call the onSaveClick function passed from the parent
+    handleCloseModal(); // Close the modal after calling the onSaveClick function
   };
 
   return (
@@ -39,7 +43,7 @@ function Managerlinkmodal({ type, onClick, disabled, onClose  }) {
                     <div className='mt-5 mb-5'>
                         <div>
                
-                        <Link   to="/rider-page"  onClick={onClose} className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
+                        <Link   to="/rider-page"  onClick={handleSave} className='rounded-pill go-back py-3 px-5 text-decoration-none d-block  w-100 btn-link mt-3 text-light'>Go back</Link>
                         </div>
                         <div>
                         <Link to="/" className='rounded-pill py-3 px-5 text-decoration-none d-block w-100 btn-link mt-3 text-light'>Copy manager link</Link>

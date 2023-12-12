@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Adminpage2.css";
@@ -8,15 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 
 const Adminpage2 = () => {
-  
   const [loading, setLoading] = useState(false);
-  const [establishmentData, setEstablishmentData] = useState([]);
-  const [riderData, setRiderData] = useState([]);
-  const [orderResponse, setOrderResponse] = useState([]);
-
   const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
-
+  const [riderData, setRiderData] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     contact_person: "",
@@ -25,36 +19,27 @@ const Adminpage2 = () => {
     riderPhone: "",
     riderAddress: "",
     order_number: "",
-    reserved_quantity: "",
-    amount_returned_by_customer: "",
-    quantity_sold: "",
+    reserved_quantity: 0,
+    amount_returned_by_customer: 0,
+    quantity_sold: 0,
     amount_charged: "",
-    gift_or_discount: "",
-    quantity_delivered: "",
-    amount_paid : "",
-    balance : "",
-    discount: "",
-    confirm: false
+    gift_or_discount: 0,
+    quantity_delivered: 0,
+    amount_paid: 0,
+    balance: 0,
+    discount: 0,
+    confirm: false,
+    created: new Date().toISOString(), // Set to the current date-time in ISO format
+    series: "",
   });
 
- 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const establishmentResponse = await axios.get("https://distachapp.onrender.com/establishment/");
+        console.log('trying to get riders')
         const riderResponse = await axios.get("https://distachapp.onrender.com/rider/");
-        const orderResponse = await axios.get("https://distachapp.onrender.com/order/");
-
-        if (establishmentResponse.status === 200) {
-          setEstablishmentData(establishmentResponse.data);
-        } else {
-          console.error("Failed to fetch establishment data");
-        }
-        if (orderResponse.status === 200) {
-          setOrderResponse(orderResponse.data);
-        } else {
-          console.error("Failed to fetch Order data");
-        }
 
         if (riderResponse.status === 200) {
           setRiderData(riderResponse.data);
@@ -69,42 +54,11 @@ const Adminpage2 = () => {
     fetchData();
   }, []);
 
-
-  useEffect(() => {
-    if (orderResponse.length > 0) {
-      const orderData = orderResponse[0]; // Assuming you want to prefill with the first order
-  
-      setFormData((prevData) => ({
-        ...prevData,
-        order_number: orderData.order_number || '',
-        series: orderData.series || '',
-        quantity_delivered: orderData.quantity_delivered || '',
-        amount_paid: orderData.amount_paid || '',
-        balance: orderData.balance || '',
-        discount: orderData.discount || '',
-      }));
-    }
-  }, [orderResponse]);
   const handleChange = (e) => {
+    console.log('Getting and Setting riders')
     const { name, value } = e.target;
-
-    if (name === "name") {
-      const selectedEstablishment = establishmentData.find(
-        (establishment) => establishment.id === parseInt(value, 10)
-      );
-      if (selectedEstablishment) {
-        setFormData((prevData) => ({
-          ...prevData,
-          name: selectedEstablishment.name,
-          contact_person: selectedEstablishment.contact_person,
-          phone_number: selectedEstablishment.phone_number,
-          order_number: selectedEstablishment.order_number,
-        }));
-      }
-    } else if (name === "rider") {
-      const selectedRider = riderData.find(
-        (rider) => rider.id === parseInt(value, 10)
-      );
+    if (name === "rider") {
+      const selectedRider = riderData.find((rider) => rider.id === parseInt(value, 10));
       if (selectedRider) {
         setFormData((prevData) => ({
           ...prevData,
@@ -113,55 +67,20 @@ const Adminpage2 = () => {
           riderAddress: selectedRider.address,
         }));
       }
-    } else if (name === "order") {
-      const selectedOrder = orderResponse.find(
-        (order) => order.id === parseInt(value, 10)
-      );
-      if (selectedOrder) {
-        setFormData((prevData) => ({
-          ...prevData,
-          order: selectedOrder.id,
-          quantity_sold: selectedOrder.quantity_sold,
-          amount_charged: selectedOrder.amount_charged,
-          created: selectedOrder.created,
-          gift_or_discount: selectedOrder.gift_or_discount,
-          series: selectedOrder.series,
-          amount_paid: selectedOrder.amount_paid,
-          quantity_delivered: selectedOrder.quantity_delivered,
-          balance: selectedOrder.balance,
-          discount: selectedOrder.discount,
-        }));
-      }
     } else {
       setFormData((prevData) => ({ ...prevData, [name]: value }));
     }
   };
 
-  // const handleInputChange = (e) => {
-  //   const { name, value, type, checked } = e.target;
-
-  //   // Handle checkbox input separately
-  //   const newValue = type === "checkbox" ? checked : value;
-
-  //   setFormData({
-  //     ...formData,
-  //     [name]: newValue,
-  //   });
-  // };
-
-  
-
-
   const handleSubmit = async () => {
     try {
-      const response = await axios.put(
-        `http://127.0.0.1:9090/establishment/create/${formData.id}`,
-        formData
-      );
+      console.log("I am about to create an establishment")
+      setLoading(true);
+      const response = await axios.post("http://127.0.0.1:9090/establishment/create/", formData);
 
-      if (response.status === 200) {
-        console.log(formData);
+      if (response.status === 201) {
         console.log("Establishment data sent successfully!!");
+        toast.success("Establishment data sent successfully!!");
         navigate("/rider-page-1");
       } else {
         console.error("Failed to send establishment data");
@@ -169,37 +88,6 @@ const Adminpage2 = () => {
       }
     } catch (error) {
       console.error("Error sending establishment data:", error);
-      toast.error("An error occurred. Please try again later.");
-    }
-  };
-  // const handleSubmitOrder = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //       "http://127.0.0.1:9090/order/create/",
-  //       formData
-  //     );
-
-  //     if (response.status === 200) {
-  //       console.log("Order details sent successfully!");
-  //       toast.success("Order details sent successfully!");
-  //       setShowModal(true);
-  //     } else {
-  //       console.error("Failed to send order details.");
-  //       toast.error("Failed to send order details.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error sending order details:", error);
-  //     toast.error("An error occurred. Please try again later.");
-  //   }
-  // };
-
-  const handleSave = async () => {
-    try {
-      setLoading(true);
-      await handleSubmit();
-
-    } catch (error) {
-      console.error("Error during save:", error);
       toast.error("An error occurred. Please try again later.");
     } finally {
       setLoading(false);
@@ -210,38 +98,13 @@ const Adminpage2 = () => {
     setShowModal(false);
   };
 
-
-  // const handleUpdate = async () => {
-  //   try {
-  //     const response = await axios.put(
-  //       `http://localhost:9090/establishment/${formData.name}`, // Update the endpoint with the establishment ID you're editing
-  //       {
-  //         contact_person: formData.contact_person,
-  //         phone_number: formData.phone_number,
-  //         // Add other fields you want to update
-  //       }
-  //     );
-  
-  //     if (response.status === 200) {
-  //       console.log("Establishment data updated successfully!!");
-  //       toast.success("Establishment data updated successfully!!");
-  //       // You can add additional logic here such as updating state or informing the user about the successful update
-  //     } else {
-  //       console.error("Failed to update establishment data");
-  //       toast.error("Failed to update establishment data");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error updating establishment data:", error);
-  //     toast.error("An error occurred. Please try again later.");
-  //   }
-  // };
-
   return (
     <div>
+      <form onSubmit={handleSubmit}>
       <div className="container-fluid add">
         <div className="pt-3 ps-5">
           <Link className="text-light text-decoration-none fs-5 ml-4" to="/">
-            <i className="bi bi-chevron-left"></i> Go Back
+            <i className="bi bi-chevron-left"></i> Go Back 
           </Link>
         </div>
         <div className="row justify-content-center align-items-center">
@@ -255,29 +118,21 @@ const Adminpage2 = () => {
           <p className="fs-3 fw-bold">Establecimiento</p>
         </div>
         <div className="col-lg-12 col-md-12 col-sm-12">
-        <div className="mb-4 mt-5">
-                <label htmlFor="name" className="mb-3">
-                  Select Establishment
-                </label>
-                <select
-                  className="form-select rounded-pill w-100 border-1 py-3 px-3 numero"
-                  aria-label="establishment" 
-                  name="name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                >
-                  <option value=""  disabled>
-                    Select Establishment
-                  </option>
-                  {establishmentData.map((item, index) => (
-                  <option key={index} value={item.id}>
-                    {item.name} {item.contact_person} - {item.phone_number}
-                  </option>
-                  ))}
-                </select>
-              </div>
+       
           <div>
             <div className="row mt-5 pt-3">
+              <div className="col-lg-6 col-md-12 col-sm-12">
+                <label htmlFor="contactPerson" className="mb-3">
+                  Name of Establishment
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name || ''}
+                  onChange={handleChange}
+                  className="form-control rounded-pill w-100 border-1 py-3 px-3"
+                />
+              </div>
               <div className="col-lg-6 col-md-12 col-sm-12">
                 <label htmlFor="contactPerson" className="mb-3">
                   Persona de contacto
@@ -287,7 +142,6 @@ const Adminpage2 = () => {
                   name="contact_person"
                   value={formData.contact_person || ''}
                   onChange={handleChange}
-                  readOnly={false} // Always editable
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
               </div>
@@ -300,7 +154,6 @@ const Adminpage2 = () => {
                     name="phone_number"
                     value={formData.phone_number || ''}
                     onChange={handleChange}
-                    readOnly={false}
                     className="form-control rounded-pill w-100 border-1 py-3 px-3"
                   />
               </div>
@@ -380,7 +233,7 @@ const Adminpage2 = () => {
                 <input
                   type="text"
                   name="order_number"
-                  value={formData.order_number || ''}
+                  value={formData.order_number}
                   onChange={handleChange}
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
@@ -391,8 +244,8 @@ const Adminpage2 = () => {
                 </label>
                 <input
                   type="text"
-                  name="order_number"
-                  value={formData.order_number}
+                  name="created"
+                  value={formData.created}
                   onChange={handleChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
@@ -411,10 +264,70 @@ const Adminpage2 = () => {
               </div>
               <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                 <label htmlFor="name" className="fs-5 mb-2">
-                Quantity Delivered
+                Quantity Reserved
+                </label>
+                <input
+                  type="number"
+                  name="reserved_quantity"
+                  value={formData.reserved_quantity}
+                  onChange={handleChange}
+                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                />
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                <label htmlFor="name" className="fs-5 mb-2">
+                Amount Returned By Customer 
+                </label>
+                <input
+                  type="number"
+                  name="amount_returned_by_customer"
+                  value={formData.amount_returned_by_customer}
+                  onChange={handleChange}
+                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                />
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                <label htmlFor="name" className="fs-5 mb-2">
+                  Quantity Sold
+                </label>
+                <input
+                  type="number"
+                  name="quantity_sold"
+                  value={formData.quantity_sold}
+                  onChange={handleChange}
+                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                />
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                <label htmlFor="name" className="fs-5 mb-2">
+                 AMount Charged
                 </label>
                 <input
                   type="text"
+                  name="amount_charged"
+                  value={formData.amount_charged}
+                  onChange={handleChange}
+                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                />
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                <label htmlFor="name" className="fs-5 mb-2">
+                 Gift or Dsicount
+                </label>
+                <input
+                  type="number"
+                  name="gift_or_discount"
+                  value={formData.gift_or_discount}
+                  onChange={handleChange}
+                  className="rounded-pill w-100 border-1 py-3 px-3 form-control"
+                />
+              </div>
+              <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
+                <label htmlFor="name" className="fs-5 mb-2">
+                Quantity Delivered
+                </label>
+                <input
+                  type="number"
                   name="quantity_delivered"
                   value={formData.quantity_delivered}
                   onChange={handleChange}
@@ -426,7 +339,7 @@ const Adminpage2 = () => {
                 Amount Paid
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="amount_paid"
                   value={formData.amount_paid}
                   onChange={handleChange}
@@ -435,10 +348,10 @@ const Adminpage2 = () => {
               </div>
               <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                 <label htmlFor="name" className="fs-5 mb-2">
-                  Balance
+                Balance
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="balance"
                   value={formData.balance}
                   onChange={handleChange}
@@ -447,12 +360,12 @@ const Adminpage2 = () => {
               </div>
               <div className="col-lg-6 col-md-12 col-sm-12 mb-5">
                 <label htmlFor="name" className="fs-5 mb-2">
-                  Discount
+                Confirm
                 </label>
                 <input
                   type="text"
-                  name="discount"
-                  value={formData.discount}
+                  name="confirm"
+                  value={formData.confirm}
                   onChange={handleChange}
                   className="rounded-pill w-100 border-1 py-3 px-3 form-control"
                 />
@@ -462,16 +375,21 @@ const Adminpage2 = () => {
             <div className="text-center mt-3">
               {/* <Managerlinkmodal type="submit"
                 onClick={handleSave}
-                disabled={loading}/> */}
-              <Managerlinkmodal
-                type="submit"
-                onClick={() => {
-                  handleSave();
-                }}
-                disabled={loading}
-                showModal={showModal}
-                onClose={handleCloseModal} 
-              />
+                    disabled={loading}/> */}
+              {/* <button type="submit"
+              onClick={handleSubmit}
+              disabled={loading}
+              showModal={showModal}
+              onClose={handleCloseModal}>SUBMIT</button>
+               */}
+         
+              { <Managerlinkmodal
+              type="submit"
+              onSaveClick={handleSubmit}
+              disabled={loading}
+              showModal={showModal}
+              onClose={handleCloseModal}
+            /> } 
 
               {/* <Managerlinkmodal/> */}
               {/* Modal component */}
@@ -493,6 +411,7 @@ const Adminpage2 = () => {
           </div>
         </div>
       </div>
+      </form>
       <Footer />
     </div>
   );

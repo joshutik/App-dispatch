@@ -5,6 +5,28 @@ import Currentdate from "../Currentdate/Currentdate";
 import axios from "axios";
 
 const Ownerslog = () => {
+  const [establishmentData, setEstablishmentData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const establishmentResponse = await axios.get("https://distachapp.onrender.com/establishment/");
+        if (establishmentResponse.status === 200) {
+          setEstablishmentData(establishmentResponse.data);
+        } else {
+          console.error("Failed to fetch establishment data");
+        }
+        
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+
   const [totalEarnings, setTotalEarnings] = useState("");
   const [order, setOrder] = useState("");
   const [amtPaid, setAmtPaid] = useState("");
@@ -68,10 +90,12 @@ const Ownerslog = () => {
             className="form-select rounded-pill py-3"
             aria-label="Default select example"
           >
-            <option selected>All establishment</option>
-            <option value="1">Lottery Company 1</option>
-            <option value="2">Lottery Company 1</option>
-            <option value="3">Lottery Company 1</option>
+            <option selected>Select an establishment</option>
+                  {establishmentData.map((item, index) => (
+                  <option key={index} value={item.id}>
+                    {item.name} {item.contact_person} - {item.phone_number}
+            </option>
+            ))}
           </select>
           <div className="row gy-4 justify-content-center">
             <div className="row mt-5">

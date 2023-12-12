@@ -30,7 +30,7 @@ const Ownerslogin = () => {
 
     // Call the login API endpoint with formData
     try {
-      const response = await axios.post("", {
+      const response = await axios.post("https://distachapp.onrender.com/jwt_token/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

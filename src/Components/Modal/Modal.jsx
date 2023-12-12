@@ -30,7 +30,7 @@ function Example({ establishmentId }) {
     console.log('About to delete establishment');
     if (establishmentId) {
       try {
-        const response = await axios.delete(`https://distachapp.onrender.com/establishment/${establishmentId}`);
+        const response = await axios.delete(`http://localhost:9090/establishment/${establishmentId}`);
         if (response.status === 204) {
           console.log('Establishment deleted successfully');
           // Handle deletion success

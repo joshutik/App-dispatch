@@ -48,7 +48,7 @@ const Managerpage = () => {
             <div className="fs-5 icon col-lg-6 col-md-6 col-sm-12">
               <Link to="/add-order" className="icon text-decoration-none">
                 {" "}
-                <i class="bi bi-plus-lg"></i>Add new order
+                <i class="bi bi-plus-lg"></i>Add new order  
               </Link>
             </div>
             <div className="fs-5 col-lg-6 col-md-6 col-sm-12 text-end">

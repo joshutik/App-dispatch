@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import "./Addorder.css";
 // import { Link } from "react-router-dom";
 import Successmodal from "../Successmodal/Successmodal";
@@ -6,20 +6,20 @@ import Successmodal from "../Successmodal/Successmodal";
 
 const Addorder = () => {
 
-  const [formData, setFormData] = useState({
-    name: "",
-    contact_person: "",
-    phone_number: "",
-    rider: "",
-    riderPhone: "",
-    riderAddress: "",
-    order_number: "",
-    reserved_quantity: "",
-    amount_returned_by_customer: "",
-    quantity_sold: "",
-    amount_charged: "",
-    gift_or_discount: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   contact_person: "",
+  //   phone_number: "",
+  //   rider: "",
+  //   riderPhone: "",
+  //   riderAddress: "",
+  //   order_number: "",
+  //   reserved_quantity: "",
+  //   amount_returned_by_customer: "",
+  //   quantity_sold: "",
+  //   amount_charged: "",
+  //   gift_or_discount: "",
+  // });
 
   return (
     <div>
