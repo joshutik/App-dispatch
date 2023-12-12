@@ -76,8 +76,6 @@
 
 //       // Handle successful registration
 //       console.log("Registration successful:", response.data);
-      
-
 
 //       // Assume the backend returns an authentication token
 //       const authToken = response.data.token;
@@ -133,12 +131,12 @@
 //           <div className="card rounded-5 w-100 p-5 mx-auto shadow">
 //             <form onSubmit={handleSubmit}>
 //                 {activeState === "adminRegister" && (<div>
-//                     <h2 className="text-center text-color">Admin Register</h2> 
+//                     <h2 className="text-center text-color">Admin Register</h2>
 //                 </div>)}
 //                 {activeState === "ownerRegister" && (<div>
-//                     <h2 className="text-center text-color">Owner Register</h2> 
+//                     <h2 className="text-center text-color">Owner Register</h2>
 //                 </div>)}
-                
+
 //               <div className="my-4">
 //                 <label className="my-2">First Name:</label>
 //                 <br />
@@ -225,7 +223,7 @@
 //                     <Link className="text-decoration-none"  onClick={() => setActiveState("adminRegister")}> register as admin
 //                    </Link> </p>
 //               </div>}
-             
+
 //             </form>
 //           </div>
 //           {errors.registration && (
@@ -238,7 +236,6 @@
 // };
 
 // export default Adminregister;
-
 
 import React, { useState } from "react";
 import "./Adminregister.css";
@@ -316,7 +313,7 @@ const Adminregister = ({ onFormSwitch }) => {
       setLoading(true);
       // setLoading(true); // Set loading to true when the registration process starts
       const response = await axios.post(
-        "http://127.0.0.1:9090/register/user/create",
+        "https://distachapp.onrender.com/register/user/create",
         formData
       );
 

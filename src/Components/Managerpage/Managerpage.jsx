@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Managerpage.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import ResponsiveExample from "../Tables/Responsivetable";
 
 const Managerpage = () => {
@@ -19,12 +20,41 @@ const Managerpage = () => {
   //   setTableData(updatedData);
   // };
 
+  const { id } = useParams();
+  const [establishment, setEstablishment] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://distachapp.onrender.com/establishment/${id}`
+        );
+
+        if (response.status === 200) {
+          setEstablishment(response.data);
+          localStorage.setItem("company", JSON.stringify(response.data));
+          console.log(response.data);
+        } else {
+          console.error("Failed to fetch data");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
       <div className="container-fluid">
         <div className="manager-page">
           <div className="pt-3 ps-5">
-            <Link className="text-light text-decoration-none fs-5 ml-4" to="/Rider-login">
+            <Link
+              className="text-light text-decoration-none fs-5 ml-4"
+              to="/Rider-login"
+            >
               <i className="bi bi-chevron-left"></i> Go Back
             </Link>
           </div>
@@ -48,7 +78,7 @@ const Managerpage = () => {
             <div className="fs-5 icon col-lg-6 col-md-6 col-sm-12">
               <Link to="/add-order" className="icon text-decoration-none">
                 {" "}
-                <i class="bi bi-plus-lg"></i>Add new order  
+                <i class="bi bi-plus-lg"></i>Add new order
               </Link>
             </div>
             <div className="fs-5 col-lg-6 col-md-6 col-sm-12 text-end">

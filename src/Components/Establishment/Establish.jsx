@@ -1,28 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Establish.css';
-import img4 from '../Assets/card img-1.png';
-import img7 from '../Assets/Rectangle 21 (3).png';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Example from '../Modal/Modal';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Establish.css";
+import img4 from "../Assets/card img-1.png";
+import img7 from "../Assets/Rectangle 21 (3).png";
+import { Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Example from "../Modal/Modal";
 
 const Establish = () => {
   const [responseData, setResponseData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://distachapp.onrender.com/establishment/');
+        const response = await axios.get(
+          "https://distachapp.onrender.com/establishment/"
+        );
 
         if (response.status === 200) {
           setResponseData(response.data);
           console.log(response.data);
         } else {
-          console.error('Failed to fetch data');
+          console.error("Failed to fetch data");
         }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -30,15 +33,21 @@ const Establish = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const openCompany = (company) => {
+    console.log(company);
+    // localStorage.setItem("company", JSON.stringify(company));
+    navigate(`/admin-page/${company.id}`);
+  };
+
   return (
     <div>
       <div className="row mt-5 gy-4">
         <div className="rounded-5 overlay">
           {responseData.map((item, index) => (
             <div key={index} className="container position-relative">
-              <Link to="/admin-page">
+              <div onClick={() => openCompany(item)}>
                 <img className="w-100 " src={img4} alt="" />
-              </Link>
+              </div>
               <div className="text-light fs-4 my-3">
                 <Example establishmentId={item.id} />
               </div>
