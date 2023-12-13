@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./Adminregister.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+// import Loader from 'react-loader-spinner';
 
-const Adminregister = ({onFormSwitch}) => {
-    const [activeState, setActiveState] = useState('adminRegister')
+const Adminregister = ({ onFormSwitch }) => {
+  const [activeState] = useState("adminRegister");
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -21,7 +22,8 @@ const Adminregister = ({onFormSwitch}) => {
   });
 
   const navigate = useNavigate();
-
+  const [registrationError, setRegistrationError] = useState(null); // State to hold th
+  const [loading, setLoading] = useState(false); // State for loading
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -45,12 +47,12 @@ const Adminregister = ({onFormSwitch}) => {
     }
 
     if (!formData.last_name.trim()) {
-      newErrors.last_name = "First Name is required";
+      newErrors.last_name = "Last Name is required";
       valid = false;
     }
 
-    if (!formData.username.trim()) {
-      newErrors.username = "Email is required";
+    if (!formData.username?.trim()) {
+      newErrors.username = "Username is required";
       valid = false;
     }
     if (!formData.email.trim()) {
@@ -69,49 +71,38 @@ const Adminregister = ({onFormSwitch}) => {
 
   const handleRegistration = async () => {
     try {
+      setLoading(true);
+      // setLoading(true); // Set loading to true when the registration process starts
       const response = await axios.post(
-        "http://127.0.0.1:9090/register/user/create",
+        "https://distachapp.onrender.com/register/user/create",
         formData
       );
 
       // Handle successful registration
       console.log("Registration successful:", response.data);
-      
-
-
-      // Assume the backend returns an authentication token
-      const authToken = response.data.token;
-
-      // Save the token to local storage or state for future API requests
-      localStorage.setItem("authToken", authToken);
+      navigate("/admin-login");
+      console.log("Server Response:", response);
     } catch (error) {
       if (error.response) {
         // The request was made, but the server responded with a status code
         // that falls out of the range of 2xx
         console.error(
-          "Registration failed with statu s code:",
+          "Registration failed with status code:",
           error.response.status
         );
         console.error("Error data:", error.response.data);
-        setErrors({
-          ...errors,
-          registration: "Registration failed. Please try again.",
-        });
+        setRegistrationError("Registration failed. Please try again.");
       } else if (error.request) {
         // The request was made but no response was received
         console.error("No response received from the server");
-        setErrors({
-          ...errors,
-          registration: "No response received from the server.",
-        });
+        setRegistrationError("No response received from the server.");
       } else {
         // Something happened in setting up the request that triggered an Error
         console.error("Error during request setup:", error.message);
-        setErrors({
-          ...errors,
-          registration: "An error occurred. Please try again.",
-        });
+        setRegistrationError("An error occurred. Please try again.");
       }
+    } finally {
+      setLoading(false); // Set loading to false regardless of success or failure
     }
   };
 
@@ -120,7 +111,6 @@ const Adminregister = ({onFormSwitch}) => {
 
     if (validateForm()) {
       await handleRegistration();
-      navigate('/Admin-login')
     } else {
       console.log("Form validation failed");
     }
@@ -132,13 +122,17 @@ const Adminregister = ({onFormSwitch}) => {
         <div className="col-lg-6 col-md-7 col-sm-12">
           <div className="card rounded-5 w-100 p-5 mx-auto shadow">
             <form onSubmit={handleSubmit}>
-                {activeState === "adminRegister" && (<div>
-                    <h2 className="text-center text-color">Admin Register</h2> 
-                </div>)}
-                {activeState === "ownerRegister" && (<div>
-                    <h2 className="text-center text-color">Owner Register</h2> 
-                </div>)}
-                
+              {activeState === "adminRegister" && (
+                <div>
+                  <h2 className="text-center text-color">Admin Register</h2>
+                </div>
+              )}
+              {activeState === "ownerRegister" && (
+                <div>
+                  <h2 className="text-center text-color">Owner Register</h2>
+                </div>
+              )}
+
               <div className="my-4">
                 <label className="my-2">First Name:</label>
                 <br />
@@ -211,21 +205,44 @@ const Adminregister = ({onFormSwitch}) => {
                 <button
                   type="submit"
                   className="w-75 rounded-pill py-2 text-light butn-bg text-bold"
+                  disabled={loading} // Use 'loading' directly without curly braces
                 >
-                  Register
+                  {loading ? "Registering..." : "Register"}
                 </button>
               </div>
-              {activeState === 'adminRegister' && <div className="text-center">
-                <p>Not admin?{" "}
-                    <Link className="text-decoration-none"  onClick={() => setActiveState("ownerRegister")}> register as owner
-                   </Link> </p>
-              </div>}
-              {activeState === 'ownerRegister' && <div className="text-center">
-                <p>Not admin?{" "}
-                    <Link className="text-decoration-none"  onClick={() => setActiveState("adminRegister")}> register as admin
-                   </Link> </p>
-              </div>}
-             
+              {activeState === "adminRegister" && (
+                <div className="text-center">
+                  <p>
+                    Not admin?{" "}
+                    <Link
+                      className="text-decoration-none"
+                      onClick={() => navigate("/owner-register")}
+                    >
+                      {" "}
+                      register as owner
+                    </Link>{" "}
+                  </p>
+                </div>
+              )}
+              {activeState === "ownerRegister" && (
+                <div className="text-center">
+                  <p>
+                    Not owner?{" "}
+                    <Link
+                      className="text-decoration-none"
+                      onClick={() => navigate("/admin-register")}
+                    >
+                      {" "}
+                      register as admin
+                    </Link>{" "}
+                  </p>
+                </div>
+              )}
+              {registrationError && (
+                <div className="text-center mt-3">
+                  <p style={{ color: "red" }}>{registrationError}</p>
+                </div>
+              )}
             </form>
           </div>
           {errors.registration && (

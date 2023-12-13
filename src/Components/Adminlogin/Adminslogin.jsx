@@ -11,7 +11,7 @@ const Adminslogin = ({ onformSwitch }) => {
   });
   
   const [activeState, setActiveState] = useState('adminLogin'); // Add state for activeState
-
+  const [loading, setLoading] = useState(false); // State for loading
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,11 +19,14 @@ const Adminslogin = ({ onformSwitch }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
-      const response = await axios.post("http://127.0.0.1:9090/jwt_token/", formData);
+      const response = await axios.post("https://distachapp.onrender.com/register/user/create", formData);
       
 
       if (response.status === 200) {
@@ -51,6 +54,9 @@ const Adminslogin = ({ onformSwitch }) => {
       }
     } catch (error) {
       console.error("Error during login:", error);
+    }
+    finally {
+      setLoading(false); // Set loading to false regardless of success or failure
     }
   };
 
@@ -95,9 +101,10 @@ const Adminslogin = ({ onformSwitch }) => {
                     <div className="mt-5 text-center">
                       <button
                         type="submit"
+                        disabled={loading} // Use 'loading' directly without curly braces
                         className="btn btn-primary w-75 rounded-pill py-2"
                       >
-                        Login
+                       {loading ? "login in..." : "Login"}
                       </button>
                     </div>
 
@@ -136,4 +143,4 @@ const Adminslogin = ({ onformSwitch }) => {
 };
 
 
-export default Adminslogin;
+export default Adminslogin;

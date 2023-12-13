@@ -1,12 +1,16 @@
 // import logo from './logo.svg';
 // import { useState } from 'react';
 import './App.css';
+import Adminpage2 from './Components/Adminpage2/Adminpage2';
+// import Establish from './Components/Establishment/Establish'
+// import Ridercompo from './Components/Ridercomponent/Ridercompo'
+// import Approvedmodal from './Components/Aprrovedmodal/Approvedmodal';
 import Login from './Components/Login/Login';
 // import Search from './Components/Search/Search';
 // import Ownerregister from './Components/Ownerregister/Ownerregister';
 // import Landingpage from './Components/Landpage/Landingpage';
 // import Adminregister from './Components/Register/Adminregister';
-// import Rider from './Components/Riderpage/Rider';
+import Rider from './Components/Riderpage/Rider';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Establish from './Components/Establishment/Establish';
 // import Adminpage2 from './Components/Adminpage2/Adminpage2';
@@ -15,7 +19,6 @@ import Login from './Components/Login/Login';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink';
 // import Managerpage from './Components/Managerpage/Managerpage';
 // import Manager from './Components/Managerlogin/Manager';
-// import Approved from './Components/Pending/Approved';
 // import Landingpage from './Components/Landpage/Landingpage';
 // import Lotery from './Components/Lottry/Lotery';
 // import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
@@ -31,7 +34,9 @@ import Login from './Components/Login/Login';
 // import Addorder from './Components/Addneworder/Addorder';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Rider from './Components/Riderpage/Rider';
-// import Managmentlog from './Components/Managementlog/Managmentlog';
+import Managmentlog from './Components/Managementlog/Managmentlog';
+// import Editestablishment from './Components/Editestablishment/Editestablishment';
+// import Addestablishment from './Components/Addestablishment/Addestablishment';
 // // import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
 // // import Copyriderlink from './Components/Copyriderlink/Copyriderlink';
 // import Copymanagerlink from './Components/Copylink/Copymanagerlink.jsx'
@@ -45,6 +50,11 @@ function App() {
 
   return (
     <div>
+      <Adminpage2/>
+      {/* <Editestablishment/> */}
+      <Rider/>
+      {/* <Establish/> */}
+      {/* <Approvedmodal/> */}
       {/* <Select/> */}
       {/* <Ownerslog/> */}
       {/* <Addorder/> */}
@@ -71,15 +81,18 @@ function App() {
      {/* <Landingpage/> */}
      {/* <Rider/>
      <Establish/>
-     <Managmentlog/>
-     <Responsivetable/>
      <Copymanagerlink/>
-    <Manager/>
+     <Manager/>
      <Modal/>
-     {/* <Riderlogin/> */}
+     {/*  */}
      {/* <Ownerslog/> */}
      {/* <Managerpage/> */}
      {/* <Rider/> */}
+     {/* <Responsivetable/> */}
+     {/* <Riderlogin/> */}
+     <Managmentlog/>
+   
+  
 
     </div>
   );

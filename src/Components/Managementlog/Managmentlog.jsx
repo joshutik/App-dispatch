@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Managmentlog.css";
+import axios from "axios";
 
 const Managmentlog = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://distachapp.onrender.com/order/")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching data: ", error);
+      });
+  }, []);
+
   return (
     <div className="container-fluid">
       <div className="manager-log">
@@ -28,8 +42,34 @@ const Managmentlog = () => {
             <h3 className="fw-bold fs-1 my-5">Order details</h3>
           </div>
           <div className=" w-100">
-            <table className="table-1 table-bordered table-responsive align-middle w-100">
-              <thead>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Numero</th>
+                    <th>Series</th>
+                    <th>Quantity Reserved</th>
+                    <th>Quantity Returned</th>
+                    <th>Quantity Charged</th>
+                    <th>Quantity Sold</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.numero}</td>
+                      <td>{item.series}</td>
+                      <td>{item.quantityReserved}</td>
+                      <td>{item.quantityReturned}</td>
+                      <td>{item.quantityCharged}</td>
+                      <td>{item.quantitySold}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/*<table className="table-1 table-bordered table-responsive align-middle w-100">
+               <thead>
                 <tr>
                   <th scope="col" className="p-4">
                     Date
@@ -54,7 +94,7 @@ const Managmentlog = () => {
                   </th>
 
                   <th scope="col" className="p-4">
-                    {/* <Link to="/pending">Pending <i class="bi bi-chevron-down"></i></Link> */}
+                    <Link to="/pending">Pending <i class="bi bi-chevron-down"></i></Link> 
                     Gift
                    
                   </th>
@@ -115,7 +155,7 @@ const Managmentlog = () => {
                   <td className="p-4"></td>
                 </tr>
               </tbody>
-            </table>
+            </table>*/}
           </div>
         </div>
       </div>

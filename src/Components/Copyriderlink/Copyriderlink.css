@@ -23,6 +23,10 @@
     background-size: cover;
   }
 
+  /* :not(.approvedbd){
+    background-image: none;
+  } */
+
   /* .header{
     background-image: url(../Assets/Saved\ confirmation.png);
     background-size: cover;

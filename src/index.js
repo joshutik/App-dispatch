@@ -26,6 +26,7 @@ import Managmentlog from './Components/Managementlog/Managmentlog';
 import Managerpage from './Components/Managerpage/Managerpage';
 import Ridercompo from './Components/Ridercomponent/Ridercompo';
 import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal.jsx';
+import Ownerregister from './Components/Ownerregister/Ownerregister.jsx';
 // import Confirmlink from './Components/Confirmastionlink/Confirmlink';
 // import Approved from './Components/Pending/Approved';
 
@@ -45,7 +46,7 @@ import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal.jsx
       element: <Ownerslog />,
     },
     {
-      path: "/Admin-login",
+      path: "/admin-login",
       element: <Adminslogin />,
     },
     {
@@ -99,7 +100,7 @@ import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal.jsx
       element: <Lottery/>,
     },
     {
-      path: "/admin-page",
+      path: "/admin-page/:id",
       element: <Managerpage/>,
     },
     {
@@ -107,8 +108,12 @@ import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal.jsx
       element: <Ridercompo/>,
     },
     {
-      path: "/register-login",
+      path: "/admin-register",
       element: <Adminregister/>,
+    },
+    {
+      path: "/owner-register",
+      element: <Ownerregister/>,
     },
     {
       path: "/managercopy-modal",

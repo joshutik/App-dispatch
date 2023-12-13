@@ -1,0 +1,13 @@
+:root{
+  --primary-color: #17476E;
+}
+
+.modal-body{
+    background-image: none;
+  }
+
+  .approved{
+    background-color: transparent !important;
+    outline: 2px solid var(--primary-color);
+    color: var(--primary-color) !important;
+  }

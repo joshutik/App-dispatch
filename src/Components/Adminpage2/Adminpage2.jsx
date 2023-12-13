@@ -1,16 +1,19 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Adminpage2.css";
 import Footer from "../Footer/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Select from "../Selectdropdown/Select";
+// import Select from "../Selectdropdown/Select";
 import Managerlinkmodal from "../Copymanagermodal/Managerlinkmodal";
 
 const Adminpage2 = () => {
   const [loading, setLoading] = useState(false);
+  const { companyId } = useParams();
+  const [company, setCompany] = useState({});
+  // const [pCompany, setPCompany] = useState({});
   const [responseData, setResponseData] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -36,10 +39,11 @@ const Adminpage2 = () => {
 
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:9090/rider/");
+        const response = await axios.get("https://distachapp.onrender.com/rider/");
         if (response.status === 200) {
           setResponseData(response.data);
         } else {
@@ -67,7 +71,7 @@ const Adminpage2 = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+  
     if (name === "rider") {
       const selectedRider = responseData.find(
         (rider) => rider.id === parseInt(value, 10)
@@ -88,7 +92,7 @@ const Adminpage2 = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:9090/establishment/create/",
+        "https://distachapp.onrender.com/establishment/ ",
         formData
       );
 
@@ -109,7 +113,7 @@ const Adminpage2 = () => {
   const handleSubmitOrder = async () => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:9090/order/create/",
+        "https://distachapp.onrender.com/establishment/",
         formData
       );
 
@@ -144,11 +148,46 @@ const Adminpage2 = () => {
     setShowModal(false);
   };
 
+  // useEffect(() => {
+  //   const company = localStorage.getItem('currentCompany');
+  //   let parsedCompany = JSON.parse(company);
+  //   setPCompany(parsedCompany);
+  //   console.log(parsedCompany);
+  // }, []);
+
+  
+  useEffect(() => {
+    // Fetch company details when the component mounts
+    fetchCompanyDetails(companyId);
+  }, [companyId]);
+
+     // Define the function to fetch company details
+  const fetchCompanyDetails = async (companyId) => {
+    try {
+      const response = await axios.get(`https://distachapp.onrender.com/establishment/${companyId}`);
+      if (response.status === 200) {
+        setCompany(response.data);
+      } else {
+        console.error("Failed to fetch company details");
+      }
+    } catch (error) {
+      console.error("Error fetching company details:", error);
+    }
+  }
+
+    useEffect(() => {
+      const selectedCompanyId = localStorage.getItem('selectedCompanyId');
+      if (selectedCompanyId) {
+        // Fetch company details using the stored ID
+        fetchCompanyDetails(selectedCompanyId);
+      }
+  }, [ ]);
+
   return (
     <div>
       <div className="container-fluid add">
         <div className="pt-3 ps-5">
-          <Link className="text-light text-decoration-none fs-5 ml-4" to="/">
+          <Link to="/edit-company" className="text-light text-decoration-none fs-5 ml-4">
             <i className="bi bi-chevron-left"></i> Go Back
           </Link>
         </div>
@@ -170,6 +209,7 @@ const Adminpage2 = () => {
             <input
               type="text"
               name="name"
+              // value={pCompany.name}
               onChange={handleInputChange}
               className="form-control rounded-pill w-100 border-1 py-3 px-3"
             />
@@ -184,6 +224,8 @@ const Adminpage2 = () => {
                   type="text"
                   name="contact_person"
                   onChange={handleInputChange}
+                  value={company.name || ''}
+                  // value={pCompany.name}
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
               </div>
@@ -194,6 +236,7 @@ const Adminpage2 = () => {
                 <input
                   type="text"
                   name="phone_number"
+                  value={company.name || ''}
                   onChange={handleInputChange}
                   className="form-control rounded-pill w-100 border-1 py-3 px-3"
                 />
@@ -432,7 +475,6 @@ const Adminpage2 = () => {
                 type="submit"
                 onClick={() => {
                   handleSave();
-                  handleSaveClick();
                 }}
                 disabled={loading}
                 showModal={showModal}
@@ -462,6 +504,7 @@ const Adminpage2 = () => {
       <Footer />
     </div>
   );
+              
 };
 
 export default Adminpage2;
