@@ -30,7 +30,7 @@ import Rider from './Components/Riderpage/Rider';
 // import Ownerslogin from './Components/Ownerlogin/Ownerslogin';
 // import Select from './Components/Selectdropdown/Select';
 // import Lottery from './Components/Lotery/Lottery';
-// import Responsivetable from './Components/Tables/Responsivetable';
+import Responsivetable from './Components/Tables/Responsivetable';
 // import Addorder from './Components/Addneworder/Addorder';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Rider from './Components/Riderpage/Rider';
@@ -88,7 +88,7 @@ function App() {
      {/* <Ownerslog/> */}
      {/* <Managerpage/> */}
      {/* <Rider/> */}
-     {/* <Responsivetable/> */}
+     <Responsivetable/>
      {/* <Riderlogin/> */}
      {/* <Managmentlog/> */}
    
