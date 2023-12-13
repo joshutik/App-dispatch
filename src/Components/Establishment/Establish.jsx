@@ -218,9 +218,9 @@ const Establish = () => {
 
   return (
     <div>
-      <div className="row align-item-center justify-content-center mt-5 gy-4">
+      <div className="row justify-content-center mt-5 gy-4">
         
-         <div className="rounded-5 overlay col-lg-4 col-md-4 col-sm-12">
+         <div className="rounded-5 overlay d-flex">
           {responseData.map((item, index) => (
             <div key={index} className="container position-relative">
               <div onClick={() => handleCompanyId(item.id)}>

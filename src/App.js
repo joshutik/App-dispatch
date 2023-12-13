@@ -34,7 +34,7 @@ import Rider from './Components/Riderpage/Rider';
 // import Addorder from './Components/Addneworder/Addorder';
 // import Riderlogin from './Components/Riderlogin/Riderlogin';
 // import Rider from './Components/Riderpage/Rider';
-import Managmentlog from './Components/Managementlog/Managmentlog';
+// import Managmentlog from './Components/Managementlog/Managmentlog';
 // import Editestablishment from './Components/Editestablishment/Editestablishment';
 // import Addestablishment from './Components/Addestablishment/Addestablishment';
 // // import Managerlinkmodal from './Components/Copymanagermodal/Managerlinkmodal';
@@ -90,7 +90,7 @@ function App() {
      {/* <Rider/> */}
      {/* <Responsivetable/> */}
      {/* <Riderlogin/> */}
-     <Managmentlog/>
+     {/* <Managmentlog/> */}
    
   
 
